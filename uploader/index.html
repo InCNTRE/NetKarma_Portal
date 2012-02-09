@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>NetKarma Portal Upload</title>
+<script src="/portal/jquery/js/jquery-1.7.1.min.js"></script>
+<script src="/portal/jquery/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script class="jsbin" src="http://datatables.net/download/build/jquery.dataTables.nightly.js"></script>
+<style type="text/css">
+      @import "demo_page.css";
+      @import "demo_table.css";
+</style>
+<link type="text/css" href="/portal/jquery/css/smoothness/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
+
+
+<script type="text/javascript"
+      src="http://www.google.com/jsapi?key=AIzaSyAIcDGjwQmoHTrp2wbbvqpyaZR2nMMrJaM">
+</script>
+<script type="text/javascript" src="ge.js">
+
+<!-- JSON support for IE (needed to use JS API) -->
+<script type="text/javascript" src="../cytoscapeweb/js/min/json2.min.js"></script>
+        
+<!-- Flash embedding utility (needed to embed Cytoscape Web) -->
+<script type="text/javascript" src="../cytoscapeweb/js/min/AC_OETags.min.js"></script>
+        
+<!-- Cytoscape Web JS API (needed to reference org.cytoscapeweb.Visualization) -->
+<script type="text/javascript" src="../cytoscapeweb/js/min/cytoscapeweb.min.js"></script>
+
+<link rel="stylesheet" type="text/css" media="all" href="styles.css" />
+
+<!-- Cytoscape Web topo Init-->
+
+<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				oTable = $('#example').dataTable({
+					"bJQueryUI": true,
+					"sPaginationType": "full_numbers"
+				});
+
+				oTabs = $('#tabs').tabs();
+
+			} );
+</script>
+
+<script type="text/javascript">
+            window.onload=function() {
+                // id of Cytoscape Web container div
+                var div_id = "cytoscapeweb";
+                
+                // you could also use other formats (e.g. GraphML) or grab the network data via AJAX
+                var networ_json = {
+		    // Data Schema for custom attributes
+		    dataSchema: {
+			nodes: [ { name: "label", type: "string" },
+				 {  name: "type", type: "string" }
+			       ],				 
+			edges: [ { name: "label", type: "string" },
+                                 {  name: "type", type: "string" }
+                               ]
+		    },
+
+		    data: {
+                        nodes: [ { id: "1", label: "chsmall", type: "agent" },
+				 { id: "2", label: "sample init", type: "process" }, 
+				 { id: "3", label: "pl1.iub.indiana.edu", type: "artifact" },
+				 { id: "4", label: "pl2.iub.indiana.edu", type: "artifact" },
+			       ],
+                        edges: [ { id: "2to1", target: "1", source: "2", type: "WasControlledBy", label: "WasControlledBy", directed: true },
+				 { id: "2to3", target: "3", source: "2", type: "Used", label: "Used" , directed: true },
+				 { id: "2to4", target: "4", source: "2", type: "Used", label: "Used" , directed: true },
+				]
+                    }
+                };
+
+  		var visual_style = {
+                    global: {
+                        backgroundColor: "#ABCFD6"
+                    },
+                    nodes: {
+			shape: { 
+				discreteMapper: {
+                               		 attrName: "type",
+					 entries : [ 
+						{ attrValue: "agent", value: "OCTAGON"},
+					        { attrValue: "process", value: "SQUARE"},
+						{ attrValue: "artifact", value: "OVAL"},
+						]
+					}
+				} 
+			},
+		    edges: {
+		        width: 3,
+			color: { 
+                                discreteMapper: {
+                                         attrName: "type",
+                                         entries : [ 
+                                                { attrValue: "WasControlledBy", value: "#0B94B1"},
+                                                { attrValue: "Used", value: "#99FF66"},
+                                                ]
+                                        }
+                                }
+                        }
+		};
+
+					
+                
+                // initialization options
+                var options = {
+                    // where you have the Cytoscape Web SWF
+                    swfPath: "/portal/cytoscapeweb/swf/CytoscapeWeb",
+                    // where you have the Flash installer SWF
+                    flashInstallerPath: "/portal/cytoscapeweb/playerProductInstall",
+		    
+                };
+                
+                // init and draw
+                var vis = new org.cytoscapeweb.Visualization(div_id, options);
+
+		  var draw_options = {
+		    // your data goes here
+                    network: networ_json,
+                    // show edge labels too
+                    edgeLabelsVisible: true,
+		    // set the style at initialisation
+                    visualStyle: visual_style
+		 }
+
+                vis.draw(draw_options);
+            };
+</script>
+
+
+</head>
+
+<body id="dt_example"> 
+<h1>NetKarma</h1>
+
+<div class="box"> 
+
+<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Experiments</a></li>
+				<li><a href="#tabs-2">WorkFlow Visualisation</a></li>
+				<li><a href="#tabs-3">Resource Visualisation</a></li>
+				<li><a href="#tabs-4">Geographic Visualisation</a></li>
+			</ul>
+<div id="tabs-1">
+
+
+<table>
+<td width="40%">
+  <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+
+
+  <fieldset>
+  <legend>File Upload</legend>
+
+  <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="1000000000" />
+  Experiment Description <input type="text" name="Description"> </input>
+
+  <div>
+	<label for="fileselect">Files to upload:</label>
+	<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+	<div id="filedrag">or drop files here</div>
+  </div>
+
+ <div id="submitbutton">
+	<button type="submit">Upload Files</button>
+ </div>
+
+ <div id="supported_files">
+	Gush log files and RSPEC parsing is supported. All others are saved as artifacts.
+ </div>
+
+ </fieldset>
+
+ </form>
+
+ <div id="progress"></div>
+
+ <div id="messages">
+ <p>Status Messages</p>
+ </div>
+</td>
+<td>
+
+<fieldset>
+  <legend>NetKarma Experiments</legend>
+
+<div id="container">	
+     <div class="demo_jui">
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+        <thead>
+          <tr>
+            <th>Experiment ID</th>
+	    <th>Experiment Description</th>
+            <th>Project</th>
+            <th>User</th>
+            <th>Start</th>
+	    <th>End</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="odd gradeX">
+            <td>1</td>
+            <td>Twister</td>
+            <td>NetKarma</td>
+            <td>chsmall</td>
+            <td>Mon Jan 1 10:00 GMT</td>
+	    <td>Mon Jan 1 21:00 GMT</td>
+          </tr>
+          <tr class="even gradeC">
+            <td>2</td>
+            <td>XSP</td>
+	    <td>NetKarma</td>
+            <td>chsmall</td>
+            <td>Mon Jan 1 11:00 GMT</td>
+            <td>Mon Jan 1 22:00 GMT</td>
+          </tr>
+	</tbody>
+       </table>
+   </div>
+</div>
+
+</fieldset>
+
+</td> 
+</table>
+
+</div>
+
+<div id="tabs-2"> 
+   <div id="cytoscapeweb">
+	Cytoscape Web graph will apear here
+   </div>
+</div>
+
+<div id="tabs-3">
+   <div id="cytoscapeweb_topo">
+        Cytoscape Web topo graph 
+   </div>
+</div>
+
+
+<div id="tabs-4"> 
+ <div id="map_canvas">
+	Google Earth
+ </div>
+</div>
+
+</div>
+
+  
+
+</div>
+
+
+</div>
+
+</div>
+	
+      <div style="float: left; width: 20%; padding-top: 10px;>
+      <img src="../img/iu.png" class="footer_image" />
+      </div>
+
+      <div style="float: left; width: 33%; padding-top: 10px;>
+      <a href="http://incntre.iu.edu/">
+      <img src="../img/incntre-trans.png" class="footer_image" />
+      </a>
+      </div>
+      <div style="float: left; width: 33%; padding-top: 10px;">
+      <a href="http://globalnoc.iu.edu/">
+      <img src="../img//PTI_IU_trans.png" class="footer_image" />
+
+      </a>
+      </div>
+
+
+<script src="filedrag.js"></script>
+</body>
+</html>
