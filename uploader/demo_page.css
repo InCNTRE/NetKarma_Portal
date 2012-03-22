@@ -12,8 +12,8 @@
 
 
 #dt_example #container {
-	width: 800px;
-	margin: 30px auto;
+	width: 100%;
+	margin: 0px auto;
 	padding: 0;
 }
 
@@ -28,7 +28,7 @@
 }
 
 #dt_example .demo_jui {
-	margin: 30px auto 0 auto;
+	margin: 0px auto 0 auto;
 }
 
 #dt_example .big {

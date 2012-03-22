@@ -1,0 +1,43 @@
+#!/usr/bin/perl
+
+use Data::Dumper;
+use DBI;
+use JSON;
+
+
+sub main {
+
+    my $username      = 'karma';
+    my $password      = 'kicks3,cans';
+    my $database_name = 'karma';
+    my $port          = 3306;
+    my $hostname      = 'localhost';
+    my $dbh           = DBI->connect(
+                "DBI:mysql:database=$database_name;host=$hostname;port=$port",
+                $username, $password, { AutoCommit => 0 } );
+
+
+    my $query = "select entity_uri from exe_entity";
+    my $sth = $dbh->prepare($query);
+    $sth->execute();
+
+       my $results = [];
+       my
+        while ( my $row = $sth->fetchrow_hashref() ) {
+		
+		push( @$results, $row->{'entity_uri'} );
+	}
+
+	print Dumper $results;
+		
+			
+} 
+
+
+
+sub send_json {
+        my $output = shift;
+        print "Content-type: text/plain\n\n" . encode_json($output);
+}
+
+main();

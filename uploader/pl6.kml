@@ -1,0 +1,3311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2" 
+  xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Document>
+
+
+<name>TWISTER Experiments</name>
+	<open>1</open>
+	
+	
+	
+            <Style id="netkarma_marker">
+       	<IconStyle>
+       		<scale>0.75</scale>
+       		<Icon>
+       			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-green.png</href> 
+       		</Icon>
+       		<hotSpot x="0.8" y="0.8" xunits="fraction" yunits="fraction"/>
+       	</IconStyle>
+       	<LabelStyle>
+       		<color>ff00aaff</color>
+       	</LabelStyle>
+       	<BalloonStyle>
+      <!-- a background color for the balloon -->
+      <bgColor>ff00aaff</bgColor>
+      <!-- styling of the balloon text -->
+      <text><![CDATA[
+      
+      <table width="500" cellpadding="0" cellspacing="0">
+       <tr>
+       <td>
+      <b><font color="#CC0000" size="+2">$[name]</font></b>
+      <br/><br/>
+      <b>Node:</b><br/>
+      $[description]
+      <br/><br/>
+       </td>
+       </tr>
+      ]]></text>
+    </BalloonStyle>
+       </Style>
+       
+
+      <Style id="green_marker">
+       	<IconStyle>
+       		<scale>1</scale>
+       		<Icon>
+       			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-green.png</href> 
+       		</Icon>
+       		<hotSpot x="0.8" y="0.8" xunits="fraction" yunits="fraction"/>
+       	</IconStyle>
+       	<LabelStyle>
+       		<color>ff00aaff</color>
+       	</LabelStyle>
+       </Style>
+
+
+
+              <Style id="blue_marker">            
+       	<IconStyle>
+       		<scale>0.75</scale>
+       		<Icon>
+       			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-blue.png</href>
+       		</Icon>
+       		<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+       	</IconStyle>
+       	<LabelStyle>
+       		<color>ff00aaff</color>
+       		<scale>1</scale>
+       	</LabelStyle>
+       </Style>
+
+
+       <Style id="yellow_marker">            
+       	<IconStyle>
+       		<scale>0.8</scale>
+       		<Icon>
+       			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-gold.png</href>
+       		</Icon>
+       		<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+       	</IconStyle>
+       	<LabelStyle>
+       		<color>ff00aaff</color>
+       	</LabelStyle>
+       </Style>
+       <Style id="green_marker">
+       	<IconStyle>
+       		<scale>1</scale>
+       		<Icon>
+       			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-green.png</href> 
+       		</Icon>
+       		<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+       	</IconStyle>
+       	<LabelStyle>
+       		<color>ff00aaff</color>
+       	</LabelStyle>
+       </Style>
+       <Style id="red_marker">            <IconStyle>                    <scale>0.8</scale>                    <Icon>                             <href>http://gmoc-dev.grnoc.iu.edu//img/marker.png</href>                     </Icon>                     <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>               </IconStyle>              <LabelStyle>                     <color>ff00aaff</color>             </LabelStyle>     </Style>
+<Style id="yellowLineGreenPoly">   <LineStyle>     <color>7f00ffff</color>     <width>8</width>   </LineStyle>   <PolyStyle>     <color>7f00ff00</color>   </PolyStyle> </Style><Style id="redLineGreenPoly">   <LineStyle>     <color>7fff0000</color>     <width>8</width>   </LineStyle>   <PolyStyle>     <color>7f00ff00</color>   </PolyStyle> </Style>
+
+
+
+
+<Folder><name>Compute Nodes</name>
+ <Placemark>
+ <name>cs.princeton.edu,nec-labs.com</name>
+ <description>
+  <![CDATA[
+<div id="cs.princeton.edu,nec-labs.com">urn:publicid:IDN+planet-lab.org+component+alice.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+delta.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+echo.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+hptest-1.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+hptest-3.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+plab1.nec-labs.com<BR>urn:publicid:IDN+planet-lab.org+component+plab2.nec-labs.com<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-01.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-02.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-03.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-04.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-05.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-06.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-9.cs.princeton.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-74.6597,40.3756</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>wail.wisc.edu</name>
+ <description>
+  <![CDATA[
+<div id="wail.wisc.edu">urn:publicid:IDN+planet-lab.org+component+planetlab3.wail.wisc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.wail.wisc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-89.4104,43.0761</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>lbnl.nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="lbnl.nodes.planet-lab.org">urn:publicid:IDN+planet-lab.org+component+node1.lbnl.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+node2.lbnl.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.2536,37.8668</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>naist.jp</name>
+ <description>
+  <![CDATA[
+<div id="naist.jp">urn:publicid:IDN+planet-lab.org+component+planetlab-01.naist.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-02.naist.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-03.naist.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-04.naist.jp</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>135.8333,34.6833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>pop-pa.rnp.br,pop-ce.rnp.br,pop-mg.rnp.br,ufabc.edu.br,pop-rj.rnp.br,pop-rs.rnp.br,c3sl.ufpr.br</name>
+ <description>
+  <![CDATA[
+<div id="pop-pa.rnp.br,pop-ce.rnp.br,pop-mg.rnp.br,ufabc.edu.br,pop-rj.rnp.br,pop-rs.rnp.br,c3sl.ufpr.br">urn:publicid:IDN+planet-lab.org+component+planet-lab1.ufabc.edu.br<BR>urn:publicid:IDN+planet-lab.org+component+planet-lab2.ufabc.edu.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.c3sl.ufpr.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.pop-ce.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.pop-mg.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.pop-pa.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.pop-rj.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.pop-rs.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.c3sl.ufpr.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.pop-ce.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.pop-mg.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.pop-pa.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.pop-rj.rnp.br<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.pop-rs.rnp.br</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-55,-10</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>engr.sjsu.edu</name>
+ <description>
+  <![CDATA[
+<div id="engr.sjsu.edu">urn:publicid:IDN+planet-lab.org+component+plab1.engr.sjsu.edu<BR>urn:publicid:IDN+planet-lab.org+component+plab2.engr.sjsu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-121.8833,37.3422</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>berkeley.intel-research.net</name>
+ <description>
+  <![CDATA[
+<div id="berkeley.intel-research.net">urn:publicid:IDN+planet-lab.org+component+planet4.berkeley.intel-research.net<BR>urn:publicid:IDN+planet-lab.org+component+planet5.berkeley.intel-research.net<BR>urn:publicid:IDN+planet-lab.org+component+planet6.berkeley.intel-research.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.2193,37.795</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>pc.cis.udel.edu</name>
+ <description>
+  <![CDATA[
+<div id="pc.cis.udel.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.pc.cis.udel.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.pc.cis.udel.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-75.597,39.5645</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>mpi-sws.mpg.de,informatik.uni-wuerzburg.de</name>
+ <description>
+  <![CDATA[
+<div id="mpi-sws.mpg.de,informatik.uni-wuerzburg.de">urn:publicid:IDN+planet-lab.org+component+planetlab01.mpi-sws.mpg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.mpi-sws.mpg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab03.mpi-sws.mpg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab04.mpi-sws.mpg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab05.mpi-sws.mpg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab06.mpi-sws.mpg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.informatik.uni-wuerzburg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.informatik.uni-wuerzburg.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>9,51</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>stanford.edu,scs.stanford.edu</name>
+ <description>
+  <![CDATA[
+<div id="stanford.edu,scs.stanford.edu">urn:publicid:IDN+planet-lab.org+component+of-planet5.stanford.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet1.scs.stanford.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet2.scs.stanford.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.172,37.4178</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark id="ucs.indiana.edu">
+ <name>ucs.indiana.edu</name>
+ <description>
+  <![CDATA[
+<div id="ucs.indiana.edu">urn:publicid:IDN+planet-lab.org+component+pl1.ucs.indiana.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.ucs.indiana.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl>
+
+
+<Point>
+ <coordinates>-86.517,39.1679</coordinates>
+ </Point>
+ </Placemark>
+ 
+ <Placemark>
+ <name>acis.ufl.edu</name>
+ <description>
+  <![CDATA[
+<div id="acis.ufl.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.acis.ufl.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.acis.ufl.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-82.3496,29.6433</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>fing.edu.uy,lan.redclara.net</name>
+ <description>
+  <![CDATA[
+<div id="fing.edu.uy,lan.redclara.net">urn:publicid:IDN+planet-lab.org+component+planetlab-1.fing.edu.uy<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.fing.edu.uy<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1-buenosaires.lan.redclara.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1-santiago.lan.redclara.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1-saopaulo.lan.redclara.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1-tijuana.lan.redclara.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2-buenosaires.lan.redclara.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2-santiago.lan.redclara.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2-saopaulo.lan.redclara.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2-tijuana.lan.redclara.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-56.1708,-34.8581</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>tlm.unavarra.es,ii.uam.es,uc3m.es,ls.fi.upm.es</name>
+ <description>
+  <![CDATA[
+<div id="tlm.unavarra.es,ii.uam.es,uc3m.es,ls.fi.upm.es">urn:publicid:IDN+planet-lab.org+component+ops.ii.uam.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.ls.fi.upm.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.tlm.unavarra.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.uc3m.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ls.fi.upm.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.tlm.unavarra.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.uc3m.es<BR>urn:publicid:IDN+planet-lab.org+component+utet.ii.uam.es</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-3.6833,40.4</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ics.forth.gr</name>
+ <description>
+  <![CDATA[
+<div id="ics.forth.gr">urn:publicid:IDN+planet-lab.org+component+planetlab1.ics.forth.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ics.forth.gr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>25.1306,35.325</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>fri.uni-lj.si</name>
+ <description>
+  <![CDATA[
+<div id="fri.uni-lj.si">urn:publicid:IDN+planet-lab.org+component+planetlab1.fri.uni-lj.si<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.fri.uni-lj.si</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>14.5144,46.0553</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cse.msu.edu</name>
+ <description>
+  <![CDATA[
+<div id="cse.msu.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cse.msu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cse.msu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-84.4883,42.7283</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>otemachi.wide.ad.jp,sfc.wide.ad.jp,pnl.nitech.ac.jp,iii.u-tokyo.ac.jp,dojima.wide.ad.jp,ics.es.osaka-u.ac.jp,planetlab.ics.tut.ac.jp,doshisha.ac.jp,jaist.ac.jp,goto.info.waseda.ac.jp,nvlab.org,ise.eng.osaka-u.ac.jp,koganei.wide.ad.jp,ane.cmc.osaka-u.ac.jp</name>
+ <description>
+  <![CDATA[
+<div id="otemachi.wide.ad.jp,sfc.wide.ad.jp,pnl.nitech.ac.jp,iii.u-tokyo.ac.jp,dojima.wide.ad.jp,ics.es.osaka-u.ac.jp,planetlab.ics.tut.ac.jp,doshisha.ac.jp,jaist.ac.jp,goto.info.waseda.ac.jp,nvlab.org,ise.eng.osaka-u.ac.jp,koganei.wide.ad.jp,ane.cmc.osaka-u.ac.jp">urn:publicid:IDN+planet-lab.org+component+n<BR>urn:publicid:IDN+planet-lab.org+component+nis-planet2.doshisha.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+pl1-higashi.ics.es.osaka-u.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+pl2.planetlab.ics.tut.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planet1.jaist.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planet1.pnl.nitech.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planet2.pnl.nitech.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab0.dojima.wide.ad.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab0.otemachi.wide.ad.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.iii.u-tokyo.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.nvlab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.otemachi.wide.ad.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.sfc.wide.ad.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.goto.info.waseda.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.goto.info.waseda.ac.jp</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>138,36</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>pl.sophia.inria.fr</name>
+ <description>
+  <![CDATA[
+<div id="pl.sophia.inria.fr">urn:publicid:IDN+planet-lab.org+component+onelab02.pl.sophia.inria.fr<BR>urn:publicid:IDN+planet-lab.org+component+onelab09.pl.sophia.inria.fr<BR>urn:publicid:IDN+planet-lab.org+component+onelab10.pl.sophia.inria.fr<BR>urn:publicid:IDN+planet-lab.org+component+onelab11.pl.sophia.inria.fr<BR>urn:publicid:IDN+planet-lab.org+component+wlab02.pl.sophia.inria.fr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>7,43.6333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>kaist.ac.kr,yonsei.ac.kr</name>
+ <description>
+  <![CDATA[
+<div id="kaist.ac.kr,yonsei.ac.kr">urn:publicid:IDN+planet-lab.org+component+csplanetlab2.kaist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+csplanetlab3.kaist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+csplanetlab4.kaist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+csplanetlab5.kaist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+csplanetlab6.kaist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.yonsei.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.yonsei.ac.kr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>127.5,37</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cse.ohio-state.edu</name>
+ <description>
+  <![CDATA[
+<div id="cse.ohio-state.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-1.cse.ohio-state.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cse.ohio-state.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-82.9986,39.993</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>sys.virginia.edu</name>
+ <description>
+  <![CDATA[
+<div id="sys.virginia.edu">urn:publicid:IDN+planet-lab.org+component+planetlab01.sys.virginia.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.sys.virginia.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-78.5137,38.0329</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eece.ksu.edu</name>
+ <description>
+  <![CDATA[
+<div id="eece.ksu.edu">urn:publicid:IDN+planet-lab.org+component+plab3.eece.ksu.edu<BR>urn:publicid:IDN+planet-lab.org+component+plab4.eece.ksu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-96.581,39.196</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.aueb.gr,di.uoa.gr,planetlab.ntua.gr,cslab.ece.ntua.gr</name>
+ <description>
+  <![CDATA[
+<div id="cs.aueb.gr,di.uoa.gr,planetlab.ntua.gr,cslab.ece.ntua.gr">urn:publicid:IDN+planet-lab.org+component+kostis.di.uoa.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.aueb.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.cslab.ece.ntua.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.aueb.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cslab.ece.ntua.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cslab.ece.ntua.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cslab.ece.ntua.gr<BR>urn:publicid:IDN+planet-lab.org+component+stella.planetlab.ntua.gr<BR>urn:publicid:IDN+planet-lab.org+component+vicky.planetlab.ntua.gr<BR>urn:publicid:IDN+planet-lab.org+component+zoi.di.uoa.gr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>23.7332,37.9833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ie.cuhk.edu.hk,eee.hku.hk,cs.ust.hk</name>
+ <description>
+  <![CDATA[
+<div id="ie.cuhk.edu.hk,eee.hku.hk,cs.ust.hk">urn:publicid:IDN+planet-lab.org+component+plab1.cs.ust.hk<BR>urn:publicid:IDN+planet-lab.org+component+plab2.cs.ust.hk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.eee.hku.hk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.ie.cuhk.edu.hk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eee.hku.hk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ie.cuhk.edu.hk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.ie.cuhk.edu.hk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.ie.cuhk.edu.hk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.ie.cuhk.edu.hk</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>114.15,22.2833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ite.gmu.edu</name>
+ <description>
+  <![CDATA[
+<div id="ite.gmu.edu">urn:publicid:IDN+planet-lab.org+component+plgmu1.ite.gmu.edu<BR>urn:publicid:IDN+planet-lab.org+component+plgmu2.ite.gmu.edu<BR>urn:publicid:IDN+planet-lab.org+component+plgmu3.ite.gmu.edu<BR>urn:publicid:IDN+planet-lab.org+component+plgmu4.ite.gmu.edu<BR>urn:publicid:IDN+planet-lab.org+component+plgmu5.ite.gmu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-77.3375,38.8357</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.ucy.ac.cy</name>
+ <description>
+  <![CDATA[
+<div id="cs.ucy.ac.cy">urn:publicid:IDN+planet-lab.org+component+planetlab-1.cs.ucy.ac.cy<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cs.ucy.ac.cy</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>33.3667,35.1667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>webedu.ccu.edu.tw,ntu.nodes.planet-lab.org,iis.sinica.edu.tw,cs.nccu.edu.tw,ee.ntu.edu.tw</name>
+ <description>
+  <![CDATA[
+<div id="webedu.ccu.edu.tw,ntu.nodes.planet-lab.org,iis.sinica.edu.tw,cs.nccu.edu.tw,ee.ntu.edu.tw">urn:publicid:IDN+planet-lab.org+component+adam.ee.ntu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+ent1.cs.nccu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+ent2.cs.nccu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+eve.ee.ntu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.webedu.ccu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.webedu.ccu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.iis.sinica.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.ntu.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.iis.sinica.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ntu.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>121.525,25.0392</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>pku.edu.cn,dsp.ac.cn,sjtu.edu.cn,6test.edu.cn</name>
+ <description>
+  <![CDATA[
+<div id="pku.edu.cn,dsp.ac.cn,sjtu.edu.cn,6test.edu.cn">urn:publicid:IDN+planet-lab.org+component+pl1.6test.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+pl1.pku.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+pl2.6test.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+pl2.pku.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+pl3.pku.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+planet1.dsp.ac.cn<BR>urn:publicid:IDN+planet-lab.org+component+planet2.dsp.ac.cn<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.sjtu.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.sjtu.edu.cn</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>116.3883,39.9289</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>informatik.rwth-aachen.de</name>
+ <description>
+  <![CDATA[
+<div id="informatik.rwth-aachen.de">urn:publicid:IDN+planet-lab.org+component+freedom.informatik.rwth-aachen.de<BR>urn:publicid:IDN+planet-lab.org+component+peace.informatik.rwth-aachen.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>6.1053,50.7708</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.caltech.edu,cs.ucla.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.caltech.edu,cs.ucla.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.ucla.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.ucla.edu<BR>urn:publicid:IDN+planet-lab.org+component+planlab1.cs.caltech.edu<BR>urn:publicid:IDN+planet-lab.org+component+planlab2.cs.caltech.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-118.2987,33.7866</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eecs.cwru.edu</name>
+ <description>
+  <![CDATA[
+<div id="eecs.cwru.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-4.eecs.cwru.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-5.eecs.cwru.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-81.6053,41.5074</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>tkn.tu-berlin.de,fhi-fokus.de,wiwi.hu-berlin.de,fokus.fraunhofer.de,zib.de</name>
+ <description>
+  <![CDATA[
+<div id="tkn.tu-berlin.de,fhi-fokus.de,wiwi.hu-berlin.de,fokus.fraunhofer.de,zib.de">urn:publicid:IDN+planet-lab.org+component+onelab-1.fhi-fokus.de<BR>urn:publicid:IDN+planet-lab.org+component+onelab-2.fhi-fokus.de<BR>urn:publicid:IDN+planet-lab.org+component+planet1.zib.de<BR>urn:publicid:IDN+planet-lab.org+component+planet2.zib.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.fokus.fraunhofer.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.fokus.fraunhofer.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab01.tkn.tu-berlin.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.tkn.tu-berlin.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.wiwi.hu-berlin.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.wiwi.hu-berlin.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>13.4,52.5167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csres.utexas.edu</name>
+ <description>
+  <![CDATA[
+<div id="csres.utexas.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.csres.utexas.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.csres.utexas.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.csres.utexas.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.csres.utexas.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.csres.utexas.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.csres.utexas.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab7.csres.utexas.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-97.7369,30.2961</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uoregon.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.uoregon.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.uoregon.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.uoregon.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cs.uoregon.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cs.uoregon.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-123.0547,44.0364</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>upc.es,uoc.edu,upf.edu,tidprojects.com</name>
+ <description>
+  <![CDATA[
+<div id="upc.es,uoc.edu,upf.edu,tidprojects.com">urn:publicid:IDN+planet-lab.org+component+dplanet1.uoc.edu<BR>urn:publicid:IDN+planet-lab.org+component+dplanet2.uoc.edu<BR>urn:publicid:IDN+planet-lab.org+component+plab1.tidprojects.com<BR>urn:publicid:IDN+planet-lab.org+component+plab2.tidprojects.com<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.upc.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.upc.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.upc.es<BR>urn:publicid:IDN+planet-lab.org+component+planetlabpc1.upf.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlabpc2.upf.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>2.1833,41.3833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>tagus.ist.utl.pt,di.fct.unl.pt,iscte.pt,di.fc.ul.pt</name>
+ <description>
+  <![CDATA[
+<div id="tagus.ist.utl.pt,di.fct.unl.pt,iscte.pt,di.fc.ul.pt">urn:publicid:IDN+planet-lab.org+component+planetlab-1.di.fc.ul.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.iscte.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.tagus.ist.utl.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.di.fc.ul.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.iscte.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.tagus.ist.utl.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.di.fct.unl.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.di.fct.unl.pt</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-9.1333,38.7167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>itwm.fraunhofer.de,informatik.uni-kl.de,itwm.fhg.de</name>
+ <description>
+  <![CDATA[
+<div id="itwm.fraunhofer.de,informatik.uni-kl.de,itwm.fhg.de">urn:publicid:IDN+planet-lab.org+component+planetlab1.informatik.uni-kl.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.itwm.fhg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.informatik.uni-kl.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.itwm.fhg.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.itwm.fraunhofer.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.itwm.fraunhofer.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.itwm.fraunhofer.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>7.75,49.45</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>millennium.berkeley.edu</name>
+ <description>
+  <![CDATA[
+<div id="millennium.berkeley.edu">urn:publicid:IDN+<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab10.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab11.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab12.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab13.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab15.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab16.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab7.millennium.berkeley.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab9.millennium.berkeley.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.2702,37.8091</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.st-andrews.ac.uk</name>
+ <description>
+  <![CDATA[
+<div id="cs.st-andrews.ac.uk">urn:publicid:IDN+planet-lab.org+component+planetlab3.cs.st-andrews.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cs.st-andrews.ac.uk</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-2,54</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>utep.edu</name>
+ <description>
+  <![CDATA[
+<div id="utep.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.utep.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.utep.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-106.4976,31.7832</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cewit.stonybrook.edu</name>
+ <description>
+  <![CDATA[
+<div id="cewit.stonybrook.edu">urn:publicid:IDN+planet-lab.org+component+pl1.cewit.stonybrook.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.cewit.stonybrook.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-72.6371,40.9223</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>sjce.nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="sjce.nodes.planet-lab.org">urn:publicid:IDN+planet-lab.org+component+planetlab-1.sjce.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.sjce.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-3.sjce.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.0873,37.4108</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.tcd.ie,ucd.ie</name>
+ <description>
+  <![CDATA[
+<div id="cs.tcd.ie,ucd.ie">urn:publicid:IDN+planet-lab.org+component+planetlab-node-01.ucd.ie<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-node-02.ucd.ie<BR>urn:publicid:IDN+planet-lab.org+component+planetlab01.cs.tcd.ie<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.cs.tcd.ie</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-6.2489,53.3331</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>netlab.uky.edu</name>
+ <description>
+  <![CDATA[
+<div id="netlab.uky.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.netlab.uky.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.netlab.uky.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-84.5075,38.0287</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>iitb.ac.in,iitd.ernet.in,psgtech.ac.in</name>
+ <description>
+  <![CDATA[
+<div id="iitb.ac.in,iitd.ernet.in,psgtech.ac.in">urn:publicid:IDN+planet-lab.org+component+agni.iitd.ernet.in<BR>urn:publicid:IDN+planet-lab.org+component+plab1.psgtech.ac.in<BR>urn:publicid:IDN+planet-lab.org+component+plab2.psgtech.ac.in<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.iitb.ac.in<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.iitb.ac.in<BR>urn:publicid:IDN+planet-lab.org+component+vayu.iitd.ernet.in</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>72.8258,18.975</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>jhu.edu,cnds.jhu.edu</name>
+ <description>
+  <![CDATA[
+<div id="jhu.edu,cnds.jhu.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cnds.jhu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.jhu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cnds.jhu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.jhu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cnds.jhu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cnds.jhu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-76.5967,39.3288</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ipv6.lip6.fr,cnt.nerim.net,eurecom.fr</name>
+ <description>
+  <![CDATA[
+<div id="ipv6.lip6.fr,cnt.nerim.net,eurecom.fr">urn:publicid:IDN+planet-lab.org+component+planetlab-europe-02.ipv6.lip6.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-europe-06.ipv6.lip6.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-europe-07.ipv6.lip6.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-wifi-01.ipv6.lip6.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.eurecom.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eurecom.fr<BR>urn:publicid:IDN+planet-lab.org+component+thalescom-48-41.cnt.nerim.net<BR>urn:publicid:IDN+planet-lab.org+component+thalescom-48-42.cnt.nerim.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>2.3333,48.8667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eecs.umich.edu</name>
+ <description>
+  <![CDATA[
+<div id="eecs.umich.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.eecs.umich.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eecs.umich.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.eecs.umich.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.eecs.umich.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.eecs.umich.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-83.7145,42.2923</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>pittsburgh.intel-research.net,cmcl.cs.cmu.edu</name>
+ <description>
+  <![CDATA[
+<div id="pittsburgh.intel-research.net,cmcl.cs.cmu.edu">urn:publicid:IDN+planet-lab.org+component+planet1.pittsburgh.intel-research.net<BR>urn:publicid:IDN+planet-lab.org+component+planet2.pittsburgh.intel-research.net<BR>urn:publicid:IDN+planet-lab.org+component+planet3.pittsburgh.intel-research.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.cmcl.cs.cmu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cmcl.cs.cmu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-3.cmcl.cs.cmu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-79.9562,40.4439</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>bu.edu</name>
+ <description>
+  <![CDATA[
+<div id="bu.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-01.bu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-02.bu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.0993,42.3451</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eecs.wsu.edu</name>
+ <description>
+  <![CDATA[
+<div id="eecs.wsu.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.eecs.wsu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eecs.wsu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-117.6443,46.8387</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>amst.nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="amst.nodes.planet-lab.org">urn:publicid:IDN+planet-lab.org+component+planetlab-1.amst.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.amst.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-3.amst.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>5.75,52.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.brown.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.brown.edu">urn:publicid:IDN+planet-lab.org+component+earth.cs.brown.edu<BR>urn:publicid:IDN+planet-lab.org+component+jupiter.cs.brown.edu<BR>urn:publicid:IDN+planet-lab.org+component+pluto.cs.brown.edu<BR>urn:publicid:IDN+planet-lab.org+component+saturn.cs.brown.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.4623,41.5877</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.cs.umd.edu</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.cs.umd.edu">urn:publicid:IDN+planet-lab.org+component+miranda.planetlab.cs.umd.edu<BR>urn:publicid:IDN+planet-lab.org+component+osiris.planetlab.cs.umd.edu<BR>urn:publicid:IDN+planet-lab.org+component+salt.planetlab.cs.umd.edu<BR>urn:publicid:IDN+planet-lab.org+component+whitefall.planetlab.cs.umd.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-76.8807,39.0027</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cse.ucsc.edu</name>
+ <description>
+  <![CDATA[
+<div id="cse.ucsc.edu">urn:publicid:IDN+planet-lab.org+component+planetslug3.cse.ucsc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetslug4.cse.ucsc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetslug5.cse.ucsc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetslug6.cse.ucsc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetslug7.cse.ucsc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.0603,36.9899</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>it.uts.edu.au</name>
+ <description>
+  <![CDATA[
+<div id="it.uts.edu.au">urn:publicid:IDN+planet-lab.org+component+planetlab1.it.uts.edu.au<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.it.uts.edu.au</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>151.2167,-33.8833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>uta.edu</name>
+ <description>
+  <![CDATA[
+<div id="uta.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.uta.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.uta.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-97.2915,32.7714</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.binghamton.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.binghamton.edu">urn:publicid:IDN+planet-lab.org+component+charon.cs.binghamton.edu<BR>urn:publicid:IDN+planet-lab.org+component+pluto.cs.binghamton.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-75.8683,42.1074</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>snu.ac.kr,kookmin.ac.kr,koren21.net,cs.kookmin.ac.kr,kreonet.net</name>
+ <description>
+  <![CDATA[
+<div id="snu.ac.kr,kookmin.ac.kr,koren21.net,cs.kookmin.ac.kr,kreonet.net">urn:publicid:IDN+planet-lab.org+component+arari.snu.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+dplab03.kookmin.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+netapp6.cs.kookmin.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+netapp7.cs.kookmin.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+pl1snu.koren21.net<BR>urn:publicid:IDN+planet-lab.org+component+pl2snu.koren21.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.kreonet.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.kreonet.net<BR>urn:publicid:IDN+planet-lab.org+component+recall.snu.ac.kr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>126.9997,37.5664</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uh.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.uh.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-1.cs.uh.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cs.uh.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-95.4342,29.834</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>iet.unipi.it</name>
+ <description>
+  <![CDATA[
+<div id="iet.unipi.it">urn:publicid:IDN+planet-lab.org+component+marie.iet.unipi.it<BR>urn:publicid:IDN+planet-lab.org+component+onelab6.iet.unipi.it<BR>urn:publicid:IDN+planet-lab.org+component+onelab7.iet.unipi.it<BR>urn:publicid:IDN+planet-lab.org+component+pierre.iet.unipi.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>12.25,43.9333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>win.trlabs.ca</name>
+ <description>
+  <![CDATA[
+<div id="win.trlabs.ca">urn:publicid:IDN+planet-lab.org+component+planetlab1.win.trlabs.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.win.trlabs.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-97.1668,49.8833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>static.oxfr.ma.charter.com</name>
+ <description>
+  <![CDATA[
+<div id="static.oxfr.ma.charter.com">urn:publicid:IDN+planet-lab.org+component+75-130-96-12.static.oxfr.ma.charter.com<BR>urn:publicid:IDN+planet-lab.org+component+75-130-96-13.static.oxfr.ma.charter.com</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.8089,42.2647</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>fct.ualg.pt</name>
+ <description>
+  <![CDATA[
+<div id="fct.ualg.pt">urn:publicid:IDN+planet-lab.org+component+planetlab1.fct.ualg.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.fct.ualg.pt</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-7.9333,37.0167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uwaterloo.ca</name>
+ <description>
+  <![CDATA[
+<div id="cs.uwaterloo.ca">urn:publicid:IDN+planet-lab.org+component+plink.cs.uwaterloo.ca<BR>urn:publicid:IDN+planet-lab.org+component+plonk.cs.uwaterloo.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-80.5333,43.4667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cecalc.ula.ve</name>
+ <description>
+  <![CDATA[
+<div id="cecalc.ula.ve">urn:publicid:IDN+planet-lab.org+component+deimos.cecalc.ula.ve<BR>urn:publicid:IDN+planet-lab.org+component+fobos.cecalc.ula.ve</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-66.9167,10.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ku.edu.tr</name>
+ <description>
+  <![CDATA[
+<div id="ku.edu.tr">urn:publicid:IDN+planet-lab.org+component+planet1.ku.edu.tr<BR>urn:publicid:IDN+planet-lab.org+component+planet2.ku.edu.tr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>28.9647,41.0186</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ewi.tudelft.nl</name>
+ <description>
+  <![CDATA[
+<div id="ewi.tudelft.nl">urn:publicid:IDN+planet-lab.org+component+planetlab1.ewi.tudelft.nl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ewi.tudelft.nl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>4.3667,52</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csail.mit.edu</name>
+ <description>
+  <![CDATA[
+<div id="csail.mit.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.csail.mit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.csail.mit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.csail.mit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.csail.mit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.csail.mit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.csail.mit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab7.csail.mit.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.1028,42.3646</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>vt.nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="vt.nodes.planet-lab.org">urn:publicid:IDN+planet-lab.org+component+planetlab-01.vt.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-02.vt.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-03.vt.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-04.vt.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-80.4325,37.2668</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>mnlab.cti.depaul.edu</name>
+ <description>
+  <![CDATA[
+<div id="mnlab.cti.depaul.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.mnlab.cti.depaul.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.mnlab.cti.depaul.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-87.6272,41.8776</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ece.uprm.edu,planetlab.uprr.pr</name>
+ <description>
+  <![CDATA[
+<div id="ece.uprm.edu,planetlab.uprr.pr">urn:publicid:IDN+planet-lab.org+component+node1.planetlab.uprr.pr<BR>urn:publicid:IDN+planet-lab.org+component+node2.planetlab.uprr.pr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-01.ece.uprm.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-02.ece.uprm.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-66.5,18.25</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>irisa.fr</name>
+ <description>
+  <![CDATA[
+<div id="irisa.fr">urn:publicid:IDN+planet-lab.org+component+inriarennes1.irisa.fr<BR>urn:publicid:IDN+planet-lab.org+component+inriarennes2.irisa.fr<BR>urn:publicid:IDN+planet-lab.org+component+peeramide.irisa.fr<BR>urn:publicid:IDN+planet-lab.org+component+peeramidion.irisa.fr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-1.6833,48.0833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ucsd.edu</name>
+ <description>
+  <![CDATA[
+<div id="ucsd.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.ucsd.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ucsd.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.ucsd.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-117.2359,32.8807</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>hpl.hp.com,docomolabs-usa.com</name>
+ <description>
+  <![CDATA[
+<div id="hpl.hp.com,docomolabs-usa.com">urn:publicid:IDN+planet-lab.org+component+planetlabnode-1.docomolabs-usa.com<BR>urn:publicid:IDN+planet-lab.org+component+planetlabnode-2.docomolabs-usa.com<BR>urn:publicid:IDN+planet-lab.org+component+pli1-br-1.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli1-br-2.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli1-br-3.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli1-pa-4.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli1-pa-5.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli1-pa-6.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli1-tlnx.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli2-br-1.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli2-br-2.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli2-pa-1.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli2-pa-2.hpl.hp.com<BR>urn:publicid:IDN+planet-lab.org+component+pli2-pa-3.hpl.hp.com</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.1826,37.3762</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cnu.ac.kr</name>
+ <description>
+  <![CDATA[
+<div id="cnu.ac.kr">urn:publicid:IDN+planet-lab.org+component+opal.cnu.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.cnu.ac.kr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>128.0167,36.2667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>colbud.hu,elte.hu,tmit.bme.hu</name>
+ <description>
+  <![CDATA[
+<div id="colbud.hu,elte.hu,tmit.bme.hu">urn:pu<BR>urn:publicid:IDN+planet-lab.org+component+evghu1.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu10.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu11.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu12.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu14.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu2.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu3.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu5.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu6.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu7.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu8.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+evghu9.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+planet1.colbud.hu<BR>urn:publicid:IDN+planet-lab.org+component+planet1.elte.hu<BR>urn:publicid:IDN+planet-lab.org+component+planet2.elte.hu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.tmit.bme.hu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.tmit.bme.hu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>19.0833,47.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.purdue.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.purdue.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.purdue.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.purdue.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-86.9162,40.4249</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>uni-klu.ac.at</name>
+ <description>
+  <![CDATA[
+<div id="uni-klu.ac.at">urn:publicid:IDN+planet-lab.org+component+plab1-itec.uni-klu.ac.at<BR>urn:publicid:IDN+planet-lab.org+component+plab2-itec.uni-klu.ac.at</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>14.3053,46.6247</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ceid.upatras.gr</name>
+ <description>
+  <![CDATA[
+<div id="ceid.upatras.gr">urn:publicid:IDN+planet-lab.org+component+planetlab1.ceid.upatras.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ceid.upatras.gr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>21.7344,38.2444</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>fem.tu-ilmenau.de,prakinf.tu-ilmenau.de</name>
+ <description>
+  <![CDATA[
+<div id="fem.tu-ilmenau.de,prakinf.tu-ilmenau.de">urn:publicid:IDN+planet-lab.org+component+planet1.prakinf.tu-ilmenau.de<BR>urn:publicid:IDN+planet-lab.org+component+planet2.prakinf.tu-ilmenau.de<BR>urn:publicid:IDN+planet-lab.org+component+planet3.prakinf.tu-ilmenau.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.fem.tu-ilmenau.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.fem.tu-ilmenau.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>10.9,50.6833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>informatik.uni-goettingen.de</name>
+ <description>
+  <![CDATA[
+<div id="informatik.uni-goettingen.de">urn:publicid:IDN+planet-lab.org+component+planetlab1.informatik.uni-goettingen.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.informatik.uni-goettingen.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>9.9333,51.5333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ece.ucdavis.edu</name>
+ <description>
+  <![CDATA[
+<div id="ece.ucdavis.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.ece.ucdavis.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ece.ucdavis.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-121.6398,38.4829</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csl.sri.com</name>
+ <description>
+  <![CDATA[
+<div id="csl.sri.com">urn:publicid:IDN+planet-lab.org+component+pl-node-0.csl.sri.com<BR>urn:publicid:IDN+planet-lab.org+component+pl-node-1.csl.sri.com</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.1781,37.459</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cc.gt.atl.ga.us</name>
+ <description>
+  <![CDATA[
+<div id="cc.gt.atl.ga.us">urn:publicid:IDN+planet-lab.org+component+planet1.cc.gt.atl.ga.us<BR>urn:publicid:IDN+planet-lab.org+component+planet2.cc.gt.atl.ga.us<BR>urn:publicid:IDN+planet-lab.org+component+planet3.cc.gt.atl.ga.us<BR>urn:publicid:IDN+planet-lab.org+component+planet4.cc.gt.atl.ga.us</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-84.3771,33.7719</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.colorado.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.colorado.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.colorado.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.colorado.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-105.3736,40.0878</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>engr.ccny.cuny.edu</name>
+ <description>
+  <![CDATA[
+<div id="engr.ccny.cuny.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.engr.ccny.cuny.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.engr.ccny.cuny.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-73.9491,40.8291</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>servers.ua.pt</name>
+ <description>
+  <![CDATA[
+<div id="servers.ua.pt">urn:publicid:IDN+planet-lab.org+component+planet1.servers.ua.pt<BR>urn:publicid:IDN+planet-lab.org+component+planet2.servers.ua.pt</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-8.65,40.6333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>kamgu.ru</name>
+ <description>
+  <![CDATA[
+<div id="kamgu.ru">urn:publicid:IDN+planet-lab.org+component+pllab1.kamgu.ru<BR>urn:publicid:IDN+planet-lab.org+component+pllab2.kamgu.ru</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>44.525,49.4475</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>dtc.umn.edu</name>
+ <description>
+  <![CDATA[
+<div id="dtc.umn.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.dtc.umn.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.dtc.umn.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-93.2323,44.9733</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>xeno.cl.cam.ac.uk</name>
+ <description>
+  <![CDATA[
+<div id="xeno.cl.cam.ac.uk">urn:publicid:IDN+planet-lab.org+component+planetlab1.xeno.cl.cam.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.xeno.cl.cam.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.xeno.cl.cam.ac.uk</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>0.1167,52.2</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>halifax.canet4.nodes.planet-lab.org,ottawa.canet4.nodes.planet-lab.org,winnipeg.canet4.nodes.planet-lab.org,montreal.canet4.nodes.planet-lab.org,calgary.canet4.nodes.planet-lab.org,rcc.uottawa.ca,toronto.canet4.nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="halifax.canet4.nodes.planet-lab.org,ottawa.canet4.nodes.planet-lab.org,winnipeg.canet4.nodes.planet-lab.org,montreal.canet4.nodes.planet-lab.org,calgary.canet4.nodes.planet-lab.org,rcc.uottawa.ca,toronto.canet4.nodes.planet-lab.org">urn:publicid:IDN<BR>urn:publicid:IDN+planet-lab.org+component+pl1.rcc.uottawa.ca<BR>urn:publicid:IDN+planet-lab.org+component+planet1.calgary.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet1.halifax.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet1.montreal.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet1.ottawa.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet1.toronto.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet1.winnipeg.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet2.calgary.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet2.halifax.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet2.ottawa.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet2.toronto.canet4.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet2.winnipeg.canet4.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-75.7,45.4167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.albany.edu</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.albany.edu">urn:publicid:IDN+planet-lab.org+component+node1.planetlab.albany.edu<BR>urn:publicid:IDN+planet-lab.org+component+node2.planetlab.albany.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-73.838,42.6929</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>us.es</name>
+ <description>
+  <![CDATA[
+<div id="us.es">urn:publicid:IDN+planet-lab.org+component+ait05.us.es</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-5.9869,37.3772</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>unipr.it</name>
+ <description>
+  <![CDATA[
+<div id="unipr.it">urn:publicid:IDN+planet-lab.org+component+planet1.unipr.it<BR>urn:publicid:IDN+planet-lab.org+component+planet2.unipr.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>10.3333,44.8</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.ucsb.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.ucsb.edu">urn:publicid:IDN+planet-lab.org+component+planet2.cs.ucsb.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet3.cs.ucsb.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet4.cs.ucsb.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet5.cs.ucsb.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet6.cs.ucsb.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-119.8372,34.4329</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>inf.ethz.ch,ethz.ch,csg.uzh.ch</name>
+ <description>
+  <![CDATA[
+<div id="inf.ethz.ch,ethz.ch,csg.uzh.ch">urn:publicid:IDN+planet-lab.org+component+planetlab01.ethz.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.ethz.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.csg.uzh.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.inf.ethz.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.csg.uzh.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.inf.ethz.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.inf.ethz.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.inf.ethz.ch</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>8.55,47.3667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.washington.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.washington.edu">urn:publicid:IDN+planet-lab.org+component+planetlab01.cs.washington.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.cs.washington.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab03.cs.washington.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab04.cs.washington.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab05.cs.washington.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab06.cs.washington.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-121.8034,47.4323</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>arizona-gigapop.net</name>
+ <description>
+  <![CDATA[
+<div id="arizona-gigapop.net">urn:publicid:IDN+planet-lab.org+component+planetlab1.arizona-gigapop.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.arizona-gigapop.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.arizona-gigapop.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-110.95,32.2338</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uoi.gr</name>
+ <description>
+  <![CDATA[
+<div id="cs.uoi.gr">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.uoi.gr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.uoi.gr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>20.8508,39.6675</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.wayne.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.wayne.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.wayne.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.wayne.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-83.0772,42.3755</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>uc.edu</name>
+ <description>
+  <![CDATA[
+<div id="uc.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.uc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.uc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-84.5382,39.1668</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uga.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.uga.edu">urn:publicid:IDN+planet-lab.org+component+itchy.cs.uga.edu<BR>urn:publicid:IDN+planet-lab.org+component+scratchy.cs.uga.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-83.375,33.9499</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>williams.edu</name>
+ <description>
+  <![CDATA[
+<div id="williams.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.williams.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.williams.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.williams.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.williams.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.williams.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-73.2463,42.6442</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.mathcs.emory.edu</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.mathcs.emory.edu">urn:publicid:IDN+planet-lab.org+component+node1.planetlab.mathcs.emory.edu<BR>urn:publicid:IDN+planet-lab.org+component+node2.planetlab.mathcs.emory.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-84.3248,33.7952</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.unc.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.unc.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.unc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.unc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-79.0782,35.9098</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>tssg.org</name>
+ <description>
+  <![CDATA[
+<div id="tssg.org">urn:publicid:IDN+planet-lab.org+component+planetlabeu-1.tssg.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlabeu-2.tssg.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-7.1119,52.2583</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>lublin.rd.tp.pl,piotrkow.rd.tp.pl,mini.pw.edu.pl,nowogrodzka.rd.tp.pl,warsaw.rd.tp.pl,tele.pw.edu.pl,olsztyn.rd.tp.pl,gdansk.rd.tp.pl,ise.pw.edu.pl,wroclaw.rd.tp.pl,pjwstk.edu.pl,swidnik.rd.tp.pl</name>
+ <description>
+  <![CDATA[
+<div id="lublin.rd.tp.pl,piotrkow.rd.tp.pl,mini.pw.edu.pl,nowogrodzka.rd.tp.pl,warsaw.rd.tp.pl,tele.pw.edu.pl,olsztyn.rd.tp.pl,gdansk.rd.tp.pl,ise.pw.edu.pl,wroclaw.rd.tp.pl,pjwstk.edu.pl,swidnik.rd.tp.pl">urn:publicid:IDN+p<BR>urn:publicid:IDN+planet-lab.org+component+napa1.mini.pw.edu.pl<BR>urn:publicid:IDN+planet-lab.org+component+napa1.tele.pw.edu.pl<BR>urn:publicid:IDN+planet-lab.org+component+napa2.tele.pw.edu.pl<BR>urn:publicid:IDN+planet-lab.org+component+onelab5.warsaw.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.lublin.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.pjwstk.edu.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.wroclaw.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.lublin.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.nowogrodzka.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.olsztyn.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.gdansk.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.lublin.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.piotrkow.rd.tp.pl<BR>urn:publicid:IDN+planet-lab.org+component+ple1.ise.pw.edu.pl<BR>urn:publicid:IDN+planet-lab.org+component+ple1.mini.pw.edu.pl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>21,52.25</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>exp-math.uni-essen.de</name>
+ <description>
+  <![CDATA[
+<div id="exp-math.uni-essen.de">urn:publicid:IDN+planet-lab.org+component+planetlab1.exp-math.uni-essen.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.exp-math.uni-essen.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>7.0167,51.45</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ncat.edu</name>
+ <description>
+  <![CDATA[
+<div id="ncat.edu">urn:publicid:IDN+planet-lab.org+component+csplanet1.ncat.edu<BR>urn:publicid:IDN+planet-lab.org+component+csplanet2.ncat.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-80.0244,36.0807</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>informatik.uni-stuttgart.de</name>
+ <description>
+  <![CDATA[
+<div id="informatik.uni-stuttgart.de">urn:publicid:IDN+planet-lab.org+component+planetvs1.informatik.uni-stuttgart.de<BR>urn:publicid:IDN+planet-lab.org+component+planetvs2.informatik.uni-stuttgart.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>9.1833,48.7667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eecs.jacobs-university.de</name>
+ <description>
+  <![CDATA[
+<div id="eecs.jacobs-university.de">urn:publicid:IDN+planet-lab.org+component+planetlab1.eecs.jacobs-university.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eecs.jacobs-university.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>8.8,53.0833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>disy.inf.uni-konstanz.de</name>
+ <description>
+  <![CDATA[
+<div id="disy.inf.uni-konstanz.de">urn:publicid:IDN+planet-lab.org+component+chronos.disy.inf.uni-konstanz.de<BR>urn:publicid:IDN+planet-lab.org+component+dannan.disy.inf.uni-konstanz.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>9.1833,47.6667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>fm.intel.com</name>
+ <description>
+  <![CDATA[
+<div id="fm.intel.com">urn:publicid:IDN+planet-lab.org+component+planetdev01.fm.intel.com<BR>urn:publicid:IDN+planet-lab.org+component+planetdev02.fm.intel.com<BR>urn:publicid:IDN+planet-lab.org+component+planetdev04.fm.intel.com<BR>urn:publicid:IDN+planet-lab.org+component+planetdev05.fm.intel.com</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-121.9537,37.3558</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>inf.tu-dresden.de</name>
+ <description>
+  <![CDATA[
+<div id="inf.tu-dresden.de">urn:publicid:IDN+planet-lab.org+component+planet1.inf.tu-dresden.de<BR>urn:publicid:IDN+planet-lab.org+component+planet2.inf.tu-dresden.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>13.75,51.05</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>mcgillplanetlab.org</name>
+ <description>
+  <![CDATA[
+<div id="mcgillplanetlab.org">urn:publicid:IDN+planet-lab.org+component+node-1.mcgillplanetlab.org<BR>urn:publicid:IDN+planet-lab.org+component+node-2.mcgillplanetlab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-73.5833,45.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>umkc.edu</name>
+ <description>
+  <![CDATA[
+<div id="umkc.edu">urn:publicid:IDN+planet-lab.org+component+kc-sce-plab1.umkc.edu<BR>urn:publicid:IDN+planet-lab.org+component+kc-sce-plab2.umkc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-94.5722,39.0344</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ci.pwr.wroc.pl</name>
+ <description>
+  <![CDATA[
+<div id="ci.pwr.wroc.pl">urn:publicid:IDN+planet-lab.org+component+planetlab1.ci.pwr.wroc.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ci.pwr.wroc.pl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>17.0333,51.1</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>rutgers.edu</name>
+ <description>
+  <![CDATA[
+<div id="rutgers.edu">urn:publicid:IDN+planet-lab.org+component+orbpl1.rutgers.edu<BR>urn:publicid:IDN+planet-lab.org+component+orbpl2.rutgers.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.rutgers.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.rutgers.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.rutgers.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.rutgers.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-74.4637,40.5516</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cesnet.cz</name>
+ <description>
+  <![CDATA[
+<div id="cesnet.cz">urn:publicid:IDN+planet-lab.org+component+planetlab1.cesnet.cz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cesnet.cz<BR>urn:publicid:IDN+planet-lab.org+component+ple1.cesnet.cz<BR>urn:publicid:IDN+planet-lab.org+component+ple2.cesnet.cz</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>15.1681,50.7292</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.mu.oz.au</name>
+ <description>
+  <![CDATA[
+<div id="cs.mu.oz.au">urn:publicid:IDN+planet-lab.org+component+plnode01.cs.mu.oz.au<BR>urn:publicid:IDN+planet-lab.org+component+plnode02.cs.mu.oz.au</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>145.2333,-37.9333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.haw-hamburg.de</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.haw-hamburg.de">urn:publicid:IDN+planet-lab.org+component+mars.planetlab.haw-hamburg.de<BR>urn:publicid:IDN+planet-lab.org+component+merkur.planetlab.haw-hamburg.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>10,53.55</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>georgetown.edu,howard.edu</name>
+ <description>
+  <![CDATA[
+<div id="georgetown.edu,howard.edu">urn:publicid:IDN+planet-lab.org+component+nodea.howard.edu<BR>urn:publicid:IDN+planet-lab.org+component+nodeb.howard.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.georgetown.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.georgetown.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-77.0146,38.8933</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>comp.nus.edu.sg</name>
+ <description>
+  <![CDATA[
+<div id="comp.nus.edu.sg">urn:publicid:IDN+planet-lab.org+component+planetlab1.comp.nus.edu.sg<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.comp.nus.edu.sg<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.comp.nus.edu.sg</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>103.8,1.3667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>calpoly-netlab.net</name>
+ <description>
+  <![CDATA[
+<div id="calpoly-netlab.net">urn:publicid:IDN+planet-lab.org+component+planetlab-1.calpoly-netlab.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.calpoly-netlab.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-120.4553,35.3471</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>netgroup.uniroma2.it,dis.uniroma1.it,93-94-b.business.telecomitalia.it,tils-research.it,create-net.org</name>
+ <description>
+  <![CDATA[
+<div id="netgroup.uniroma2.it,dis.uniroma1.it,93-94-b.business.telecomitalia.it,tils-research.it,create-net.org">urn:publicid:IDN+planet-lab.org+component+host147-82-static.93-94-b.business.telecomitalia.it<BR>urn:publicid:IDN+planet-lab.org+component+host149-82-static.93-94-b.business.telecomitalia.it<BR>urn:publicid:IDN+planet-lab.org+component+plab1.create-net.org<BR>urn:publicid:IDN+planet-lab.org+component+plab2.create-net.org<BR>urn:publicid:IDN+planet-lab.org+component+planet-lab-node1.netgroup.uniroma2.it<BR>urn:publicid:IDN+planet-lab.org+component+planet-lab-node2.netgroup.uniroma2.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.dis.uniroma1.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.dis.uniroma1.it<BR>urn:publicid:IDN+planet-lab.org+component+tilsplanet1.tils-research.it<BR>urn:publicid:IDN+planet-lab.org+component+tilsplanet2.tils-research.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>12.4832,41.9</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>keldysh.ru</name>
+ <description>
+  <![CDATA[
+<div id="keldysh.ru">urn:publicid:IDN+planet-lab.org+component+planetlab1.keldysh.ru<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.keldysh.ru</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>54.0667,57.4</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>imperial.ac.uk,cs.ucl.ac.uk,nrl.dcs.qmul.ac.uk</name>
+ <description>
+  <![CDATA[
+<div id="imperial.ac.uk,cs.ucl.ac.uk,nrl.dcs.qmul.ac.uk">urn:publicid:IDN+planet-lab.org+component+planetlab-1.imperial.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.imperial.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-3.imperial.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-4.imperial.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.ucl.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.nrl.dcs.qmul.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.ucl.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.nrl.dcs.qmul.ac.uk</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-0.1167,51.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.duke.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.duke.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.duke.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.duke.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cs.duke.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cs.duke.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.cs.duke.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.cs.duke.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab7.cs.duke.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-78.9019,35.9954</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>engr.uconn.edu</name>
+ <description>
+  <![CDATA[
+<div id="engr.uconn.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.engr.uconn.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.engr.uconn.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-72.251,41.808</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.huji.ac.il</name>
+ <description>
+  <![CDATA[
+<div id="cs.huji.ac.il">urn:publicid:IDN+planet-lab.org+component+planet1.cs.huji.ac.il<BR>urn:publicid:IDN+planet-lab.org+component+planet3.cs.huji.ac.il</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>35.23,31.78</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.uvic.ca</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.uvic.ca">urn:publicid:IDN+planet-lab.org+component+pl1.planetlab.uvic.ca<BR>urn:publicid:IDN+planet-lab.org+component+pl2.planetlab.uvic.ca<BR>urn:publicid:IDN+planet-lab.org+component+pl3.planetlab.uvic.ca<BR>urn:publicid:IDN+planet-lab.org+component+pl4.planetlab.uvic.ca<BR>urn:publicid:IDN+planet-lab.org+component+pl5.planetlab.uvic.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-123.35,48.4333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>citadel.edu</name>
+ <description>
+  <![CDATA[
+<div id="citadel.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.citadel.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.citadel.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-79.8577,32.8488</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.rochester.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.rochester.edu">urn:publicid:IDN+planet-lab.org+component+planet1.cs.rochester.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet2.cs.rochester.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-77.6082,43.1299</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.ou.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.ou.edu">urn:publicid:IDN+planet-lab.org+component+roam1.cs.ou.edu<BR>urn:publicid:IDN+planet-lab.org+component+roam2.cs.ou.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-97.4445,35.2086</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.rice.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.rice.edu">urn:publicid:IDN+planet-lab.org+component+ricepl-1.cs.rice.edu<BR>urn:publicid:IDN+planet-lab.org+component+ricepl-2.cs.rice.edu<BR>urn:publicid:IDN+planet-lab.org+component+ricepl-3.cs.rice.edu<BR>urn:publicid:IDN+planet-lab.org+component+ricepl-4.cs.rice.edu<BR>urn:publicid:IDN+planet-lab.org+component+ricepl-5.cs.rice.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-95.4188,29.7176</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eecs.northwestern.edu</name>
+ <description>
+  <![CDATA[
+<div id="eecs.northwestern.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.eecs.northwestern.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eecs.northwestern.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.eecs.northwestern.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-87.6845,42.0586</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>uncc.edu</name>
+ <description>
+  <![CDATA[
+<div id="uncc.edu">urn:publicid:IDN+planet-lab.org+component+planetlab01.uncc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.uncc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab03.uncc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab04.uncc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-80.7267,35.3041</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs-ncl.net</name>
+ <description>
+  <![CDATA[
+<div id="cs-ncl.net">urn:publicid:IDN+planet-lab.org+component+csplanet01.cs-ncl.net<BR>urn:publicid:IDN+planet-lab.org+component+csplanet02.cs-ncl.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-1.6195,54.9881</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uit.no</name>
+ <description>
+  <![CDATA[
+<div id="cs.uit.no">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.uit.no<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.uit.no</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>18.9667,69.6667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.mtu.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.mtu.edu">urn:publicid:IDN+planet-lab.org+component+mtuplanetlab1.cs.mtu.edu<BR>urn:publicid:IDN+planet-lab.org+component+mtuplanetlab2.cs.mtu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-88.6471,47.1544</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>unl.edu</name>
+ <description>
+  <![CDATA[
+<div id="unl.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.unl.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.unl.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-96.7118,40.8211</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>scs.cs.nyu.edu</name>
+ <description>
+  <![CDATA[
+<div id="scs.cs.nyu.edu">urn:publicid:IDN+planet-lab.org+component+planet1.scs.cs.nyu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet2.scs.cs.nyu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetx.scs.cs.nyu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-73.9885,40.7317</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ssvl.kth.se,sics.se</name>
+ <description>
+  <![CDATA[
+<div id="ssvl.kth.se,sics.se">urn:publicid:IDN+planet-lab.org+component+planetlab-1.ssvl.kth.se<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.ssvl.kth.se<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.sics.se<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.sics.se</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>17.9167,59.45</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.stevens-tech.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.stevens-tech.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.stevens-tech.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.stevens-tech.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-74.0321,40.7458</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>hiit.fi</name>
+ <description>
+  <![CDATA[
+<div id="hiit.fi">urn:publicid:IDN+planet-lab.org+component+planetlab1.hiit.fi<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.hiit.fi<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.hiit.fi<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.hiit.fi</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>24.9342,60.1756</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>rml.ryerson.ca,csl.utoronto.ca,erin.utoronto.ca</name>
+ <description>
+  <![CDATA[
+<div id="rml.ryerson.ca,csl.utoronto.ca,erin.utoronto.ca">urn:publicid:IDN+planet-lab.org+component+pl1.csl.utoronto.ca<BR>urn:publicid:IDN+planet-lab.org+component+pl2.csl.utoronto.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-1.rml.ryerson.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.rml.ryerson.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab01.erin.utoronto.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.erin.utoronto.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-79.4168,43.6667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>fit.vutbr.cz</name>
+ <description>
+  <![CDATA[
+<div id="fit.vutbr.cz">urn:publicid:IDN+planet-lab.org+component+planetlab1.fit.vutbr.cz</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>16.6333,49.2</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>kusa.ac.jp</name>
+ <description>
+  <![CDATA[
+<div id="kusa.ac.jp">urn:publicid:IDN+planet-lab.org+component+planetlab-01.kusa.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-02.kusa.ac.jp</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>133.7667,34.5833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>informatik.uni-erlangen.de</name>
+ <description>
+  <![CDATA[
+<div id="informatik.uni-erlangen.de">urn:publicid:IDN+planet-lab.org+component+planetlab1.informatik.uni-erlangen.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.informatik.uni-erlangen.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>11.0038,49.5897</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark id="flux.utah.edu">
+ <name>flux.utah.edu</name>
+ <description>
+  <![CDATA[
+<div id="flux.utah.edu">urn:publicid:IDN+planet-lab.org+component+planetlab4.flux.utah.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.flux.utah.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.flux.utah.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab7.flux.utah.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-111.7367,40.7855</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>lums.edu.pk</name>
+ <description>
+  <![CDATA[
+<div id="lums.edu.pk">urn:publicid:IDN+planet-lab.org+component+planetlab01.lums.edu.pk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.lums.edu.pk</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>74.3436,31.5497</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uchicago.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.uchicago.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.uchicago.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.uchicago.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cs.uchicago.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cs.uchicago.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-87.6027,41.7804</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ittc.ku.edu</name>
+ <description>
+  <![CDATA[
+<div id="ittc.ku.edu">urn:publicid:IDN+planet-lab.org+component+kupl1.ittc.ku.edu<BR>urn:publicid:IDN+planet-lab.org+component+kupl2.ittc.ku.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-95.2756,38.9525</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cse.wustl.edu</name>
+ <description>
+  <![CDATA[
+<div id="cse.wustl.edu">urn:publicid:IDN+planet-lab.org+component+vn4.cse.wustl.edu<BR>urn:publicid:IDN+planet-lab.org+component+vn5.cse.wustl.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-90.3231,38.6657</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>itc.auth.gr</name>
+ <description>
+  <![CDATA[
+<div id="itc.auth.gr">urn:publicid:IDN+planet-lab.org+component+planet1.itc.auth.gr<BR>urn:publicid:IDN+planet-lab.org+component+planet2.itc.auth.gr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>22.9438,40.6403</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>itba.edu.ar</name>
+ <description>
+  <![CDATA[
+<div id="itba.edu.ar">urn:publicid:IDN+planet-lab.org+component+planet-lab1.itba.edu.ar<BR>urn:publicid:IDN+planet-lab.org+component+planet-lab2.itba.edu.ar</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-58.6725,-34.5875</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>loria.fr</name>
+ <description>
+  <![CDATA[
+<div id="loria.fr">urn:publicid:IDN+planet-lab.org+component+host3-plb.loria.fr<BR>urn:publicid:IDN+planet-lab.org+component+host4-plb.loria.fr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>6.2,48.6833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>aston.ac.uk</name>
+ <description>
+  <![CDATA[
+<div id="aston.ac.uk">urn:publicid:IDN+planet-lab.org+component+planetlab1.aston.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.aston.ac.uk</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-1.9167,52.4667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.iit-tech.net</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.iit-tech.net">urn:publicid:IDN+planet-lab.org+component+server1.planetlab.iit-tech.net<BR>urn:publicid:IDN+planet-lab.org+component+server2.planetlab.iit-tech.net<BR>urn:publicid:IDN+planet-lab.org+component+server3.planetlab.iit-tech.net<BR>urn:publicid:IDN+planet-lab.org+component+server4.planetlab.iit-tech.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-87.6248,41.8471</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>poly.edu</name>
+ <description>
+  <![CDATA[
+<div id="poly.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.poly.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.poly.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-73.9906,40.6944</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>elet.polimi.it</name>
+ <description>
+  <![CDATA[
+<div id="elet.polimi.it">urn:publicid:IDN+planet-lab.org+component+planetlab1.elet.polimi.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.elet.polimi.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>9.2,45.4667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>test.ibbt.be</name>
+ <description>
+  <![CDATA[
+<div id="test.ibbt.be">urn:publicid:IDN+planet-lab.org+component+planck227ple.test.ibbt.be<BR>urn:publicid:IDN+planet-lab.org+component+planck228ple.test.ibbt.be</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>5.4667,50.5333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>silicon-valley.ru,sinp.msu.ru,grid.kiae.ru,iki.rssi.ru</name>
+ <description>
+  <![CDATA[
+<div id="silicon-valley.ru,sinp.msu.ru,grid.kiae.ru,iki.rssi.ru">urn:publicid:IDN+planet-lab.org+component+mercury.silicon-valley.ru<BR>urn:publicid:IDN+planet-lab.org+component+pl1.grid.kiae.ru<BR>urn:publicid:IDN+planet-lab.org+component+pl2.grid.kiae.ru<BR>urn:publicid:IDN+planet-lab.org+component+plab-1.sinp.msu.ru<BR>urn:publicid:IDN+planet-lab.org+component+plab-2.sinp.msu.ru<BR>urn:publicid:IDN+planet-lab.org+component+planet-lab.iki.rssi.ru<BR>urn:publicid:IDN+planet-lab.org+component+venus.silicon-valley.ru</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>37.6156,55.7522</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>urv.net</name>
+ <description>
+  <![CDATA[
+<div id="urv.net">urn:publicid:IDN+planet-lab.org+component+planetlab.urv.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.urv.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>1.25,41.1167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>hhi.fraunhofer.de</name>
+ <description>
+  <![CDATA[
+<div id="hhi.fraunhofer.de">urn:publicid:IDN+planet-lab.org+component+planet01.hhi.fraunhofer.de<BR>urn:publicid:IDN+planet-lab.org+component+planet02.hhi.fraunhofer.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>13,52.5833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>att.nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="att.nodes.planet-lab.org">urn:publicid:IDN+planet-lab.org+component+planet1.att.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+planet2.att.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-74.4052,40.6973</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>tamu.edu</name>
+ <description>
+  <![CDATA[
+<div id="tamu.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.tamu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.tamu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-96.3027,30.59</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planet.cs.kent.edu</name>
+ <description>
+  <![CDATA[
+<div id="planet.cs.kent.edu">urn:publicid:IDN+planet-lab.org+component+pl1.planet.cs.kent.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.planet.cs.kent.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl3.planet.cs.kent.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-81.1966,41.17</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>vuse.vanderbilt.edu</name>
+ <description>
+  <![CDATA[
+<div id="vuse.vanderbilt.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-1.vuse.vanderbilt.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.vuse.vanderbilt.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-86.777,36.1473</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>postel.org</name>
+ <description>
+  <![CDATA[
+<div id="postel.org">urn:publicid:IDN+planet-lab.org+component+planetlab1.postel.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.postel.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.postel.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.postel.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-118.2988,34.0416</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>info.ucl.ac.be</name>
+ <description>
+  <![CDATA[
+<div id="info.ucl.ac.be">urn:publicid:IDN+planet-lab.org+component+calc02.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc03.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc04.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc05.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc06.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc07.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc08.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc09.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc1.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc10.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc11.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc13.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+calc14.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+onelab1.info.ucl.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+onelab2.info.ucl.ac.b<BR>urn:publicid:IDN+planet-lab.org+component+onelab3.info.ucl.ac.be</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>4.7,50.8833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>it-sudparis.eu</name>
+ <description>
+  <![CDATA[
+<div id="it-sudparis.eu">urn:publicid:IDN+planet-lab.org+component+planetlab-node1.it-sudparis.eu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-node3.it-sudparis.eu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>2.45,48.6333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>iralab.uni-karlsruhe.de</name>
+ <description>
+  <![CDATA[
+<div id="iralab.uni-karlsruhe.de">urn:publicid:IDN+planet-lab.org+component+iraplab1.iralab.uni-karlsruhe.de<BR>urn:publicid:IDN+planet-lab.org+component+iraplab2.iralab.uni-karlsruhe.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>8.3858,49.0047</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.umb.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.umb.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.umb.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.umb.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.0559,42.3159</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>dce.edu,iitr.ernet.in,ernet.in</name>
+ <description>
+  <![CDATA[
+<div id="dce.edu,iitr.ernet.in,ernet.in">urn:publicid:IDN+planet-lab.org+component+pl1.dce.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.ernet.in<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.iitr.ernet.in<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.iitr.ernet.in</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>77.2,28.6</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>byu.edu</name>
+ <description>
+  <![CDATA[
+<div id="byu.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.byu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.byu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-111.7325,40.3563</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.informatik.tu-darmstadt.de</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.informatik.tu-darmstadt.de">urn:publicid:IDN+planet-lab.org+component+host1.planetlab.informatik.tu-darmstadt.de<BR>urn:publicid:IDN+planet-lab.org+component+host2.planetlab.informatik.tu-darmstadt.de<BR>urn:publicid:IDN+planet-lab.org+component+host3.planetlab.informatik.tu-darmstadt.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>8.6494,49.8706</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>polito.it,di.unito.it</name>
+ <description>
+  <![CDATA[
+<div id="polito.it,di.unito.it">urn:publicid:IDN+planet-lab.org+component+planetlab1.di.unito.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.polito.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.di.unito.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.polito.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.di.unito.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>7.6667,45.05</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>diit.unict.it</name>
+ <description>
+  <![CDATA[
+<div id="diit.unict.it">urn:publicid:IDN+planet-lab.org+component+gschembra3.diit.unict.it<BR>urn:publicid:IDN+planet-lab.org+component+gschembra4.diit.unict.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>15.1,37.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>netmedia.gist.ac.kr</name>
+ <description>
+  <![CDATA[
+<div id="netmedia.gist.ac.kr">urn:publicid:IDN+planet-lab.org+component+planetlab1.netmedia.gist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.netmedia.gist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.netmedia.gist.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.netmedia.gist.ac.kr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>126.9156,35.1547</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>comlab.bth.se</name>
+ <description>
+  <![CDATA[
+<div id="comlab.bth.se">urn:publicid:IDN+planet-lab.org+component+itchy.comlab.bth.se<BR>urn:publicid:IDN+planet-lab.org+component+scratchy.comlab.bth.se</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>15.5833,56.1667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ece.iastate.edu</name>
+ <description>
+  <![CDATA[
+<div id="ece.iastate.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-1.ece.iastate.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.ece.iastate.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-3.ece.iastate.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-4.ece.iastate.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-5.ece.iastate.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-6.ece.iastate.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-93.4652,42.036</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ustc.edu.cn</name>
+ <description>
+  <![CDATA[
+<div id="ustc.edu.cn">urn:publicid:IDN+planet-lab.org+component+planetlab1.ustc.edu.cn</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>117.2808,31.8639</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.ucr.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.ucr.edu">urn:publicid:IDN+planet-lab.org+component+planet-lab1.cs.ucr.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet-lab2.cs.ucr.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-116.0556,33.7529</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>surfsnel.dsl.internl.net</name>
+ <description>
+  <![CDATA[
+<div id="surfsnel.dsl.internl.net">urn:publicid:IDN+planet-lab.org+component+146-179.surfsnel.dsl.internl.net<BR>urn:publicid:IDN+planet-lab.org+component+147-179.surfsnel.dsl.internl.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>4.6333,52.2667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>fc.univie.ac.at</name>
+ <description>
+  <![CDATA[
+<div id="fc.univie.ac.at">urn:publicid:IDN+planet-lab.org+component+ple01.fc.univie.ac.at<BR>urn:publicid:IDN+planet-lab.org+component+ple02.fc.univie.ac.at</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>16.3667,48.2</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.ubc.ca,cs.surrey.sfu.ca</name>
+ <description>
+  <![CDATA[
+<div id="cs.ubc.ca,cs.surrey.sfu.ca">urn:publicid:IDN+planet-lab.org+component+cs-planetlab3.cs.surrey.sfu.ca<BR>urn:publicid:IDN+planet-lab.org+component+cs-planetlab4.cs.surrey.sfu.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.ubc.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.ubc.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-123.1333,49.25</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>accretive-dsl.nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="accretive-dsl.nodes.planet-lab.org">urn:publicid:IDN+planet-lab.org+component+uw1.accretive-dsl.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.3327,47.5716</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cis.upenn.edu</name>
+ <description>
+  <![CDATA[
+<div id="cis.upenn.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cis.upenn.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cis.upenn.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-75.1968,39.9597</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>l3s.uni-hannover.de</name>
+ <description>
+  <![CDATA[
+<div id="l3s.uni-hannover.de">urn:publicid:IDN+planet-lab.org+component+planet1.l3s.uni-hannover.de<BR>urn:publicid:IDN+planet-lab.org+component+planet2.l3s.uni-hannover.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>9.7167,52.3667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>technion.ac.il</name>
+ <description>
+  <![CDATA[
+<div id="technion.ac.il">urn:publicid:IDN+planet-lab.org+component+ds-pl1.technion.ac.il<BR>urn:publicid:IDN+planet-lab.org+component+ds-pl2.technion.ac.il<BR>urn:publicid:IDN+planet-lab.org+component+ds-pl3.technion.ac.il</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>34.9892,32.8156</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.nthu.edu.tw</name>
+ <description>
+  <![CDATA[
+<div id="cs.nthu.edu.tw">urn:publicid:IDN+planet-lab.org+component+pads21.cs.nthu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+pads23.cs.nthu.edu.tw</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>120.9714,24.8047</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.unibas.ch</name>
+ <description>
+  <![CDATA[
+<div id="cs.unibas.ch">urn:publicid:IDN+planet-lab.org+component+planetlab-1.cs.unibas.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cs.unibas.ch</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>7.6,47.5667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planet-lab.telecom-lille1.eu</name>
+ <description>
+  <![CDATA[
+<div id="planet-lab.telecom-lille1.eu">urn:publicid:IDN+planet-lab.org+component+node1pl.planet-lab.telecom-lille1.eu<BR>urn:publicid:IDN+planet-lab.org+component+node2pl.planet-lab.telecom-lille1.eu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>6.1667,45.65</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.pitt.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.pitt.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.pitt.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.pitt.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-80.0248,40.4344</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.otago.ac.nz</name>
+ <description>
+  <![CDATA[
+<div id="cs.otago.ac.nz">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.otago.ac.nz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.otago.ac.nz</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>174,-41</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.rit.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.rit.edu">urn:publicid:IDN+planet-lab.org+component+planet1.cs.rit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet2.cs.rit.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-77.6377,43.0899</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>usask.ca</name>
+ <description>
+  <![CDATA[
+<div id="usask.ca">urn:publicid:IDN+planet-lab.org+component+planetlab-1.usask.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.usask.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-106.6668,52.1333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eecs.utk.edu</name>
+ <description>
+  <![CDATA[
+<div id="eecs.utk.edu">urn:publicid:IDN+planet-lab.org+component+pl1.eecs.utk.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.eecs.utk.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-84.1829,35.9217</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>rennes.supelec.fr</name>
+ <description>
+  <![CDATA[
+<div id="rennes.supelec.fr">urn:publicid:IDN+planet-lab.org+component+pl1.rennes.supelec.fr<BR>urn:publicid:IDN+planet-lab.org+component+pl2.rennes.supelec.fr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>3.7167,48.5167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csc.ncsu.edu</name>
+ <description>
+  <![CDATA[
+<div id="csc.ncsu.edu">urn:publicid:IDN+planet-lab.org+component+planet02.csc.ncsu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet03.csc.ncsu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet11.csc.ncsu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planet12.csc.ncsu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-78.7239,35.7463</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csie.nuk.edu.tw</name>
+ <description>
+  <![CDATA[
+<div id="csie.nuk.edu.tw">urn:publicid:IDN+planet-lab.org+component+planetlab1.csie.nuk.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.csie.nuk.edu.tw</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>120.35,22.6333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eu.archive.org,cs.vu.nl</name>
+ <description>
+  <![CDATA[
+<div id="eu.archive.org,cs.vu.nl">urn:publicid:IDN+planet-lab.org+component+ia200018.eu.archive.org<BR>urn:publicid:IDN+planet-lab.org+component+ia200019.eu.archive.org<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.vu.nl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.vu.nl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>4.9167,52.35</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>n.info.eng.osaka-cu.ac.jp</name>
+ <description>
+  <![CDATA[
+<div id="n.info.eng.osaka-cu.ac.jp">urn:publicid:IDN+planet-lab.org+component+planetlab1.n.info.eng.osaka-cu.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.n.info.eng.osaka-cu.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.n.info.eng.osaka-cu.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.n.info.eng.osaka-cu.ac.jp</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>135.5,34.6667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>uba.ar</name>
+ <description>
+  <![CDATA[
+<div id="uba.ar">urn:publicid:IDN+planet-lab.org+component+planet-lab1.uba.ar<BR>urn:publicid:IDN+planet-lab.org+component+planet-lab2.uba.ar</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-65.35,-26.7833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>thlab.net</name>
+ <description>
+  <![CDATA[
+<div id="thlab.net">urn:publicid:IDN+planet-lab.org+component+planetlab1.thlab.net<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.thlab.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>1.0833,46.2167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>tau.ac.il</name>
+ <description>
+  <![CDATA[
+<div id="tau.ac.il">urn:publicid:IDN+planet-lab.org+component+planetlab1.tau.ac.il<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.tau.ac.il</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>34.7956,32.1106</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.pch.net</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.pch.net">urn:publicid:IDN+planet-lab.org+component+sanfrancisco.planetlab.pch.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-122.3942,37.7898</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>uni-paderborn.de</name>
+ <description>
+  <![CDATA[
+<div id="uni-paderborn.de">urn:publicid:IDN+planet-lab.org+component+plane-lab-pb1.uni-paderborn.de<BR>urn:publicid:IDN+planet-lab.org+component+plane-lab-pb2.uni-paderborn.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>8.7667,51.7167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eas.asu.edu</name>
+ <description>
+  <![CDATA[
+<div id="eas.asu.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.eas.asu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eas.asu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-111.9288,33.3844</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>bit.uoit.ca</name>
+ <description>
+  <![CDATA[
+<div id="bit.uoit.ca">urn:publicid:IDN+planet-lab.org+component+pl1.bit.uoit.ca<BR>urn:publicid:IDN+planet-lab.org+component+pl2.bit.uoit.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-78.8667,43.9</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>gpolab.bbn.com,eecs.harvard.edu</name>
+ <description>
+  <![CDATA[
+<div id="gpolab.bbn.com,eecs.harvard.edu">urn:publicid:IDN+planet-lab.org+component+lefthand.eecs.harvard.edu<BR>urn:publicid:IDN+planet-lab.org+component+plnode-03.gpolab.bbn.com<BR>urn:publicid:IDN+planet-lab.org+component+plnode-04.gpolab.bbn.com<BR>urn:publicid:IDN+planet-lab.org+component+righthand.eecs.harvard.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.1329,42.38</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csee.usf.edu</name>
+ <description>
+  <![CDATA[
+<div id="csee.usf.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.csee.usf.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.csee.usf.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.csee.usf.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.csee.usf.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.csee.usf.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.csee.usf.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-82.4128,28.0631</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ics.uci.edu</name>
+ <description>
+  <![CDATA[
+<div id="ics.uci.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-1a.ics.uci.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2a.ics.uci.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-3.ics.uci.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-117.7694,33.6403</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>epfl.ch</name>
+ <description>
+  <![CDATA[
+<div id="epfl.ch">urn:publicid:IDN+planet-lab.org+component+lsirextpc01.epfl.ch<BR>urn:publicid:IDN+planet-lab.org+component+lsirextpc02.epfl.ch</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>6.6667,46.5333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>iiitb.ac.in</name>
+ <description>
+  <![CDATA[
+<div id="iiitb.ac.in">urn:publicid:IDN+planet-lab.org+component+planetlab1.iiitb.ac.in<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.iiitb.ac.in</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>77.5833,12.9832</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>imag.fr</name>
+ <description>
+  <![CDATA[
+<div id="imag.fr">urn:publicid:IDN+planet-lab.org+component+planetlab-1.imag.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.imag.fr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>5.7167,45.1667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>utt.fr</name>
+ <description>
+  <![CDATA[
+<div id="utt.fr">urn:publicid:IDN+planet-lab.org+component+planetlab1.utt.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.utt.fr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>4.0833,48.3</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>unm.edu</name>
+ <description>
+  <![CDATA[
+<div id="unm.edu">urn:publicid:IDN+planet-lab.org+component+pl1.unm.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.unm.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl4.unm.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-106.6729,35.0443</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>uibk.ac.at</name>
+ <description>
+  <![CDATA[
+<div id="uibk.ac.at">urn:publicid:IDN+planet-lab.org+component+plab1-c703.uibk.ac.at<BR>urn:publicid:IDN+planet-lab.org+component+plab2-c703.uibk.ac.at</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>11.4,47.2667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.columbia.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.columbia.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.columbia.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.columbia.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cs.columbia.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-73.9653,40.8006</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>dis.unina.it</name>
+ <description>
+  <![CDATA[
+<div id="dis.unina.it">urn:publicid:IDN+planet-lab.org+component+planetlab01.dis.unina.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab02.dis.unina.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>14.25,40.8333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>s3.kth.se</name>
+ <description>
+  <![CDATA[
+<div id="s3.kth.se">urn:publicid:IDN+planet-lab.org+component+planetlab1.s3.kth.se<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.s3.kth.se</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>18.05,59.3333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cnds.unibe.ch</name>
+ <description>
+  <![CDATA[
+<div id="cnds.unibe.ch">urn:publicid:IDN+planet-lab.org+component+planetlab02.cnds.unibe.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab03.cnds.unibe.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab04.cnds.unibe.ch</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>7.4667,46.9167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cse.nd.edu</name>
+ <description>
+  <![CDATA[
+<div id="cse.nd.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cse.nd.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cse.nd.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cse.nd.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cse.nd.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-86.2501,41.7007</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>singaren.net.sg,pdcc-ntu.singaren.net.sg</name>
+ <description>
+  <![CDATA[
+<div id="singaren.net.sg,pdcc-ntu.singaren.net.sg">urn:publicid:IDN+planet-lab.org+component+planetlab1.singaren.net.sg<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.singaren.net.sg<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.singaren.net.sg<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.singaren.net.sg<BR>urn:publicid:IDN+planet-lab.org+component+pnode1.pdcc-ntu.singaren.net.sg<BR>urn:publicid:IDN+planet-lab.org+component+pnode2.pdcc-ntu.singaren.net.sg</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>103.8558,1.2931</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>een.orst.edu</name>
+ <description>
+  <![CDATA[
+<div id="een.orst.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.een.orst.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.een.orst.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-123.279,44.5642</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>bgu.ac.il</name>
+ <description>
+  <![CDATA[
+<div id="bgu.ac.il">urn:publicid:IDN+planet-lab.org+component+planetlab1.bgu.ac.il<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.bgu.ac.il</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>34.75,31.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ifi.uio.no,simula.no</name>
+ <description>
+  <![CDATA[
+<div id="ifi.uio.no,simula.no">urn:publicid:IDN+planet-lab.org+component+planetlab1.ifi.uio.no<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.simula.no<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ifi.uio.no<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.simula.no</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>10.75,59.9167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>utdallas.edu</name>
+ <description>
+  <![CDATA[
+<div id="utdallas.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.utdallas.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.utdallas.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-96.7453,32.9733</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eecs.ucf.edu</name>
+ <description>
+  <![CDATA[
+<div id="eecs.ucf.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.eecs.ucf.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.eecs.ucf.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-81.2608,28.5663</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ccs.neu.edu</name>
+ <description>
+  <![CDATA[
+<div id="ccs.neu.edu">urn:publicid:IDN+planet-lab.org+component+planetlabone.ccs.neu.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlabtwo.ccs.neu.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.0878,42.3424</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>lkn.ei.tum.de</name>
+ <description>
+  <![CDATA[
+<div id="lkn.ei.tum.de">urn:publicid:IDN+planet-lab.org+component+planetlab1.lkn.ei.tum.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.lkn.ei.tum.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>11.5833,48.15</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.extranet.uni-passau.de</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.extranet.uni-passau.de">urn:publicid:IDN+planet-lab.org+component+aladdin.planetlab.extranet.uni-passau.de<BR>urn:publicid:IDN+planet-lab.org+component+dschinni.planetlab.extranet.uni-passau.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>13.4832,48.5833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>elibel.tm.fr</name>
+ <description>
+  <![CDATA[
+<div id="elibel.tm.fr">urn:publicid:IDN+planet-lab.org+component+planetlab1lannion.elibel.tm.fr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2lannion.elibel.tm.fr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>0.9667,49.35</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.cornell.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.cornell.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.cornell.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.cornell.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3-dsl.cs.cornell.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4-dsl.cs.cornell.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.cs.cornell.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.cs.cornell.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-76.4804,42.4485</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>man.poznan.pl</name>
+ <description>
+  <![CDATA[
+<div id="man.poznan.pl">urn:publicid:IDN+planet-lab.org+component+planetlab-1.man.poznan.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.man.poznan.pl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>16.9667,52.4167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.colostate.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.colostate.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-1.cs.colostate.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cs.colostate.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-105.4648,40.4555</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.umass.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.umass.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.umass.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.umass.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-72.5284,42.4052</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>unineuchatel.ch</name>
+ <description>
+  <![CDATA[
+<div id="unineuchatel.ch">urn:publicid:IDN+planet-lab.org+component+planetlab1.unineuchatel.ch<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.unineuchatel.ch</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>6.9667,47</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>larc.usp.br</name>
+ <description>
+  <![CDATA[
+<div id="larc.usp.br">urn:publicid:IDN+planet-lab.org+component+plab1.larc.usp.br<BR>urn:publicid:IDN+planet-lab.org+component+plab2.larc.usp.br</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-46.6167,-23.5333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>science.unitn.it</name>
+ <description>
+  <![CDATA[
+<div id="science.unitn.it">urn:publicid:IDN+planet-lab.org+component+planetlab1.science.unitn.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.science.unitn.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>11.1333,46.0667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>canterbury.ac.nz</name>
+ <description>
+  <![CDATA[
+<div id="canterbury.ac.nz">urn:publicid:IDN+planet-lab.org+component+planetlab3.canterbury.ac.nz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.canterbury.ac.nz</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>172.6332,-43.5333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uiuc.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.uiuc.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.uiuc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.uiuc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab3.cs.uiuc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.cs.uiuc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab5.cs.uiuc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab6.cs.uiuc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-88.2123,40.1095</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.auckland.ac.nz,aut.ac.nz</name>
+ <description>
+  <![CDATA[
+<div id="cs.auckland.ac.nz,aut.ac.nz">urn:publicid:IDN+planet-lab.org+component+planetlab-1.cs.auckland.ac.nz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cs.auckland.ac.nz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.aut.ac.nz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.aut.ac.nz</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>174.7667,-36.8667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>huawei.com</name>
+ <description>
+  <![CDATA[
+<div id="huawei.com">urn:publicid:IDN+planet-lab.org+component+pn1-planetlab.huawei.com<BR>urn:publicid:IDN+planet-lab.org+component+pn2-planetlab.huawei.com</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>114.1333,22.5333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>plab.ege.edu.tr</name>
+ <description>
+  <![CDATA[
+<div id="plab.ege.edu.tr">urn:publicid:IDN+planet-lab.org+component+planetlab1.plab.ege.edu.tr<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.plab.ege.edu.tr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>41.6633,37.8067</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ple.silweb.pl</name>
+ <description>
+  <![CDATA[
+<div id="ple.silweb.pl">urn:publicid:IDN+planet-lab.org+component+plab1.ple.silweb.pl<BR>urn:publicid:IDN+planet-lab.org+component+plab2.ple.silweb.pl<BR>urn:publicid:IDN+planet-lab.org+component+plab3.ple.silweb.pl<BR>urn:publicid:IDN+planet-lab.org+component+plab4.ple.silweb.pl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>18.6667,50.2833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ait.ac.th</name>
+ <description>
+  <![CDATA[
+<div id="ait.ac.th">urn:publicid:IDN+planet-lab.org+component+ple1.ait.ac.th<BR>urn:publicid:IDN+planet-lab.org+component+ple2.ait.ac.th</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>100.5167,13.75</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>scsr.nevada.edu</name>
+ <description>
+  <![CDATA[
+<div id="scsr.nevada.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.scsr.nevada.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.scsr.nevada.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-115.1461,36.0865</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>colgate.edu</name>
+ <description>
+  <![CDATA[
+<div id="colgate.edu">urn:publicid:IDN+planet-lab.org+component+ebb.colgate.edu<BR>urn:publicid:IDN+planet-lab.org+component+flow.colgate.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-75.5483,42.8175</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>inf.uth.gr</name>
+ <description>
+  <![CDATA[
+<div id="inf.uth.gr">urn:publicid:IDN+planet-lab.org+component+iason.inf.uth.gr<BR>urn:publicid:IDN+planet-lab.org+component+medea.inf.uth.gr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>22.9458,39.3667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>nileu.edu.eg</name>
+ <description>
+  <![CDATA[
+<div id="nileu.edu.eg">urn:publicid:IDN+planet-lab.org+component+planetlab1.nileu.edu.eg<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.nileu.edu.eg</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>31.25,30.05</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csuohio.edu</name>
+ <description>
+  <![CDATA[
+<div id="csuohio.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.csuohio.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.csuohio.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-81.6724,41.4875</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uic.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.uic.edu">urn:publicid:IDN+planet-lab.org+component+planetlab-1.cs.uic.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.cs.uic.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-87.6852,41.8784</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>planetlab.etl.luc.edu</name>
+ <description>
+  <![CDATA[
+<div id="planetlab.etl.luc.edu">urn:publicid:IDN+planet-lab.org+component+node0.planetlab.etl.luc.edu<BR>urn:publicid:IDN+planet-lab.org+component+node1.planetlab.etl.luc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-87.6686,42.0106</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>mcs.suffolk.edu</name>
+ <description>
+  <![CDATA[
+<div id="mcs.suffolk.edu">urn:publicid:IDN+planet-lab.org+component+adrastea.mcs.suffolk.edu<BR>urn:publicid:IDN+planet-lab.org+component+metis.mcs.suffolk.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.0655,42.3571</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>homeip.net</name>
+ <description>
+  <![CDATA[
+<div id="homeip.net">urn:publicid:IDN+planet-lab.org+component+pl1-alblf.homeip.net<BR>urn:publicid:IDN+planet-lab.org+component+pl2-alblf.homeip.net</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>2.2833,48.7333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>tu.koszalin.pl</name>
+ <description>
+  <![CDATA[
+<div id="tu.koszalin.pl">urn:publicid:IDN+planet-lab.org+component+ple1.tu.koszalin.pl<BR>urn:publicid:IDN+planet-lab.org+component+ple2.tu.koszalin.pl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>16.1833,54.2</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>just.edu.jo</name>
+ <description>
+  <![CDATA[
+<div id="just.edu.jo">urn:publicid:IDN+planet-lab.org+component+planetlab02.just.edu.jo<BR>urn:publicid:IDN+planet-lab.org+component+planetlab1.just.edu.jo</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>35.9333,31.95</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>csie.ncu.edu.tw</name>
+ <description>
+  <![CDATA[
+<div id="csie.ncu.edu.tw">urn:publicid:IDN+planet-lab.org+component+nw142.csie.ncu.edu.tw<BR>urn:publicid:IDN+planet-lab.org+component+nw144.csie.ncu.edu.tw</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>121.3056,24.9869</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ing.unimo.it</name>
+ <description>
+  <![CDATA[
+<div id="ing.unimo.it">urn:publicid:IDN+planet-lab.org+component+planetlab-1.ing.unimo.it<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.ing.unimo.it</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>10.9167,44.6667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>pusan.ac.kr</name>
+ <description>
+  <![CDATA[
+<div id="pusan.ac.kr">urn:publicid:IDN+planet-lab.org+component+mnc1.pusan.ac.kr<BR>urn:publicid:IDN+planet-lab.org+component+mnc2.pusan.ac.kr</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>129.0403,35.1028</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cyfronet.pl</name>
+ <description>
+  <![CDATA[
+<div id="cyfronet.pl">urn:publicid:IDN+planet-lab.org+component+planetlab1.cyfronet.pl<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cyfronet.pl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>19.9167,50.0833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>willab.fi</name>
+ <description>
+  <![CDATA[
+<div id="willab.fi">urn:publicid:IDN+planet-lab.org+component+planetlab1.willab.fi<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.willab.fi</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>25.4667,65.0167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>eng.monash.edu.au</name>
+ <description>
+  <![CDATA[
+<div id="eng.monash.edu.au">urn:publicid:IDN+planet-lab.org+component+pl1.eng.monash.edu.au<BR>urn:publicid:IDN+planet-lab.org+component+pl2.eng.monash.edu.au</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>140.5666,-34.2333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>sos.info.hiroshima-cu.ac.jp</name>
+ <description>
+  <![CDATA[
+<div id="sos.info.hiroshima-cu.ac.jp">urn:publicid:IDN+planet-lab.org+component+pl1.sos.info.hiroshima-cu.ac.jp<BR>urn:publicid:IDN+planet-lab.org+component+pl2.sos.info.hiroshima-cu.ac.jp</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>132.45,34.4</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>pdl.nudt.edu.cn</name>
+ <description>
+  <![CDATA[
+<div id="pdl.nudt.edu.cn">urn:publicid:IDN+planet-lab.org+component+planetlab-1.pdl.nudt.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.pdl.nudt.edu.cn</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>113.1136,28.1792</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>montefiore.ulg.ac.be</name>
+ <description>
+  <![CDATA[
+<div id="montefiore.ulg.ac.be">urn:publicid:IDN+planet-lab.org+component+planetlab1.montefiore.ulg.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.montefiore.ulg.ac.be</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>5.5667,50.6333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>dmcs.p.lodz.pl</name>
+ <description>
+  <![CDATA[
+<div id="dmcs.p.lodz.pl">urn:publicid:IDN+planet-lab.org+component+ple1.dmcs.p.lodz.pl<BR>urn:publicid:IDN+planet-lab.org+component+ple2.dmcs.p.lodz.pl</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>19.4667,51.75</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>upm.ro</name>
+ <description>
+  <![CDATA[
+<div id="upm.ro">urn:publicid:IDN+planet-lab.org+component+planetlab1.upm.ro<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.upm.ro</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>26.4,47.95</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>informatik.uni-leipzig.de</name>
+ <description>
+  <![CDATA[
+<div id="informatik.uni-leipzig.de">urn:publicid:IDN+planet-lab.org+component+planetlab1.informatik.uni-leipzig.de<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.informatik.uni-leipzig.de</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>12.3333,51.3</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>esprit-tn.com</name>
+ <description>
+  <![CDATA[
+<div id="esprit-tn.com">urn:publicid:IDN+planet-lab.org+component+planetlab1.esprit-tn.com<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.esprit-tn.com</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>9,34</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>rd.tut.fi</name>
+ <description>
+  <![CDATA[
+<div id="rd.tut.fi">urn:publicid:IDN+planet-lab.org+component+planetlab1.rd.tut.fi<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.rd.tut.fi</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>23.75,61.5</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>ecs.vuw.ac.nz</name>
+ <description>
+  <![CDATA[
+<div id="ecs.vuw.ac.nz">urn:publicid:IDN+planet-lab.org+component+planetlab1.ecs.vuw.ac.nz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.ecs.vuw.ac.nz</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>174.7833,-41.3</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>infonet.fundp.ac.be</name>
+ <description>
+  <![CDATA[
+<div id="infonet.fundp.ac.be">urn:publicid:IDN+planet-lab.org+component+chimay.infonet.fundp.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+orval.infonet.fundp.ac.be<BR>urn:publicid:IDN+planet-lab.org+component+rochefort.infonet.fundp.ac.be</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>4.8667,50.4667</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.du.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.du.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.du.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.du.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-104.4083,39.7388</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>elisa.cpsc.ucalgary.ca</name>
+ <description>
+  <![CDATA[
+<div id="elisa.cpsc.ucalgary.ca">urn:publicid:IDN+planet-lab.org+component+planetlab-1.elisa.cpsc.ucalgary.ca<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.elisa.cpsc.ucalgary.ca</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-114.0833,51.0833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>wand.net.nz</name>
+ <description>
+  <![CDATA[
+<div id="wand.net.nz">urn:publicid:IDN+planet-lab.org+component+planetlab-n1.wand.net.nz<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-n2.wand.net.nz</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>175.2833,-37.7833</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.uml.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.uml.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.cs.uml.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cs.uml.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-71.3506,42.6523</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark id="clemson.edu">
+ <name>clemson.edu</name>
+ <description>
+  <![CDATA[
+<div id="clemson.edu">urn:publicid:IDN+planet-lab.org+component+planetlab1.clemson.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.clemson.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-82.7167,34.5342</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>di.uminho.pt</name>
+ <description>
+  <![CDATA[
+<div id="di.uminho.pt">urn:publicid:IDN+planet-lab.org+component+planetlab-um00.di.uminho.pt<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-um10.di.uminho.pt</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-8.4333,41.55</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cnis.nyit.edu,nodes.planet-lab.org</name>
+ <description>
+  <![CDATA[
+<div id="cnis.nyit.edu,nodes.planet-lab.org">urn:publicid:IDN+planet-lab.org+component+planetlab1.cnis.nyit.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.cnis.nyit.edu<BR>urn:publicid:IDN+planet-lab.org+component+ttu1-1.nodes.planet-lab.org<BR>urn:publicid:IDN+planet-lab.org+component+ttu2-1.nodes.planet-lab.org</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-97,38</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>bupt.edu.cn</name>
+ <description>
+  <![CDATA[
+<div id="bupt.edu.cn">urn:publicid:IDN+planet-lab.org+component+planetlab1.bupt.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+planetlab2.bupt.edu.cn</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>119.8836,28.1081</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>inf.susx.ac.uk</name>
+ <description>
+  <![CDATA[
+<div id="inf.susx.ac.uk">urn:publicid:IDN+planet-lab.org+component+gemini02.inf.susx.ac.uk<BR>urn:publicid:IDN+planet-lab.org+component+gemini03.inf.susx.ac.uk</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-0.15,50.8333</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cs.yale.edu</name>
+ <description>
+  <![CDATA[
+<div id="cs.yale.edu">urn:publicid:IDN+planet-lab.org+component+pl1.cs.yale.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.cs.yale.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-72.9241,41.3111</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>sysu.edu.cn</name>
+ <description>
+  <![CDATA[
+<div id="sysu.edu.cn">urn:publicid:IDN+planet-lab.org+component+planetlab-1.sysu.edu.cn<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-2.sysu.edu.cn</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>113.25,23.1167</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cis.uab.edu</name>
+ <description>
+  <![CDATA[
+<div id="cis.uab.edu">urn:publicid:IDN+planet-lab.org+component+pl1.cis.uab.edu<BR>urn:publicid:IDN+planet-lab.org+component+pl2.cis.uab.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-86.9292,33.5446</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>cti.espol.edu.ec</name>
+ <description>
+  <![CDATA[
+<div id="cti.espol.edu.ec">urn:publicid:IDN+planet-lab.org+component+prueba1.cti.espol.edu.ec</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-79.9,-2.1667</coordinates>
+ </Point>
+ </Placemark> 
+</Folder></Document>
+</kml>

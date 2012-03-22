@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+     http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+
+  <!-- Created by Graph::Easy v0.71 at Sun Mar  4 00:46:18 2012 -->
+
+  <key id="d0" for="node" attr.name="group" attr.type="string">
+    <default></default>
+  </key>
+  <key id="d1" for="edge" attr.name="label" attr.type="string"/>
+
+  <graph id="G" edgedefault="directed">
+    <graph id="Artifacts" edgedefault="directed">
+      <node id="Block_9">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_11">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_6">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_7">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_3">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_10">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_2">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_1">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_8">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="File_12">
+        <data key="d0">Artifacts</data>
+      </node>
+      <edge source="File_12" target="Process_12">
+        <data key="d1">used</data>
+      </edge>
+
+      <node id="Block_5">
+        <data key="d0">Artifacts</data>
+      </node>
+      <node id="Block_4">
+        <data key="d0">Artifacts</data>
+      </node>
+    </graph>    <graph id="Process" edgedefault="directed">
+      <node id="Process_4">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_4" target="Block_4">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_16">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_16" target="Process_1">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_10">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_2">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_3">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_4">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_5">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_6">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_7">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_8">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_16" target="Process_9">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <node id="Process_1">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_1" target="Block_1">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_17">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_17" target="Process_16">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_17" target="Process_15">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <node id="Process_12">
+        <data key="d0">Process</data>
+      </node>
+      <node id="Process_3">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_3" target="Block_3">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_5">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_5" target="Block_5">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_10">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_10" target="Block_10">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_7">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_7" target="Block_7">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_15">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_15" target="Process_11">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <node id="Process_8">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_8" target="Block_8">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_11">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_11" target="Block_11">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_2">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_2" target="Block_2">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_6">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_6" target="Block_6">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_9">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_9" target="Block_9">
+        <data key="d1">wasGeneratedBy</data>
+      </edge>
+
+      <node id="Process_14">
+        <data key="d0">Process</data>
+      </node>
+      <edge source="Process_14" target="Process_17">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+      <edge source="Process_14" target="Process_12">
+        <data key="d1">wasTriggeredBy</data>
+      </edge>
+
+    </graph>
+  </graph>
+</graphml>

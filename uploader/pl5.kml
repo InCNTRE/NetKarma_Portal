@@ -11,11 +11,11 @@
 	
             <Style id="netkarma_marker">
        	<IconStyle>
-       		<scale>0.75</scale>
+       		<scale>1</scale>
        		<Icon>
        			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-green.png</href> 
        		</Icon>
-       		<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+       		<hotSpot x="0.8" y="0.8" xunits="fraction" yunits="fraction"/>
        	</IconStyle>
        	<LabelStyle>
        		<color>ff00aaff</color>
@@ -43,11 +43,11 @@
 
       <Style id="green_marker">
        	<IconStyle>
-       		<scale>0.75</scale>
+       		<scale>1</scale>
        		<Icon>
        			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-green.png</href> 
        		</Icon>
-       		<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+       		<hotSpot x="0.8" y="0.8" xunits="fraction" yunits="fraction"/>
        	</IconStyle>
        	<LabelStyle>
        		<color>ff00aaff</color>
@@ -208,7 +208,7 @@
 
               <Style id="blue_marker">            
        	<IconStyle>
-       		<scale>0.5</scale>
+       		<scale>1</scale>
        		<Icon>
        			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-blue.png</href>
        		</Icon>
@@ -235,7 +235,7 @@
        </Style>
        <Style id="green_marker">
        	<IconStyle>
-       		<scale>0.75</scale>
+       		<scale>1</scale>
        		<Icon>
        			<href>http://gmoc-dev.grnoc.iu.edu//img/marker-green.png</href> 
        		</Icon>

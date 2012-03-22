@@ -66,6 +66,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 			reader.readAsDataURL(file);
 		}
 
+
 	}
 
 
@@ -110,7 +111,6 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 	// initialize
 	function Init() {
 
-
 		var fileselect = $id("fileselect"),
 			filedrag = $id("filedrag"),
 			submitbutton = $id("submitbutton");
@@ -129,7 +129,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 			filedrag.style.display = "block";
 
 			// remove submit button
-			//submitbutton.style.display = "none";
+			submitbutton.style.display = "none";
 		}
 
 	}

@@ -9,11 +9,16 @@ html {
 
 body {
         font-family:Arial,Helvetica,sans-serif !important;
-	 background: -webkit-gradient(linear, left top, left bottom, from(#111111), to(#ffffff));
-        background: -moz-gradient(linear, left top, left bottom, from(#8E2639), to(#ffffff));
+	 background: -webkit-gradient(linear, left top, left bottom, from(#6E4E2B), to(#ffffff));
+        background: -moz-gradient(linear, left top, left bottom, from(#6E4E2B), to(#ffffff));
 }
 
-div.box {
+div#upload {
+	vertical-align: top;
+}
+
+
+div.box2 {
         border-radius:10px;
         box-shadow: 5px 5px 5px #888;
         -moz-box-shadow: 5px 5px 5px #888;
@@ -140,4 +145,5 @@ pre
 	margin: 0 0 1em auto;
 }
 
-#cytoscapeweb { width: 100%; height: 600px; min-height: 600px;}
+#cytoscapeweb { width: 1000px; height: 800px; min-height: 600px;}
+#cytoscapeweb_topo { width: 1000px; height: 800px; min-height: 600px;}

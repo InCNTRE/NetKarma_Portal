@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+     http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+
+  <!-- Created by Graph::Easy v0.71 at Thu Feb 16 01:00:13 2012 -->
+
+  <key id="d0" for="node" attr.name="label" attr.type="string"/>
+  <key id="d1" for="edge" attr.name="label" attr.type="string"/>
+
+  <graph id="G" edgedefault="directed">
+    <node id="urn:ogf:network:domain=ps.es.net:node=albu-cr1">
+      <data key="d0">albu-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=albu-sdn1">
+      <data key="d0">albu-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=ameslab-rt2">
+      <data key="d0">ameslab-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=anl-mr2">
+      <data key="d0">anl-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=aofa-cr2">
+      <data key="d0">aofa-cr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1">
+      <data key="d0">aofa-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d0">atla-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=atla-sdn1">
+      <data key="d0">atla-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=bnl-mr2">
+      <data key="d0">bnl-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=bnl-mr3">
+      <data key="d0">bnl-mr3</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=bois-cr1">
+      <data key="d0">bois-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=bost-cr1">
+      <data key="d0">bost-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d0">chic-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=chic-sdn2">
+      <data key="d0">chic-sdn2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=clev-cr1">
+      <data key="d0">clev-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d0">clev-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=denv-cr2">
+      <data key="d0">denv-cr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=denv-sdn1">
+      <data key="d0">denv-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=doe-gtn-rt1">
+      <data key="d0">doe-gtn-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=doe-nnsa-rt1">
+      <data key="d0">doe-nnsa-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=elpa-cr1">
+      <data key="d0">elpa-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=elpa-sdn1">
+      <data key="d0">elpa-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=eqx-ash-rt1">
+      <data key="d0">eqx-ash-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=eqx-chi-rt1">
+      <data key="d0">eqx-chi-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=eqx-sj-rt1">
+      <data key="d0">eqx-sj-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=esnet-rt1">
+      <data key="d0">esnet-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=esnet-rt3">
+      <data key="d0">esnet-rt3</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d0">fnal-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=fnal-mr3">
+      <data key="d0">fnal-mr3</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=forr-rt1">
+      <data key="d0">forr-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=ga-rt2">
+      <data key="d0">ga-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=hous-cr1">
+      <data key="d0">hous-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=hous-sdn1">
+      <data key="d0">hous-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=inl-rt2">
+      <data key="d0">inl-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=jgi-mr2">
+      <data key="d0">jgi-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=kans-cr1">
+      <data key="d0">kans-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=kans-sdn1">
+      <data key="d0">kans-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=lasv-rt1">
+      <data key="d0">lasv-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=lbl-mr2">
+      <data key="d0">lbl-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=llnl-mr2">
+      <data key="d0">llnl-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=llnl-rt1">
+      <data key="d0">llnl-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=llnldc-rt2">
+      <data key="d0">llnldc-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=lvk-rt2">
+      <data key="d0">lvk-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=nash-cr1">
+      <data key="d0">nash-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d0">nash-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=nersc-mr2">
+      <data key="d0">nersc-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d0">newy-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=nrel-rt1">
+      <data key="d0">nrel-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=nso-rt1">
+      <data key="d0">nso-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=orau-rt1">
+      <data key="d0">orau-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=ornl-rt2">
+      <data key="d0">ornl-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=osti-rt1">
+      <data key="d0">osti-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=paix-pa-rt1">
+      <data key="d0">paix-pa-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=pantex-rt2">
+      <data key="d0">pantex-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=pnwg-cr1">
+      <data key="d0">pnwg-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1">
+      <data key="d0">pnwg-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=pppl-rt2">
+      <data key="d0">pppl-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=sdsc-sdn2">
+      <data key="d0">sdsc-sdn2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=slac-mr2">
+      <data key="d0">slac-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=snla-rt2">
+      <data key="d0">snla-rt2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=snll-mr2">
+      <data key="d0">snll-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=snv-mr2">
+      <data key="d0">snv-mr2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=srs-rt1">
+      <data key="d0">srs-rt1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=star-cr1">
+      <data key="d0">star-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=star-sdn1">
+      <data key="d0">star-sdn1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=sunn-cr1">
+      <data key="d0">sunn-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2">
+      <data key="d0">sunn-sdn2</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d0">wash-cr1</data>
+    </node>
+    <node id="urn:ogf:network:domain=ps.es.net:node=wash-sdn2">
+      <data key="d0">wash-sdn2</data>
+    </node>
+
+    <edge source="urn:ogf:network:domain=ps.es.net:node=albu-sdn1" target="urn:ogf:network:domain=ps.es.net:node=denv-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=denv-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=albu-sdn1" target="urn:ogf:network:domain=ps.es.net:node=albu-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=albu-cr1:port=ge-5/0/0:link=ge-5/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=albu-sdn1" target="urn:ogf:network:domain=ps.es.net:node=albu-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=albu-cr1:port=xe-3/1/0:link=xe-3/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=albu-sdn1" target="urn:ogf:network:domain=ps.es.net:node=elpa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=elpa-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=ameslab-rt2" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=ge-1/0/0:link=ge-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=anl-mr2" target="urn:ogf:network:domain=ps.es.net:node=chic-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-sdn2:port=xe-7/2/0:link=xe-7/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=anl-mr2" target="urn:ogf:network:domain=ps.es.net:node=star-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=star-cr1:port=xe-0/2/0:link=xe-0/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=anl-mr2" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=xe-5/0/0:link=xe-5/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-cr1:port=xe-2/0/0:link=xe-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=aofa-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=aofa-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=bnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bnl-mr2:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=bnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bnl-mr2:port=xe-3/0/0:link=xe-3/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=bnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bnl-mr2:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=bost-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bost-cr1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-2/1/0:link=xe-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-cr2" target="urn:ogf:network:domain=ps.es.net:node=pppl-rt2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pppl-rt2:port=ge-3/1/1:link=ge-3/1/1.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1" target="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=clev-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1" target="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=clev-sdn1:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-7/2/0:link=xe-7/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-1/2/0:link=xe-1/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=atla-sdn1" target="urn:ogf:network:domain=ps.es.net:node=hous-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=hous-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=atla-sdn1" target="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-cr1:port=xe-4/1/0:link=xe-4/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=atla-sdn1" target="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-cr1:port=xe-5/1/0:link=xe-5/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=atla-sdn1" target="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nash-sdn1:port=xe-0/2/0:link=xe-0/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=atla-sdn1" target="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nash-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=bnl-mr3" target="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=aofa-sdn1:port=xe-9/1/0:link=xe-9/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=bnl-mr3" target="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=aofa-sdn1:port=xe-2/0/0:link=xe-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=bnl-mr3" target="urn:ogf:network:domain=ps.es.net:node=bnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bnl-mr2:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=bnl-mr3" target="urn:ogf:network:domain=ps.es.net:node=bnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bnl-mr2:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=bnl-mr3" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-7/1/0:link=xe-7/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=bnl-mr3" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-2/0/0:link=xe-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=bois-cr1" target="urn:ogf:network:domain=ps.es.net:node=pnwg-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-cr1:port=ge-5/0/0:link=ge-5/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr3">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr3:port=xe-2/0/0:link=xe-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=kans-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=kans-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=kans-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=kans-sdn1:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=ge-0/1/0:link=ge-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=ge-2/1/0:link=ge-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=clev-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=clev-sdn1:port=xe-7/1/0:link=xe-7/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nash-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=chic-sdn2" target="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nash-sdn1:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=clev-cr1" target="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-cr1:port=ge-4/1/0:link=ge-4/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=clev-cr1" target="urn:ogf:network:domain=ps.es.net:node=bost-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bost-cr1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=clev-cr1" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=xe-2/0/0:link=xe-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=clev-cr1" target="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=clev-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=clev-cr1" target="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=clev-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-cr2" target="urn:ogf:network:domain=ps.es.net:node=denv-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=denv-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-cr2" target="urn:ogf:network:domain=ps.es.net:node=denv-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=denv-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-cr2" target="urn:ogf:network:domain=ps.es.net:node=bois-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=bois-cr1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-cr2" target="urn:ogf:network:domain=ps.es.net:node=albu-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=albu-cr1:port=ge-4/0/0:link=ge-4/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-cr2" target="urn:ogf:network:domain=ps.es.net:node=nrel-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nrel-rt1:port=GigabitEthernet0/1:link=GigabitEthernet0/1.1604</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-sdn1" target="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sunn-sdn2:port=xe-2/1/0:link=xe-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-sdn1" target="urn:ogf:network:domain=ps.es.net:node=kans-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=kans-sdn1:port=xe-1/2/0:link=xe-1/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-sdn1" target="urn:ogf:network:domain=ps.es.net:node=kans-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=kans-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-sdn1" target="urn:ogf:network:domain=ps.es.net:node=nrel-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nrel-rt1:port=GigabitEthernet0/1:link=GigabitEthernet0/1.1605</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=denv-sdn1" target="urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1:port=xe-0/2/0:link=xe-0/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=doe-nnsa-rt1" target="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-cr1:port=so-0/1/0:link=so-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=doe-nnsa-rt1" target="urn:ogf:network:domain=ps.es.net:node=doe-gtn-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=doe-gtn-rt1:port=fe-0/3/3:link=fe-0/3/3.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=elpa-cr1" target="urn:ogf:network:domain=ps.es.net:node=albu-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=albu-cr1:port=xe-3/0/0:link=xe-3/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=elpa-cr1" target="urn:ogf:network:domain=ps.es.net:node=elpa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=elpa-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=elpa-cr1" target="urn:ogf:network:domain=ps.es.net:node=elpa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=elpa-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=eqx-ash-rt1" target="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-cr1:port=ge-6/0/0:link=ge-6/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=eqx-chi-rt1" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=ge-7/1/0:link=ge-7/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=eqx-chi-rt1" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=ge-1/0/2:link=ge-1/0/2.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=eqx-sj-rt1" target="urn:ogf:network:domain=ps.es.net:node=sunn-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sunn-cr1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=fnal-mr3" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=xe-6/1/0:link=xe-6/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=fnal-mr3" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr2:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=fnal-mr3" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr2:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=forr-rt1" target="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-cr1:port=ge-1/1/1:link=ge-1/1/1.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=forr-rt1" target="urn:ogf:network:domain=ps.es.net:node=doe-gtn-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=doe-gtn-rt1:port=ge-1/1/0:link=ge-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=ga-rt2" target="urn:ogf:network:domain=ps.es.net:node=sdsc-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sdsc-sdn2:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=hous-cr1" target="urn:ogf:network:domain=ps.es.net:node=kans-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=kans-cr1:port=xe-2/1/0:link=xe-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=hous-cr1" target="urn:ogf:network:domain=ps.es.net:node=elpa-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=elpa-cr1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=hous-cr1" target="urn:ogf:network:domain=ps.es.net:node=hous-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=hous-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=hous-cr1" target="urn:ogf:network:domain=ps.es.net:node=hous-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=hous-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=hous-cr1" target="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-cr1:port=xe-4/0/0:link=xe-4/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=hous-sdn1" target="urn:ogf:network:domain=ps.es.net:node=elpa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=elpa-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=jgi-mr2" target="urn:ogf:network:domain=ps.es.net:node=nersc-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nersc-mr2:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=jgi-mr2" target="urn:ogf:network:domain=ps.es.net:node=nersc-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nersc-mr2:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=kans-cr1" target="urn:ogf:network:domain=ps.es.net:node=denv-cr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=denv-cr2:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=kans-cr1" target="urn:ogf:network:domain=ps.es.net:node=kans-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=kans-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=kans-cr1" target="urn:ogf:network:domain=ps.es.net:node=kans-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=kans-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=kans-cr1" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=xe-3/0/0:link=xe-3/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=kans-sdn1" target="urn:ogf:network:domain=ps.es.net:node=hous-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=hous-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=lasv-rt1" target="urn:ogf:network:domain=ps.es.net:node=ga-rt2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=ga-rt2:port=so-4/1/0:link=so-4/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=lbl-mr2" target="urn:ogf:network:domain=ps.es.net:node=jgi-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=jgi-mr2:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=lbl-mr2" target="urn:ogf:network:domain=ps.es.net:node=jgi-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=jgi-mr2:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=lbl-mr2" target="urn:ogf:network:domain=ps.es.net:node=slac-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=slac-mr2:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=lbl-mr2" target="urn:ogf:network:domain=ps.es.net:node=slac-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=slac-mr2:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=lbl-mr2" target="urn:ogf:network:domain=ps.es.net:node=esnet-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=esnet-rt1:port=ge-1/1/0:link=ge-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=llnl-mr2" target="urn:ogf:network:domain=ps.es.net:node=snv-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=snv-mr2:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=llnl-mr2" target="urn:ogf:network:domain=ps.es.net:node=snv-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=snv-mr2:port=xe-8/0/0:link=xe-8/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=llnl-rt1" target="urn:ogf:network:domain=ps.es.net:node=snll-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=snll-mr2:port=xe-0/2/0:link=xe-0/2/0.1121</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=llnl-rt1" target="urn:ogf:network:domain=ps.es.net:node=llnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=llnl-mr2:port=ge-3/0/6:link=ge-3/0/6.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=nash-cr1" target="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-cr1:port=xe-5/0/0:link=xe-5/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=nash-cr1" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=xe-5/1/0:link=xe-5/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=nash-cr1" target="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nash-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=nash-cr1" target="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nash-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=nso-rt1" target="urn:ogf:network:domain=ps.es.net:node=lasv-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=lasv-rt1:port=so-1/2/1:link=so-1/2/1.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=ornl-rt2" target="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-cr1:port=so-1/2/0:link=so-1/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=ornl-rt2" target="urn:ogf:network:domain=ps.es.net:node=nash-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nash-sdn1:port=xe-7/1/0:link=xe-7/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=ornl-rt2" target="urn:ogf:network:domain=ps.es.net:node=orau-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=orau-rt1:port=GigabitEthernet0/3:link=GigabitEthernet0/3.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=osti-rt1" target="urn:ogf:network:domain=ps.es.net:node=ornl-rt2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=ornl-rt2:port=ge-0/0/6:link=ge-0/0/6.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=pantex-rt2" target="urn:ogf:network:domain=ps.es.net:node=denv-cr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=denv-cr2:port=so-10/0/0:link=so-10/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=pnwg-cr1" target="urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=pnwg-cr1" target="urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=slac-mr2" target="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sunn-sdn2:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=slac-mr2" target="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sunn-sdn2:port=xe-3/0/0:link=xe-3/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=snla-rt2" target="urn:ogf:network:domain=ps.es.net:node=albu-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=albu-cr1:port=ge-2/0/0:link=ge-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=snll-mr2" target="urn:ogf:network:domain=ps.es.net:node=llnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=llnl-mr2:port=xe-2/0/0:link=xe-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=snll-mr2" target="urn:ogf:network:domain=ps.es.net:node=llnl-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=llnl-mr2:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=snll-mr2" target="urn:ogf:network:domain=ps.es.net:node=nersc-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nersc-mr2:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=snll-mr2" target="urn:ogf:network:domain=ps.es.net:node=nersc-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=nersc-mr2:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=srs-rt1" target="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-cr1:port=so-0/1/0:link=so-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-cr1" target="urn:ogf:network:domain=ps.es.net:node=ameslab-rt2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=ameslab-rt2:port=ge-1/0/0:link=ge-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-cr1" target="urn:ogf:network:domain=ps.es.net:node=chic-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-cr1:port=xe-3/1/0:link=xe-3/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-cr1" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr2:port=xe-2/0/0:link=xe-2/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-cr1" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr2:port=xe-7/1/0:link=xe-7/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=chic-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-sdn2:port=xe-0/2/0:link=xe-0/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=chic-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-sdn2:port=xe-1/2/0:link=xe-1/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=chic-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=chic-sdn2:port=xe-2/1/0:link=xe-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=wash-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-sdn2:port=xe-2/1/0:link=xe-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=star-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=star-cr1:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=star-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=star-cr1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr2:port=xe-2/1/0:link=xe-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr2:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=fnal-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=fnal-mr2:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=star-sdn1" target="urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=denv-cr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=denv-cr2:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sunn-sdn2:port=xe-1/2/0:link=xe-1/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sunn-sdn2:port=xe-2/2/0:link=xe-2/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=elpa-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=elpa-cr1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=lasv-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=lasv-rt1:port=so-0/1/0:link=so-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=pnwg-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-cr1:port=ge-6/0/0:link=ge-6/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=inl-rt2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=inl-rt2:port=so-1/0/1:link=so-1/0/1.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=paix-pa-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=paix-pa-rt1:port=ge-1/0/0:link=ge-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-cr1" target="urn:ogf:network:domain=ps.es.net:node=snv-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=snv-mr2:port=xe-8/1/0:link=xe-8/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2" target="urn:ogf:network:domain=ps.es.net:node=elpa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=elpa-sdn1:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2" target="urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2" target="urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pnwg-sdn1:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2" target="urn:ogf:network:domain=ps.es.net:node=sdsc-sdn2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=sdsc-sdn2:port=xe-0/1/0:link=xe-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2" target="urn:ogf:network:domain=ps.es.net:node=snv-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=snv-mr2:port=xe-7/2/0:link=xe-7/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2" target="urn:ogf:network:domain=ps.es.net:node=snv-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=snv-mr2:port=xe-1/0/0:link=xe-1/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=sunn-sdn2" target="urn:ogf:network:domain=ps.es.net:node=snv-mr2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=snv-mr2:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-cr1" target="urn:ogf:network:domain=ps.es.net:node=atla-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-cr1:port=xe-3/0/0:link=xe-3/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-cr1" target="urn:ogf:network:domain=ps.es.net:node=doe-gtn-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=doe-gtn-rt1:port=ge-0/1/0:link=ge-0/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-cr1" target="urn:ogf:network:domain=ps.es.net:node=llnldc-rt2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=llnldc-rt2:port=Serial3/0:link=Serial3/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-cr1" target="urn:ogf:network:domain=ps.es.net:node=orau-rt1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=orau-rt1:port=Serial1/0:link=Serial1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-cr1" target="urn:ogf:network:domain=ps.es.net:node=pppl-rt2">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=pppl-rt2:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-cr1:port=ge-2/1/0:link=ge-2/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=wash-cr1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=wash-cr1:port=ge-3/1/0:link=ge-3/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=atla-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=atla-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=atla-sdn1:port=xe-7/0/0:link=xe-7/0/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=aofa-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=aofa-sdn1:port=xe-7/3/0:link=xe-7/3/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=clev-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=clev-sdn1:port=xe-1/2/0:link=xe-1/2/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-1/1/0:link=xe-1/1/0.0</data>
+    </edge>
+    <edge source="urn:ogf:network:domain=ps.es.net:node=wash-sdn2" target="urn:ogf:network:domain=ps.es.net:node=newy-sdn1">
+      <data key="d1">urn:ogf:network:domain=ps.es.net:node=newy-sdn1:port=xe-0/0/0:link=xe-0/0/0.0</data>
+    </edge>
+  </graph>
+</graphml>

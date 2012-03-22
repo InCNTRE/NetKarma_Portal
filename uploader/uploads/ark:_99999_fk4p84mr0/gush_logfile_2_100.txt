@@ -1,0 +1,100 @@
+debug.cc:104:1296341651:Debug::initialize pid=4276 pgrp=4276 level=5
+gush.cc:177:1296341651:Gush constructor: port = 12345
+gush.cc:199:1296341651:Gush constructor started by uid:1000 name:peng home:/home/peng
+gush.cc:206:1296341651:Gush constructor: Gush running as peng@peng-virtual-machine:12345
+version.cc:126:1296341651:This gush executable is built from the following:
+version.cc:130:1296341651:    aes_input_stream.cc,v	1.3
+version.cc:130:1296341651:    aes_output_stream.cc,v	1.3
+version.cc:130:1296341651:    api_channel.cc,v	1.3
+version.cc:130:1296341651:    barrier.cc,v	1.3
+version.cc:130:1296341651:    barrier_block.cc,v	1.4
+version.cc:130:1296341651:    barrier_knee.cc,v	1.3
+version.cc:130:1296341651:    barrier_manager.cc,v	1.5
+version.cc:130:1296341651:    block.cc,v	1.3
+version.cc:130:1296341651:    buffered_input_stream.cc,v	1.3
+version.cc:130:1296341651:    buffered_output_stream.cc,v	1.3
+version.cc:130:1296341651:    capability.cc,v	1.3
+version.cc:130:1296341651:    component.cc,v	1.3
+version.cc:130:1296341651:    component_block.cc,v	1.7
+version.cc:130:1296341651:    configuration_matcher.cc,v	1.3
+version.cc:130:1296341651:    connection_ssh.cc,v	1.3
+version.cc:130:1296341651:    connection_tcp.cc,v	1.3
+version.cc:130:1296341651:    constraint.cc,v	1.3
+version.cc:130:1296341651:    constraint_sword.cc,v	1.3
+version.cc:130:1296341651:    container_block.cc,v	1.4
+version.cc:130:1296341651:    debug.cc,v	1.3
+version.cc:130:1296341651:    default_log_manager.cc,v	1.3
+version.cc:130:1296341651:    default_matcher.cc,v	1.4
+version.cc:130:1296341651:    event.cc,v	1.3
+version.cc:130:1296341651:    event_loop.cc,v	1.3
+version.cc:130:1296341651:    event_loop_select.cc,v	1.3
+version.cc:130:1296341651:    exception.cc,v	1.3
+version.cc:130:1296341651:    experiment.cc,v	1.3
+version.cc:130:1296341651:    experiment_block.cc,v	1.4
+version.cc:130:1296341651:    experiment_controller_default.cc,v	1.8
+version.cc:130:1296341651:    file_input_channel.cc,v	1.3
+version.cc:130:1296341651:    file_manager.cc,v	1.3
+version.cc:130:1296341651:    file_output_channel.cc,v	1.3
+version.cc:130:1296341651:    file_transfer.cc,v	1.3
+version.cc:130:1296341651:    file_transfer_default.cc,v	1.3
+version.cc:130:1296341651:    file_transfer_wget.cc,v	1.3
+version.cc:130:1296341651:    gush.cc,v	1.6
+version.cc:130:1296341651:    host_directory.cc,v	1.4
+version.cc:130:1296341651:    host_id.cc,v	1.3
+version.cc:130:1296341651:    host_monitor_script.cc,v	1.3
+version.cc:130:1296341651:    http_handler.cc,v	1.4
+version.cc:130:1296341651:    http_reader.cc,v	1.3
+version.cc:130:1296341651:    http_writer.cc,v	1.3
+version.cc:130:1296341651:    liveness_monitor.cc,v	1.3
+version.cc:130:1296341651:    logger.cc,v	1.3
+version.cc:130:1296341651:    main.cc,v	1.5
+version.cc:130:1296341651:    message.cc,v	1.3
+version.cc:130:1296341651:    node.cc,v	1.4
+version.cc:130:1296341651:    preferences.cc,v	1.5
+version.cc:130:1296341651:    process.cc,v	1.5
+version.cc:130:1296341651:    process_block.cc,v	1.6
+version.cc:130:1296341651:    process_monitor.cc,v	1.3
+version.cc:130:1296341651:    project.cc,v	1.3
+version.cc:130:1296341651:    proxy_installer.cc,v	1.4
+version.cc:130:1296341651:    resource_allocator_default.cc,v	1.3
+version.cc:130:1296341651:    resource_manager_emulab.cc,v	1.3
+version.cc:130:1296341651:    resource_manager_ssh.cc,v	1.3
+version.cc:130:1296341651:    resources.cc,v	1.5
+version.cc:130:1296341651:    slice.cc,v	1.8
+version.cc:130:1296341651:    software.cc,v	1.3
+version.cc:130:1296341651:    software_installer.cc,v	1.3
+version.cc:130:1296341651:    software_installer_default.cc,v	1.3
+version.cc:130:1296341651:    software_installer_script.cc,v	1.3
+version.cc:130:1296341651:    software_installer_stork.cc,v	1.3
+version.cc:130:1296341651:    software_installer_tar.cc,v	1.3
+version.cc:130:1296341651:    software_installer_yum.cc,v	1.3
+version.cc:130:1296341651:    ssh_mesh.cc,v	1.5
+version.cc:130:1296341651:    ssh_mesh_connection.cc,v	1.3
+version.cc:130:1296341651:    ssh_mesh_message.cc,v	1.3
+version.cc:130:1296341651:    ssh_mesh_message_reader.cc,v	1.3
+version.cc:130:1296341651:    ssh_mesh_message_writer.cc,v	1.3
+version.cc:130:1296341651:    ssh_mesh_node.cc,v	1.3
+version.cc:130:1296341651:    stream_input_channel.cc,v	1.3
+version.cc:130:1296341651:    stream_output_channel.cc,v	1.3
+version.cc:130:1296341651:    substitution.cc,v	1.3
+version.cc:130:1296341651:    sword_matcher.cc,v	1.3
+version.cc:130:1296341651:    sword_objects.cc,v	1.4
+version.cc:130:1296341651:    terminal_ui.cc,v	1.8
+version.cc:130:1296341651:    timer.cc,v	1.3
+version.cc:130:1296341651:    var_table.cc,v	1.3
+version.cc:130:1296341651:    version.cc,v	1.3
+version.cc:130:1296341651:    workflow_block.cc,v	1.5
+version.cc:130:1296341651:    xml_util.cc,v	1.3
+gush.cc:215:1296341651:Gush constructor: starting event loop
+event_loop_select.cc:55:1296341651:EventLoop::start()
+gush.cc:225:1296341651:Gush constructor: initialize event, timer, logger
+event.cc:36:1296341651:Initializing Events
+timer.cc:121:1296341651:Timer initialize
+logger.cc:47:1296341651:Logger initialize
+gush.cc:232:1296341651:Gush constructor: set unexpected handler
+gush.cc:239:1296341651:Gush constructor: addEventHandlers()
+gush.cc:2269:1296341651:Adding gush mesh handlers
+event.cc:55:1296341651:Event::addHandler(0x870cfd0, Mesh, 0)
+event.cc:55:1296341651:Event::addHandler(0x870cfd0, Mesh, 1)
+event.cc:55:1296341651:Event::addHandler(0x870cfd0, Mesh, 2)
+event.cc:55:1296341651:Event::addHandler(0x870cfd0, Mesh, 3)

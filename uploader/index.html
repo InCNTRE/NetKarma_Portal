@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>NetKarma Portal Upload</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>NetKarma Portal</title>
 <script src="/portal/jquery/js/jquery-1.7.1.min.js"></script>
 <script src="/portal/jquery/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="/portal/js/jqueryFileTree/jqueryFileTree.js"></script>
+<link href="/portal/js/jqueryFileTree/jqueryFileTree.css" rel="stylesheet" type="text/css" media="screen" />
 <script class="jsbin" src="http://datatables.net/download/build/jquery.dataTables.nightly.js"></script>
 <style type="text/css">
       @import "demo_page.css";
@@ -13,10 +16,8 @@
 <link type="text/css" href="/portal/jquery/css/smoothness/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
 
 
-<script type="text/javascript"
-      src="http://www.google.com/jsapi?key=AIzaSyAIcDGjwQmoHTrp2wbbvqpyaZR2nMMrJaM">
-</script>
-<script type="text/javascript" src="ge.js">
+<!-- OpenLayers -->
+<script type="text/javascript" src="../OpenLayers-2.11/OpenLayers.js"></script>
 
 <!-- JSON support for IE (needed to use JS API) -->
 <script type="text/javascript" src="../cytoscapeweb/js/min/json2.min.js"></script>
@@ -30,105 +31,153 @@
 <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
 
 <!-- Cytoscape Web topo Init-->
+<script type="text/javascript" src="cyto_topo.js"></script>
+<script type="text/javascript" src="cyto_workflow2.js"></script>
+
+<script type="text/javascript">
+$.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, fnCallback, bStandingRedraw )
+{
+    if ( typeof sNewSource != 'undefined' && sNewSource != null )
+    {
+        oSettings.sAjaxSource = sNewSource;
+    }
+    this.oApi._fnProcessingDisplay( oSettings, true );
+    var that = this;
+    var iStart = oSettings._iDisplayStart;
+    var aData = [];
+ 
+    this.oApi._fnServerParams( oSettings, aData );
+     
+    oSettings.fnServerData( oSettings.sAjaxSource, aData, function(json) {
+        /* Clear the old information from the table */
+        that.oApi._fnClearTable( oSettings );
+         
+        /* Got the data - add it to the table */
+        var aData =  (oSettings.sAjaxDataProp !== "") ?
+            that.oApi._fnGetObjectDataFn( oSettings.sAjaxDataProp )( json ) : json;
+         
+        for ( var i=0 ; i<aData.length ; i++ )
+        {
+            that.oApi._fnAddData( oSettings, aData[i] );
+        }
+         
+        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+        that.fnDraw();
+         
+        if ( typeof bStandingRedraw != 'undefined' && bStandingRedraw === true )
+        {
+            oSettings._iDisplayStart = iStart;
+            that.fnDraw( false );
+        }
+         
+        that.oApi._fnProcessingDisplay( oSettings, false );
+         
+        /* Callback user function - for event handlers etc */
+        if ( typeof fnCallback == 'function' && fnCallback != null )
+        {
+            fnCallback( oSettings );
+        }
+    }, oSettings );
+}
+</script>
+
 
 <script type="text/javascript" charset="utf-8">
+
+		        var oTable3;	
 			$(document).ready(function() {
 				oTable = $('#example').dataTable({
 					"bJQueryUI": true,
-					"sPaginationType": "full_numbers"
+					"sPaginationType": "full_numbers",
 				});
 
+
+
 				oTabs = $('#tabs').tabs();
+				wfTabs =  $('#wf_tabs').tabs();
+				resTabs =  $('#res_tabs').tabs();
 
 			} );
+
+			 $(document).ready(function() {
+                                oTable2 = $('#workflow').dataTable({
+                                        "bJQueryUI": true,
+                                        "sPaginationType": "full_numbers",
+                                        "sAjaxSource": '../webservice/get_workflow_db.cgi'
+                                });
+			 });
+
+			 $(document).ready(function() {
+                                oTable3 = $('#experiments').dataTable({
+                                        "bJQueryUI": true,
+                                        "sPaginationType": "full_numbers",
+                                        "sAjaxSource": '../webservice/get_experiments.cgi'
+                                });
+
+				$('#click_me2').click( function() {
+                                var myTextField = document.getElementById('input2').value;
+                                document.getElementById("exp_name_set").innerHTML = "Experiment Name: <b>" + myTextField + "</b>";
+
+                                //send ajax post to update experiments
+
+                                var data_str = "name=" + myTextField;
+                                $.ajax({
+                                        type: "GET",
+                                        url: "../webservice/add_exp.cgi",
+                                        data: data_str
+                                        }).done(function( msg ) {
+                                                oTable3.fnReloadAjax();
+                                                //$('#example').dataTable.fnReloadAjax();
+                                                //alert( "Data Saved: " + msg );
+                                        });
+                                });
+
+
+                                oTabs = $('#tabs').tabs();
+
+                        } );
+
+			
+			$(document).ready( function() {
+
+				function openFile(file) {
+					    // do something with file
+						alert(file);
+				}
+
+				
+				$('#fileTreeDemo').fileTree({ root: '/uploads/', multiFolder: true , script: '../webservice/jqueryFileTree.cgi'}, function(file) { 
+					openFile(file);
+				});
+				
+			} ); 
+
+
+
 </script>
 
-<script type="text/javascript">
-            window.onload=function() {
-                // id of Cytoscape Web container div
-                var div_id = "cytoscapeweb";
-                
-                // you could also use other formats (e.g. GraphML) or grab the network data via AJAX
-                var networ_json = {
-		    // Data Schema for custom attributes
-		    dataSchema: {
-			nodes: [ { name: "label", type: "string" },
-				 {  name: "type", type: "string" }
-			       ],				 
-			edges: [ { name: "label", type: "string" },
-                                 {  name: "type", type: "string" }
-                               ]
-		    },
 
-		    data: {
-                        nodes: [ { id: "1", label: "chsmall", type: "agent" },
-				 { id: "2", label: "sample init", type: "process" }, 
-				 { id: "3", label: "pl1.iub.indiana.edu", type: "artifact" },
-				 { id: "4", label: "pl2.iub.indiana.edu", type: "artifact" },
-			       ],
-                        edges: [ { id: "2to1", target: "1", source: "2", type: "WasControlledBy", label: "WasControlledBy", directed: true },
-				 { id: "2to3", target: "3", source: "2", type: "Used", label: "Used" , directed: true },
-				 { id: "2to4", target: "4", source: "2", type: "Used", label: "Used" , directed: true },
-				]
-                    }
-                };
+<style type="text/css">
+			
+			#fileTreeCon {
+				float: left;
+				margin: 15px;
+			}
+			
+			#fileTreeDemo {
+				width: 500px;
+				height: 400px;
+				border-top: solid 1px #BBB;
+				border-left: solid 1px #BBB;
+				border-bottom: solid 1px #FFF;
+				border-right: solid 1px #FFF;
+				background: #FFF;
+				overflow: scroll;
+				padding: 5px;
+			}
+			
+		</style>
 
-  		var visual_style = {
-                    global: {
-                        backgroundColor: "#ABCFD6"
-                    },
-                    nodes: {
-			shape: { 
-				discreteMapper: {
-                               		 attrName: "type",
-					 entries : [ 
-						{ attrValue: "agent", value: "OCTAGON"},
-					        { attrValue: "process", value: "SQUARE"},
-						{ attrValue: "artifact", value: "OVAL"},
-						]
-					}
-				} 
-			},
-		    edges: {
-		        width: 3,
-			color: { 
-                                discreteMapper: {
-                                         attrName: "type",
-                                         entries : [ 
-                                                { attrValue: "WasControlledBy", value: "#0B94B1"},
-                                                { attrValue: "Used", value: "#99FF66"},
-                                                ]
-                                        }
-                                }
-                        }
-		};
-
-					
-                
-                // initialization options
-                var options = {
-                    // where you have the Cytoscape Web SWF
-                    swfPath: "/portal/cytoscapeweb/swf/CytoscapeWeb",
-                    // where you have the Flash installer SWF
-                    flashInstallerPath: "/portal/cytoscapeweb/playerProductInstall",
-		    
-                };
-                
-                // init and draw
-                var vis = new org.cytoscapeweb.Visualization(div_id, options);
-
-		  var draw_options = {
-		    // your data goes here
-                    network: networ_json,
-                    // show edge labels too
-                    edgeLabelsVisible: true,
-		    // set the style at initialisation
-                    visualStyle: visual_style
-		 }
-
-                vis.draw(draw_options);
-            };
-</script>
 
 
 </head>
@@ -136,41 +185,57 @@
 <body id="dt_example"> 
 <h1>NetKarma</h1>
 
-<div class="box"> 
+<div class="box2"> 
 
 <div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">Experiments</a></li>
-				<li><a href="#tabs-2">WorkFlow Visualisation</a></li>
-				<li><a href="#tabs-3">Resource Visualisation</a></li>
-				<li><a href="#tabs-4">Geographic Visualisation</a></li>
+				<li><a href="#tabs-2" onclick="load_cyto_wf()">WorkFlows</a></li>
+				<li><a href="#tabs-3" onclick="load_cyto()">Resources</a></li>
+				<li><a href="#tabs-4">Data</a></li>
+				<li><a href="#tabs-5">Search</a></li>
 			</ul>
 <div id="tabs-1">
 
 
 <table>
-<td width="40%">
-  <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+<tr>
+<td width="25%" style="vertical-align:top;">
 
+   
 
   <fieldset>
   <legend>File Upload</legend>
 
-  <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="1000000000" />
-  Experiment Description <input type="text" name="Description"> </input>
+   <div id="exp_name_set">
+     Experiment Name:
+     
+     <input type="text" id="input2" />
+     <div id="click_me2">
+     <input type="button" name="click_me" id="click_me" value="Submit" /> 
+     </div>
 
+   </div>
+
+
+    <div id="upload" align="top">
+      <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+   </div>
+  <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="1000000000" />
   <div>
 	<label for="fileselect">Files to upload:</label>
 	<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
 	<div id="filedrag">or drop files here</div>
   </div>
 
- <div id="submitbutton">
-	<button type="submit">Upload Files</button>
- </div>
-
  <div id="supported_files">
-	Gush log files and RSPEC parsing is supported. All others are saved as artifacts.
+	The following files are parsed for workflow and resource provenance:
+	<ul>
+	 <li><a href="http://gush.cs.williams.edu/trac/gush">Gush log files</a></li>
+	 <li><a href="http://nmwg.internet2.edu/">UNIS/NMWG Topology file</a></li>
+	 <li><a href="http://groups.geni.net/geni/wiki/GeniRspec">GENI RSPEC V3</a></li>
+        </ul>
+         All files are saved as artifacts.
  </div>
 
  </fieldset>
@@ -183,71 +248,188 @@
  <p>Status Messages</p>
  </div>
 </td>
-<td>
+<td style="vertical-align:top;">
 
 <fieldset>
-  <legend>NetKarma Experiments</legend>
+  <legend>Experiments</legend>
 
-<div id="container">	
      <div class="demo_jui">
-      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="experiments">
         <thead>
           <tr>
             <th>Experiment ID</th>
-	    <th>Experiment Description</th>
-            <th>Project</th>
-            <th>User</th>
-            <th>Start</th>
-	    <th>End</th>
+	    <th>Description</th>
+            <th># of WorkFlows</th>
+	    <th># of Archives</th>
+            <th>Creator</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="odd gradeX">
-            <td>1</td>
-            <td>Twister</td>
-            <td>NetKarma</td>
-            <td>chsmall</td>
-            <td>Mon Jan 1 10:00 GMT</td>
-	    <td>Mon Jan 1 21:00 GMT</td>
-          </tr>
-          <tr class="even gradeC">
-            <td>2</td>
-            <td>XSP</td>
-	    <td>NetKarma</td>
-            <td>chsmall</td>
-            <td>Mon Jan 1 11:00 GMT</td>
-            <td>Mon Jan 1 22:00 GMT</td>
-          </tr>
-	</tbody>
        </table>
    </div>
-</div>
 
 </fieldset>
 
 </td> 
+</tr>
 </table>
 
 </div>
 
 <div id="tabs-2"> 
-   <div id="cytoscapeweb">
-	Cytoscape Web graph will apear here
+   
+   <div id="wf_tabs-1">
+
+     <div class="demo_jui">
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="workflow">
+        <thead>
+          <tr>
+            <th>Workflow Description</th>
+            <th>Workflow ID</th>
+            <th>Experiment Description</th>
+	    <th>Experiment ID</th>
+            <th>User</th>
+	    <th>Start</th>
+	    <th>End</th>
+          </tr>
+        </thead>
+       </table>
+     </div>
+   </div>
+   <div id="wf_tabs-2">
+   <table> 
+   <tr>
+    <td width="80%">
+       <div id="cytoscapeweb">
+	<center> No WorkFlow Chosen</center>	
+       </div>
+    </td>
+    <td width="25%">
+       <div id="node_toggle">
+	<input type="checkbox" id="showNodeLabels">Node Labels</input>
+       </div>
+       <div id="edge_toggle">
+        <input type="checkbox" id="showEdgeLabels">Edge Labels</input>
+       </div>
+	Time Window
+       <div id="slider"></div>
+       <div id="note_wf">Note</div>
+    </td>
+    </tr>
+   </table>
    </div>
 </div>
 
 <div id="tabs-3">
-   <div id="cytoscapeweb_topo">
-        Cytoscape Web topo graph 
+
+   <div id="res_tabs">
+                        <ul>
+                                <li><a href="#res_tabs-1">Resource List</a></li>
+                                <li><a href="#res_tabs-2" onclick="load_cyto_wf()">Logical</a></li>
+			 	<li><a href="#res_tabs-3" onclick="load_cyto_wf()">Geographical</a></li>
+                        </ul>
+
+   <div id="res_tabs-1">
+	Resource Table
    </div>
-</div>
-
-
-<div id="tabs-4"> 
- <div id="map_canvas">
-	Google Earth
+   <div id="res_tabs-2"> 
+   <table>
+    <tr>
+    <td width="80%">
+      <div id="cytoscapeweb_topo">
+        Cytoscape Web topo graph 
+      </div>
+   </td>
+   <td width="25%" style="vertical-align:top;"> 
+     Resource Domain: urn:ogf:network:domain=ps.es.net
+     <br>
+     <div id="note"></div>
+     <br>
+     <div id="lamp">Utilization - Powered by <a href="http://incntre.iu.edu/projects/gemini">Gemini</a></div>
+     <br>
+     <img width=50% src="GeminiPatch.png">
+     <br>
+               <select name="graph1_0" id="graph1_0" onChange="window.open(options[selectedIndex].value,'graph1_0','width=950,height=500,status=yes,scrollbars=yes,resizable=yes')">
+            <option selected value="./utilizationGraph.cgi">-- Select --</option>
+            <option value="http://ndb1.net.internet2.edu/perfAdmin/utilizationGraph.cgi?key1_type=key&key1_1=7581ec851e95d0d909f399f34aa00589&key1_2=&key2_type=key&key2_1=4a32dc15851b93102bc65712ec14f47a&key2_2=&url=http://perftest.cen.ct.gov:9990/perfSONAR_PS/services/SNMPMA&host=&interface=Ethernet1/1&length=3600">1 Hour</option>
+            <option value="http://ndb1.net.internet2.edu/perfAdmin//utilizationGraph.cgi?key1_type=key&key1_1=7581ec851e95d0d909f399f34aa00589&key1_2=&key2_type=key&key2_1=4a32dc15851b93102bc65712ec14f47a&key2_2=&url=http://perftest.cen.ct.gov:9990/perfSONAR_PS/services/SNMPMA&host=&interface=Ethernet1/1&length=14400">4 Hours</option>
+            <option value="http://ndb1.net.internet2.edu/perfAdmin//utilizationGraph.cgi?key1_type=key&key1_1=7581ec851e95d0d909f399f34aa00589&key1_2=&key2_type=key&key2_1=4a32dc15851b93102bc65712ec14f47a&key2_2=&url=http://perftest.cen.ct.gov:9990/perfSONAR_PS/services/SNMPMA&host=&interface=Ethernet1/1&length=43200">12 Hours</option>
+            <option value="http://ndb1.net.internet2.edu/perfAdmin/utilizationGraph.cgi?key1_type=key&key1_1=7581ec851e95d0d909f399f34aa00589&key1_2=&key2_type=key&key2_1=4a32dc15851b93102bc65712ec14f47a&key2_2=&url=http://perftest.cen.ct.gov:9990/perfSONAR_PS/services/SNMPMA&host=&interface=Ethernet1/1&length=86400">24 Hours</option>
+          </select>
+     </div>
+     
+    </td>
+    </tr>
+   </table>
+   </div>
+  <div id="res_tabs-3">
+    <div id="resource_map" onClick="window.open('googlv3.html')">
+     <h4>Resource Map - Planetlab</h4>
+	<img width=25% src="pl_nodes.png">
+    </div>
+     <div id="ge_tour">
+     <h4>Google Earth Experiment Movie</h4>
+      <a href="pl5.kml"><img width=25% src="ge_ss.png"></a>
+     </div>
+   </div>
  </div>
 </div>
+
+<div id="tabs-4"> 
+
+  <fieldset>
+     <legend>Search Data/MetaData</legend>
+     <input type="text" title="Search MetaData" id="md_search">
+     <button type="submit" name="md_go">
+        <span>Go</span>
+     </button>
+  </fieldset>
+  <table>
+  <tr>
+  <td>
+  <fieldset>
+     <legend>Data Artifacts</legend>
+   <div id="fileTreeDemo" class="file_tree"></div>
+  </fieldset>
+  </td>
+  <td width="600px" style="vertical-align:top;">
+  <fieldset style="vertical-align:top;">
+     <legend>MetaData</legend>
+   <div id="metadata" class="metadata">
+   </div>
+  </fieldset>
+  </td>
+  </tr>
+ </table>
+  <a href="https://www.irods.org/"><img src="https://www.irods.org/images/irods_small.png"></a>
+  <input type="button" name="click_me" id="click_me" value="Push to iRODS" />
+</div>
+
+<div id="tabs-5">
+  <fieldset>
+     <legend>Find WorkFlows</legend>   
+     <input type="text" title="Search WorkFlows" id="wf_search">
+     <button type="submit" name="wf_go">
+	<span>Go</span>
+     </button>
+  </fieldset>
+  <fieldset>
+     <legend>Find MetaData</legend>
+     <input type="text" title="Search MetaData" id="md_search">
+     <button type="submit" name="md_go">
+        <span>Go</span>
+     </button>
+  </fieldset>
+  <fieldset>
+     <legend>Find Resources</legend>
+     <input type="text" title="Search Resources" id="res_search">
+     <button type="submit" name="res_go">
+        <span>Go</span>
+     </button>
+  </fieldset>
+  
+
+</div>
+
 
 </div>
 

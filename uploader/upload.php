@@ -10,7 +10,7 @@ if ($fn) {
 
 	// AJAX call
 	file_put_contents(
-		'/var/www/html/portal/uploader/uploads/' . $fn,
+		'uploads/' . $fn,
 		file_get_contents('php://input')
 	);
 	echo "$fn uploaded";
@@ -27,7 +27,7 @@ else {
 			$fn = $files['name'][$id];
 			move_uploaded_file(
 				$files['tmp_name'][$id],
-				'/portal/uploader/uploads/' . $fn
+				'uploads/' . $fn
 			);
 			echo "<p>File $fn uploaded.</p>";
 		}

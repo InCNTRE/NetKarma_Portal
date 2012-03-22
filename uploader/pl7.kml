@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2" 
+  xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Document>
+
+
+<name>OpenLayer Experiments</name>
+
+<Folder><name>Compute Nodes</name>
+ <Placemark>
+ <name>cs.princeton.edu,nec-labs.com</name>
+ <description>
+  <![CDATA[
+<div id="cs.princeton.edu,nec-labs.com">urn:publicid:IDN+planet-lab.org+component+alice.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+delta.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+echo.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+hptest-1.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+hptest-3.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+plab1.nec-labs.com<BR>urn:publicid:IDN+planet-lab.org+component+plab2.nec-labs.com<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-01.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-02.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-03.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-04.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-05.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-06.cs.princeton.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab-9.cs.princeton.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-74.6597,40.3756</coordinates>
+ </Point>
+ </Placemark>
+ <Placemark>
+ <name>wail.wisc.edu</name>
+ <description>
+  <![CDATA[
+<div id="wail.wisc.edu">urn:publicid:IDN+planet-lab.org+component+planetlab3.wail.wisc.edu<BR>urn:publicid:IDN+planet-lab.org+component+planetlab4.wail.wisc.edu</div>
+  ]]>
+</description>
+<styleUrl>#blue_marker</styleUrl> <Point>
+ <coordinates>-89.4104,43.0761</coordinates>
+ </Point>
+ </Placemark>
+
+</Folder>
+</Document>
+</kml>
+
+
+

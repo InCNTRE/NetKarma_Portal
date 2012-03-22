@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+ 
+  <Folder>
+    <name>GRNOC Atlas3D Network Map</name>
+    <visibility>1</visibility>
+    <open>1</open>
+    <description>Network Map Template</description>
+
+    <Camera>
+      <longitude>-100</longitude>
+      <latitude>37</latitude>
+      <altitude>20000</altitude>
+      <altitudeMode>RelativeToGround</altitudeMode>
+    </Camera>
+
+
+   <LookAt>
+     <longitude>-100</longitude>
+     <latitude>37</latitude>
+     <altitude>0</altitude>
+     <range>7000000</range>
+     <altitudeMode>RelativeToGround</altitudeMode>
+   </LookAt>
+
+   <Folder id="tubes">
+     <name>3D Tubes</name>
+     <open>1</open>
+     <visibility>1</visibility>
+     
+  </Folder>
+
+   <Folder id="shadows">
+     <name>Faux Shadows</name>
+     <open>0</open>
+
+     <Style id="shadowStyle">
+       <LineStyle>
+         <color>66222222</color>
+         <width>4</width>
+       </LineStyle>
+     </Style>
+
+    <Placemark id="shadow-template">
+      <name/>
+      <description>
+      </description>
+      <styleUrl>#shadowStyle</styleUrl>
+      <LineString>
+        <extrude>0</extrude>
+        <tessellate>0</tessellate>
+        <coordinates>
+        </coordinates>
+      </LineString>
+    </Placemark>
+   </Folder>
+
+   <Folder id="points">
+     <name>Circuit Click Points</name>
+     <open>0</open>
+
+
+     <Style id="high_ckt">
+                <IconStyle>
+                        <color>ffaaffff</color>
+                        <scale>1</scale>
+                        <Icon>
+                                <href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>
+                        </Icon>
+                        <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+                </IconStyle>
+                <LabelStyle>
+                  <color>ffaaffff</color>            <!-- kml:color -->
+                  <colorMode>normal</colorMode>      <!-- kml:colorModeEnum: normal or random -->
+                  <scale>1</scale>                   <!-- float -->
+                </LabelStyle>
+
+                <ListStyle>
+                </ListStyle>
+                <LineStyle>
+                        <color>55ffffff</color>
+                        <width>3</width>
+                </LineStyle>
+     </Style>
+
+	
+
+     <Style id="norm_ckt">
+                <IconStyle>
+                        <color>aaaaffff</color>
+                        <scale>0.8</scale>
+                        <Icon>
+                                <href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>
+                        </Icon>
+                        <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+                </IconStyle>
+                <LabelStyle>
+                  <color>ffaaffff</color>            <!-- kml:color -->
+                  <colorMode>normal</colorMode>      <!-- kml:colorModeEnum: normal or random -->
+                  <scale>0.8</scale>                   <!-- float -->
+                </LabelStyle>
+
+                <ListStyle>
+                </ListStyle>
+                <LineStyle>
+                        <color>22ffffff</color>
+                        <width>1</width>
+                </LineStyle>
+     </Style>
+
+     <StyleMap id="cktStyleMap">
+                <Pair>
+                        <key>normal</key>
+                        <styleUrl>#norm_ckt</styleUrl>
+                </Pair>
+                <Pair>
+                        <key>highlight</key>
+                        <styleUrl>#high_ckt</styleUrl>
+                </Pair>
+     </StyleMap>
+
+
+
+
+     <Placemark id="point-template">
+      <name/>
+      <description>
+      </description>
+      <styleUrl>#cktStyleMap</styleUrl>
+      <Point>
+        <extrude>1</extrude>
+        <coordinates>
+        </coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+      <Region>
+        <LatLonAltBox>
+          <north/>
+          <south/>
+          <east/>
+          <west/>
+        </LatLonAltBox>
+        <Lod>
+		<minFadeExtent>1</minFadeExtent>
+                <minLodPixels>2</minLodPixels>
+        </Lod>
+      </Region>
+
+     </Placemark>
+
+   </Folder>
+
+
+
+
+  </Folder>
+</kml>
