@@ -15,10 +15,12 @@ The NetKarma Portal provides a easy way for experimenters to:
  * Browse the work of other experimenters (given proper permissions)
 
 More info on the Portal is available at:
+
  * http://groups.geni.net/geni/wiki/netKarma/GEC13_report 
  * http://groups.geni.net/geni/attachment/wiki/netKarma/GEC13_report/NetKarma_Portal.pdf
  
 Information about NetKarma is located at:
+
  * http://pti.iu.edu/d2i/provenance_netKarma
  * http://groups.geni.net/geni/wiki/netKarma
 
