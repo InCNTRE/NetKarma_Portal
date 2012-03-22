@@ -25,13 +25,15 @@ Information about NetKarma is located at:
 Dependancies 
 ------------
 
-The dependancies for the NetKarma protal
+The dependancies for the NetKarma portal are: 
+
  * jQuery - http://jquery.com/
  * CytoscapeWeb - http://cytoscapeweb.cytoscape.org/
  * DataTable jQuery plugin - http://datatables.net/
  * jQuery File Tree - http://www.abeautifulsite.net/blog/2008/03/jquery-file-tree/
  
-Optional dependancies include
+Optional dependancies include:
+
  * jqPlot - http://www.jqplot.com/
  * Openlayers - http://openlayers.org/
  
