@@ -1,4 +1,5 @@
-= NetKarma Portal =
+NetKarma Portal 
+================
 
 The NetKarma portal provides a easy way to load data into the NetKarma Provenance store and visualising the workflow information. It is closely coupled with other GENI systems to allow 
 
@@ -21,7 +22,8 @@ Information about NetKarma is located at:
  * http://pti.iu.edu/d2i/provenance_netKarma
  * http://groups.geni.net/geni/wiki/netKarma
 
-== Dependancies ==
+Dependancies 
+------------
 
 The dependancies for the NetKarma protal
  * jQuery - http://jquery.com/
@@ -40,11 +42,11 @@ All of the Javascript locations should be located at the top of the header.html 
 
 Most of the JavaScript dependancies also have CDN hosted versions but local instalation will help performance
 
-== Licience ==
+Licence 
+-------
 
 The NetKarma Portal is released under the GENI Public Licence.
 
-===
 
 Copyright (c) 2012 The Trustees of Indiana University 
   
