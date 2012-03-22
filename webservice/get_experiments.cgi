@@ -4,7 +4,7 @@ use Data::Dumper;
 use DBI;
 use JSON;
 
-my $ff_db="/var/www/html/portal/uploader/uploads/exp.db";
+my $ff_db="/var/www/html/portal_dev/uploader/uploads/exp.db";
 
 
 sub main {
