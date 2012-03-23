@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>UNIS Cytoscape test</title>
+<script src="../js/jquery-1.7.2.min.js"></script>
+
+
+<!-- JSON support for IE (needed to use JS API) -->
+<script type="text/javascript" src="../js/cytoscapeweb/json2.min.js"></script>
+        
+<!-- Flash embedding utility (needed to embed Cytoscape Web) -->
+<script type="text/javascript" src="../js/cytoscapeweb/AC_OETags.min.js"></script>
+        
+<!-- Cytoscape Web JS API (needed to reference org.cytoscapeweb.Visualization) -->
+<script type="text/javascript" src="../js/cytoscapeweb/cytoscapeweb.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function() { 
+	$.getJSON('nodes/pc118', function (data) { 
+		
+		var cyto_json = { 
+		     data: { 
+			nodes: [ { id: data.id } ]
+			}
+		};
+
+  			
+		// id of Cytoscape Web container div
+                var div_id = "cytoscapeweb";
+                
+		//  Visual Style
+		var visual_style = {
+		    global: {
+                        backgroundColor: "#ABCFD6"
+                    },
+                    nodes: {
+                        shape: "DIAMOND",
+                        compoundShape: "RECTANGLE",
+                        label: { passthroughMapper: { attrName: "id" } } ,               
+			}
+		};
+ 
+                // initialization options
+                var options = {
+                    // where you have the Cytoscape Web SWF
+                    swfPath: "/portal_dev/swf/CytoscapeWeb",
+                    // where you have the Flash installer SWF
+                    flashInstallerPath: "/swf/playerProductInstall"
+                };
+                
+                // init and draw
+                var vis = new org.cytoscapeweb.Visualization(div_id, options);
+		
+                 var draw_options = {
+                    // your data goes here
+                    network: cyto_json,
+                    // set the style at initialisation
+                    visualStyle: visual_style,
+                };
+                vis.draw(draw_options);
+		});
+
+	});
+
+</script>
+
+        
+        <style>
+            /* The Cytoscape Web container must have its dimensions set. */
+            html, body { height: 100%; width: 100%; padding: 0; margin: 0; }
+            #cytoscapeweb { width: 90%; height: 75%; }
+        </style>
+    </head>
+
+
+</head>
+
+<body>
+
+<div id="cytoscapeweb">
+  Foobar
+</div>
+
+</body>
+</html>

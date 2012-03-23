@@ -1,0 +1,16 @@
+{
+    "$schema": "http://monitor.damslab.org/unis/node#",
+    "id": "pc118",
+    "addresses": {
+        "dns": [
+            "pc118.emulab.net",
+            "node2.josecuervo.emulab-net.emulab.net"
+        ]
+    },
+    "ports": [
+        {
+            "href": "http://monitor.damslab.org/unis/examples/geni/ports/pc118_iface0",
+	    "rel": "instance"
+        }
+    ]
+}
