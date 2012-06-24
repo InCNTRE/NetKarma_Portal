@@ -63,7 +63,6 @@ legend
 
 #filedrag
 {
-	display: none;
 	font-weight: bold;
 	text-align: center;
 	padding: 1em 0;
@@ -128,6 +127,24 @@ pre
 	background: #c00 none 0 0 no-repeat;
 }
 
+div.title_2 
+{ 
+        font-style: bold;
+        font-size: 1.0em;
+	margin: 2px 2px .6em auto;
+}
+
+div.value_2
+{
+        font-size: 1.0em;
+}
+
+td#exp_info
+{
+	width="25%";
+	vertical-align: top;
+
+}
 
 span.handle_id{
 	font-size: 0.8em;

@@ -29,8 +29,10 @@ sub get_db_exp {
       my $rv = $sth->execute;
       my $array_ref = $sth->fetchall_arrayref;
       foreach my $arr (@$array_ref) {
-	my $name = "<a href=\"experiment.cgi?id=".$arr->[4]."\">".$arr->[0]."</a>";
-        my @res_arr = [ $name , $arr->[1], $arr->[2], $arr->[3] ];
+	my $name = "<a href='html/experiment.cgi?id=".$arr->[4]."'>".$arr->[0]."</a>";
+	my $handle = "<a href='http://n2t.net/ezid/id/".$arr->[1]."'>".$arr->[1]."</a>";
+       
+        my @res_arr = [ $name , $handle, $arr->[2], $arr->[3] ];
         push @results, @res_arr; 
       }
 	
