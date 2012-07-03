@@ -11,7 +11,7 @@ my $exp_html = new CGI;
 
 print $exp_html->header;
 
-my $exp_id = $exp_html->param('id') || "15";
+my $exp_id = $exp_html->param('id') || "53";
 
 
 # --- OO interface:
@@ -27,6 +27,21 @@ open (HEADER,"exp_header.html") || die "can not open header";
 while (<HEADER>) { print; }
 close HEADER;
 
+print "<script type='text/javascript' charset='utf-8'>
+
+\$(document).ready(function() {
+    oTable = \$('#workflows').dataTable({
+        'sAjaxSource': '../webservice/get_workflow_db.cgi?exp_id=$exp_id'
+    });
+
+});
+
+
+
+</script>";
+
+
+
 # Tab 1 
 #
 print "<div id=\"tabs-1\">\n<table>\n<tr>\n";
@@ -41,7 +56,7 @@ print "<fieldset>
 
 get_experiment($exp_id);
 
-print_qr_code();
+print_qr_code($exp_id);
 
 print "</fieldset></td><td>";
 
@@ -52,7 +67,7 @@ print <<EOF;
 <fieldset>
    <legend>Add Data/Files to Experiment</legend>
 
-    <div class='title_2'>Add URL/DOI/ACM Ref/Unstructured Data<\div>
+    <div class='title_2'>Add URL/DOI/Unstructured Data<\div>
     <textarea cols=50 rows=10 name='unstr_data' id='unstr_data'> 
      </textarea>
 
@@ -66,8 +81,12 @@ print <<EOF;
 
 
     <div id="upload" align="top">
-      <form id="upload" action="../webservice/upload.php" method="POST" enctype="multipart/form-data">
+
+   <form id="upload" action="../webservice/upload.php" method="POST" enctype="multipart/form-data">
    </div>
+EOF
+  print "  <input type=\"hidden\" id=\"EXP_ID\" name=\"EXP_ID\" value=$exp_id />\n";
+print <<EOF;
   <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="1000000000" />
   <div>
         <label for="fileselect">Files to upload:</label>
@@ -83,6 +102,12 @@ print <<EOF;
          <li><a href="http://groups.geni.net/geni/wiki/GeniRspec">GENI RSPEC V3</a></li>
         </ul>
          All files are saved as artifacts.
+ </div>
+
+
+   <div id="progress"></div>
+
+ <div id="messages">
  </div>
 
 </fieldset>
@@ -104,6 +129,7 @@ print <<TAB2;
      
 
      <div class="demo">
+
       <table cellpadding="0" cellspacing="0" border="0" class="display" id="workflows">
         <thead>
           <tr>
@@ -116,6 +142,12 @@ print <<TAB2;
    </div>
 
 </fieldset>
+<div id="wf_name">
+WorkFlow Name 
+</div>
+<div id="cytoscapeweb">
+        <center> No WorkFlow Chosen</center>    
+</div>
 
 TAB2
 
@@ -161,19 +193,41 @@ sub get_experiment {
       print "<div id='name_title' class='title_2'>Experiment Name:</div>\n";
       print "<div id='name'class='value_2'>$hash_ref->{name}</div>\n";
 
-      print "<div id='name_title' class='title_2'>Creater Email:</div>\n";
+      print "<div id='name_title' class='title_2'>Email:</div>\n";
       print "<div id='name'class='value_2'>$hash_ref->{creator_email}</div>\n";
 
       print "<div id='name_title' class='title_2'>Creation Date:</div>\n";
       print "<div id='name'class='value_2'>$hash_ref->{creation_date}</div>\n";
+
+     #$dbh->disconnect();
 }
 
 sub print_qr_code {
-   
+
+      my $exp_id = shift;
+
+      my $hand_suffix="";
+
+
+      #DATA SOURCE NAME
+      my $dsn = "dbi:mysql:$db_name:localhost:3306";
+      my $dbh = DBI->connect($dsn,$db_user,$db_pass) || die "Can not connect to $db_name: $DBI::errstr";
+      my $sql = "SELECT handle_name from handles where handles.exp_id = $exp_id";
+      #
+      my $sth = $dbh->prepare($sql);
+      my $rv = $sth->execute;
+      my $hash_ref = $sth->fetchrow_hashref();
+
+      my $handle = $hash_ref->{handle_name};
+      if ($handle =~ /doi:\/\/(.*)$/) { $hand_suffix = $1;}
+  
+
+print "<div id='handle_title' class='title_2'>Handle:</div>";
+print "<div class='value_2'><a href='http://n2t.net/ezid/id/$handle'>$handle</a></div>";
 print "<div id='name_title' class='title_2'>Experiment QR Code:</div>\n";
 print "<div class=\"grid_3\">\n";
 
-print "   <img src=\"https://chart.googleapis.com/chart?chs=120x120&cht=qr&chld=L|0&chl=http%3A//dx.doi.org/10.5072/FK2B27X14\"
- alt=\"QR Code for http://dx.doi.org/10.5072/FK2B27X14\" title=\"QR Code for http://dx.doi.org/10.5072/FK2B27X14\"/>\n";
+print "   <img src=\"https://chart.googleapis.com/chart?chs=120x120&cht=qr&chld=L|0&chl=http%3A//dx.doi.org/$hand_suffix\"
+ alt=\"QR Code for http://dx.doi.org/$hand_suffix\" title=\"QR Code for http://dx.doi.org/$hand_suffix\"/>\n";
 print "</div>";
 }

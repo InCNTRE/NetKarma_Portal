@@ -16,6 +16,16 @@
       @import "../css/demo_table.css";
 </style>
 
+<!-- Cytoscape JS -->
+<script type="text/javascript" src="../js/cytoscapeweb/js/min/json2.min.js"></script>
+<script type="text/javascript" src="../js/cytoscapeweb/js/min/AC_OETags.min.js"></script>
+<script type="text/javascript" src="../js/cytoscapeweb/js/min/cytoscapeweb.min.js"></script>
+
+<!-- Cytoscape Web topo Init-->
+<script type="text/javascript" src="../js/cyto_topo.js"></script>
+<script type="text/javascript" src="../js/cyto_workflow2.js"></script>
+
+
 
 <script src="../js/jquery-ui-1.8.21/js/jquery-ui-1.8.21.custom.min.js"></script>
 <script src="../js/filedrag.js"></script>
@@ -26,28 +36,18 @@
 
 <script type="text/javascript" charset="utf-8">
 
-  $(function() {
-                $( "#tabs" ).tabs();
-        });
+     $(function() {
+		$( "#tabs" ).tabs();
+	});
 
 
-</script>
-
-<script type="text/javascript" charset="utf-8">
-
-$(document).ready(function() {
-    oTable = $('#workflows').dataTable({
-        "sAjaxSource": "../webservice/get_workflow_db.cgi"
-    });
-});
 
 </script>
-
 
 
 </head>
 
-<body id="dt_example"> 
+ <body onLoad="load_cyto_wf()" id="dt_example"> 
 <a href="../index.html">
 <img src="../images/NetKarma_recycle120.png">
 </a>

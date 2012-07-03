@@ -1,0 +1,9 @@
+# information to use RabbitMQ messaging system
+messaging.username=guest
+messaging.password=guest
+messaging.hostname=localhost
+messaging.hostport=5672
+messaging.virtualhost=/
+messaging.exchangename=KarmaExchange
+messaging.queuename=KarmaQueue
+messaging.routingkey=KarmaKey
