@@ -35,7 +35,6 @@ if (( $iperf_file ne "") && ( $xsplog_file ne "") && ( $slice_file ne "")) {
 
     if ( $rv =~ /Workflow-Instance ID = (\S+)/ ) { $wf_id=$1; print $wf_id; }
     add_wf_id($wf_id,$exp_id);
-    cache_opm($wf_id,$exp_id);
 
 }
 
@@ -77,15 +76,5 @@ print $e_sql;
 #                                                  
 my $sth = $dbh->prepare($e_sql);
 my $rv = $sth->execute;
-
-}
-
-sub cache_opm {
-   my $wf_id = shift;
- my $exp_id = shift;
-
-# Sleep for a while than try to query
-sleep 2;
-system ("/home/chsmall/git/NetKarma_Portal/new_portal/webservice/karma2xgmml_test.pl $wf_id $exp_id");
 
 }
