@@ -68,8 +68,10 @@ my @results;
       foreach my $arr (@$array_ref) {
         #my $wf_id = "<div class='wf_id' id='".$arr->[0]."'>".$arr->[0]."</div>";
         my $wf_id = "<a href=\"#\" onclick=\"load_cyto_wf('" . $arr->[0]. "')\">" . $arr->[0] . "</a>";
+        my $wf_opm_file = "<a href=\"/webservice/uploads/" . $id . "/" . $arr->[0] . ".opm\">OPM File</a>";
+        my $wf_xgmml_file = "<a href=\"/cache/" . $arr->[0] . ".xgmml\">XGMML File</a>";
        
-        my @res_arr = [ $wf_id , "", ""];
+        my @res_arr = [ $wf_id , $wf_opm_file, $wf_xgmml_file];
         push @results, @res_arr; 
       }
         

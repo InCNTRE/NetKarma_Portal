@@ -6,7 +6,7 @@ use DBI;
 use Config::Simple;
 my $conf_file = "/etc/netkarma/netkarma.ini";
 
-
+my $exp_name = "";
 my $exp_html = new CGI;
 
 print $exp_html->header;
@@ -21,7 +21,8 @@ my $db_name =  $cfg->param('DB_Name');
 my $db_user = $cfg->param('DB_User');
 my $db_pass = $cfg->param('DB_Password');
 
-
+#
+my $dir = "/webservice/uploads/$exp_id/";
 # print header file
 open (HEADER,"exp_header.html") || die "can not open header";
 while (<HEADER>) { print; }
@@ -33,9 +34,14 @@ print "<script type='text/javascript' charset='utf-8'>
     oTable = \$('#workflows').dataTable({
         'sAjaxSource': '../webservice/get_workflow_db.cgi?exp_id=$exp_id'
     });
-
+    oTable2 = \$('#topologies').dataTable({
+        'sAjaxSource': '../webservice/get_topology.cgi?exp_id=$exp_id'
+    });
+    cont = \$('#container_id').fileTree({ root: '$dir', script:'../webservice/jqueryfiletree.cgi'}, function(file) {
+        alert(file);
 });
-
+ 
+});
 
 
 </script>";
@@ -134,8 +140,8 @@ print <<TAB2;
         <thead>
           <tr>
             <th>Karma WorkFlow ID</th>
-            <th>Uploader</th>
-            <th>Upload Time</th>
+            <th>Open Provenance Model XML</th>
+            <th>Graph Representation</th>
           </tr>
         </thead>
        </table>
@@ -146,24 +152,67 @@ print <<TAB2;
 WorkFlow Name 
 </div>
 <div id="cytoscapeweb">
-        <center> No WorkFlow Chosen</center>    
+        <center> No WorkFlow Chosen/Available</center>    
 </div>
 
+
+</div>
 TAB2
 
-# close Tab2
-print "</div>\n";
+# Tab 3
 
-#Tab3
-print "<div id=\"tabs-3\">";
+print <<TAB3;
 
-# close Tab 3
-print "</div>\n";
+<div id="tabs-3">
+<fieldset>
+  <legend>Topologies</legend>
+     
+
+     <div class="demo">
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="topologies">
+        <thead>
+          <tr>
+            <th>Topology File</th>
+            <th>Uploader</th>
+            <th>Upload Time</th>
+          </tr>
+        </thead>
+       </table>
+   </div>
+ 
+</fieldset>
+
+<div id="cytoscapeweb2">
+        <center> No Topology Chosen/Available</center>    
+</div>
+</div>
+TAB3
+
+
 
 #Tab4
 print "<div id=\"tabs-4\">";
-#
-## close Tab 3
+
+print <<TAB4;
+<fieldset>
+  <legend>Archives</legend>
+  
+
+<div class="example_rf">
+ Experiment: $exp_name		
+ <br>
+ <hr>
+ Files:
+ <br>
+ <div id="container_id" class="demo_rf"></div>
+</div>
+
+</fieldset>
+TAB4
+
+
+## close Tab 4
 print "</div>\n";
 
 
@@ -190,6 +239,9 @@ sub get_experiment {
       my $sth = $dbh->prepare($sql);
       my $rv = $sth->execute;
       my $hash_ref = $sth->fetchrow_hashref;
+
+
+      $exp_name = $hash_ref->{name};
       print "<div id='name_title' class='title_2'>Experiment Name:</div>\n";
       print "<div id='name'class='value_2'>$hash_ref->{name}</div>\n";
 

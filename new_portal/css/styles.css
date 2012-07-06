@@ -149,3 +149,6 @@ td#exp_info
 span.handle_id{
 	font-size: 0.8em;
 }
+
+#cytoscapeweb { width: 1000px; height: 800px; min-height: 600px;}
+#cytoscapeweb_topo { width: 1000px; height: 800px; min-height: 600px;}
