@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="help">
+    <!--Auto generated ant build file-->
+    <property environment="env"/>
+    <property name="project.base.dir" value="."/>
+    <property name="maven.class.path" value=""/>
+    <property name="name" value="KarmaService"/>
+    <property name="src" value="${project.base.dir}/src"/>
+    <property name="test" value="${project.base.dir}/test"/>
+    <property name="build" value="${project.base.dir}/build"/>
+    <property name="classes" value="${build}/classes"/>
+    <property name="generated" value="generated"/>
+    <property name="lib" value="${build}/lib"/>
+    <!-- property name="resources" value="${project.base.dir}/resources"/ -->
+    <property name="resources" value="${generated}/resources"/>
+    <property name="xbeans.packaged.jar.name" value="karma-types.jar"/>
+    <property value="" name="jars.ok"/>
+    <property name="config" value="${project.base.dir}/config"/>
+    <property name="messaging.packaged.jar.name" value="karma-messaging.jar"/>
+    <path id="axis2.class.path">
+        <pathelement path="${java.class.path}"/>
+        <pathelement path="${maven.class.path}"/>
+        <fileset dir=".">
+            <include name="lib/*.jar"/>
+        </fileset>
+    </path>
+    <target name="init">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${classes}"/>
+        <mkdir dir="${lib}"/>
+        <mkdir dir="${generated}/classes"/>
+    </target>
+    <target name="jar.xbeans">
+      <javac debug="on" srcdir="${generated}/src" destdir="${generated}/classes" fork="true" source="1.5" target="1.5">
+        <!-- src path="${generated}/src"/ -->
+        <exclude name="**/KarmaServiceSkeleton.java"/>
+        <classpath refid="axis2.class.path"/>
+      </javac>
+      <jar destfile="${build}/${xbeans.packaged.jar.name}">
+          <fileset dir="${generated}/classes"/>
+          
+            <fileset dir="${resources}">
+                <exclude name="**/services.xml"/>
+                <exclude name="**/*.xsd"/>
+            </fileset>
+            <!-- fileset dir="${classes}">
+          <include name="schemaorg_apache_xmlbeans/*"/>
+        </fileset -->
+        </jar>
+        <!-- jar basedir="${resources}" destfile="${build}/${xbeans.packaged.jar.name}" excludes="**/services.xml, **/*.xsd"/ -->
+    </target>
+    <target depends="init, jar.xbeans" name="pre.compile.test">
+        <!--Test the classpath for the availability of necesary classes-->
+        <available classpathref="axis2.class.path" property="xbeans.available" classname="org.apache.xmlbeans.XmlObject"/>
+        <available classpathref="axis2.class.path" property="stax.available" classname="javax.xml.stream.XMLStreamReader"/>
+        <available classpathref="axis2.class.path" property="axis2.available" classname="org.apache.axis2.engine.AxisEngine"/>
+        <condition property="jars.ok">
+            <and>
+                <isset property="xbeans.available"/>
+                <isset property="stax.available"/>
+                <isset property="axis2.available"/>
+            </and>
+        </condition>
+        <!--Print out the availabilities-->
+        <echo message="XmlBeans Availability = ${xbeans.available}"/>
+        <echo message="Stax Availability= ${stax.available}"/>
+        <echo message="Axis2 Availability= ${axis2.available}"/>
+    </target>
+    <target depends="pre.compile.test" name="compile.src" if="jars.ok">
+        <javac debug="on" memoryMaximumSize="256m" memoryInitialSize="256m" fork="true" destdir="${classes}" srcdir="${src}">
+        	<exclude name="edu/indiana/dsi/karma/test/**.java"/>
+            <classpath location="${lib}/${xbeans.packaged.jar.name}"/>
+            <classpath refid="axis2.class.path"/>
+        </javac>
+    </target>
+    <target depends="compile.src" name="compile.test" if="jars.ok">
+        <javac debug="on" memoryMaximumSize="256m" memoryInitialSize="256m" fork="true" destdir="${classes}">
+            <src path="${test}"/>
+            <classpath location="${lib}/${xbeans.packaged.jar.name}"/>
+            <classpath refid="axis2.class.path"/>
+        </javac>
+    </target>
+    <target depends="pre.compile.test" name="echo.classpath.problem" unless="jars.ok">
+        <echo message="The class path is not set right!                                Please make sure the following classes are in the classpath                                1. XmlBeans                                2. Stax                                3. Axis2                 "/>
+    </target>
+    <target depends="jar.server" name="jar.all"/>
+    <target depends="compile.src,echo.classpath.problem" name="jar.server" if="jars.ok">
+        <copy toDir="${classes}/META-INF" failonerror="false">
+            <fileset dir="${resources}">
+                <include name="*.xml"/>
+                <include name="*.wsdl"/>
+                <include name="*.xsd"/>
+                <exclude name="**/schemaorg_apache_xmlbean/**"/>
+            </fileset>
+            <fileset dir="${config}">
+                <include name="log4j.properties"/>
+            </fileset>
+        </copy>
+        <!-- copy file="${build}/${xbeans.packaged.jar.name}" toDir="${classes}/lib"/ -->
+        <jar destfile="${lib}/${name}.aar">
+            <fileset excludes="**/Test.class" dir="${classes}"/>
+        </jar>
+    </target>
+    <target if="jars.ok" depends="jar.server" name="make.repo">
+        <mkdir dir="${build}/repo/"/>
+        <mkdir dir="${build}/repo/services"/>
+        <copy file="${build}/lib/${name}.aar" toDir="${build}/repo/services/"/>
+    </target>
+    <target if="jars.ok" depends="make.repo" name="start.server">
+        <java fork="true" classname="org.apache.axis2.transport.http.SimpleHTTPServer">
+            <arg value="${build}/repo"/>
+            <classpath refid="axis2.class.path"/>
+        </java>
+    </target>
+    <target name="wsdl2java" depends="clean, init">
+        <java classname="org.apache.axis2.wsdl.WSDL2Java" fork="true">
+            <classpath refid="axis2.class.path"/>
+            <arg value="-d"/>
+            <arg value="xmlbeans"/>
+            <arg value="-uri"/>
+            <arg file="config/KarmaService.wsdl"/>
+            <arg value="-ss"/>
+            <arg value="-sd"/>
+            <arg value="-ssi"/>
+            <arg value="-o"/>
+            <arg file="${generated}"/>
+            <arg value="-p"/>
+            <arg value="edu.indiana.dsi.karma"/>
+        </java>
+        <!-- Copy the schema folder to classpath-->
+      <copy todir="${src}">
+        <fileset dir="${generated}/src">
+          <exclude name="**/KarmaServiceSkeleton.java"/>  
+        </fileset>
+      </copy>
+        <copy todir="${classes}">
+            <fileset dir="${resources}">
+                <include name="**/*schema*/**/*.class"/>
+                <include name="**/*schema*/**/*.xsb"/>
+            </fileset>
+        </copy>
+    </target>
+
+	
+	<property name="client.generated" value="client_gen"/>
+	<target name="client.clean">
+      <delete dir="${client.generated}"/>
+	</target>
+	
+	<target name="client.init">
+      <mkdir dir="${client.generated}"/>
+	  <mkdir dir="${client.generated}/classes"/>
+	</target>
+	<target name="client.wsdl2java" depends="client.init">
+	  <java classname="org.apache.axis2.wsdl.WSDL2Java" fork="true">
+	    <classpath refid="axis2.class.path"/>
+	  	<arg value="-d"/>
+	  	<arg value="xmlbeans"/>
+	  	<arg value="-uri"/>
+	  	<arg file="config/KarmaService.wsdl"/>
+	  	<arg value="-s"/>
+	  	<arg value="-o"/>
+	  	<arg value="${client.generated}"/>
+	  </java>
+	</target>
+	<target name="client.jar">
+	      <javac debug="on" srcdir="${client.generated}/src" destdir="${client.generated}/classes" fork="true" source="1.5" target="1.5">
+	        <!-- src path="${generated}/src"/ -->
+	        <!-- exclude name="**/KarmaServiceSkeleton.java"/ -->
+	        <classpath refid="axis2.class.path"/>
+	      </javac>
+
+	      <jar destfile="${client.generated}/client-stub-types.jar">
+	          <fileset dir="${client.generated}/classes"/>
+	          
+	          <fileset dir="${client.generated}/resources">
+	                <exclude name="**/services.xml"/>
+	                <exclude name="**/*.xsd"/>
+	          </fileset>
+	            <!-- fileset dir="${classes}">
+	          <include name="schemaorg_apache_xmlbeans/*"/>
+	        </fileset -->
+	        </jar>
+	</target>
+    
+	
+	
+	<target name="clean">
+        <delete dir="${resources}"/>
+        <delete dir="${src}/org"/>
+        <delete>
+            <fileset dir="${src}/edu/indiana/dsi/karma">
+                <include name="KarmaServiceSkeletonInterface.java"/>
+                <include name="KarmaServiceMessageReceiverInOut.java"/>
+                <include name="KarmaServiceMessageReceiverInOnly.java"/>
+            </fileset>
+        </delete>
+        <delete dir="${build}"/>
+      <delete dir="${generated}"/>
+    </target>
+
+  
+    <target name="jar.messaging" depends="init, compile.src">
+      <jar destfile="${build}/${messaging.packaged.jar.name}">
+        <fileset dir="${build}/classes">
+          <include name="edu/indiana/dsi/karma/messaging/*.class"/>
+          <include name="edu/indiana/dsi/karma/util/PropertyReader.class"/>
+          <include name="edu/indiana/dsi/karma/ingest/NotificationSummary.class"/>
+          <include name="edu/indiana/dsi/karma/query/QuerySummary.class"/>
+        </fileset>
+      </jar>
+    </target>
+	<target name="karma.webservice" depends="jar.server"/>
+	<target name="karma.messaging" depends="wsdl2java, compile.src, jar.xbeans, jar.messaging"/>
+	<target name="help">
+	  <echo message="********************************************************"/>
+	  <echo message="*                                                      *"/>
+	  <echo message="*              Karma v3.1 Build Options                *"/>
+      <echo message="*                                                      *"/>
+	  <echo message="* ant karma.webservice                                 *"/>
+	  <echo message="*   builds Karma as an Apache Axis2 web service        *"/>
+	  <echo message="*                                                      *"/>
+	  <echo message="* ant karma.messaging                                  *"/>
+	  <echo message="*   builds Karma using RabbitMQ messaging              *"/>
+	  <echo message="*                                                      *"/>
+      <echo message="* ant clean                                            *"/>
+      <echo message="*   cleans all build artifacts                         *"/>
+      <echo message="*                                                      *"/>
+      <echo message="* ant wsdl2java                                        *"/>
+      <echo message="*   compiles WSDL and XSD into Java                    *"/>
+      <echo message="*                                                      *"/>
+      <echo message="* ant jar.xbeans                                       *"/>
+      <echo message="*   creates XmlBeans from XSD                          *"/>
+      <echo message="*                                                      *"/>
+	  <echo message="* ant help                                             *"/>
+	  <echo message="*   displays this help message                         *"/>
+	  <echo message="*                                                      *"/>
+	  <echo message="********************************************************"/>
+	</target>
+
+</project>

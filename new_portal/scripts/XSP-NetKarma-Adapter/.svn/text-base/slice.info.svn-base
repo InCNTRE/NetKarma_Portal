@@ -1,0 +1,14 @@
+rspec:virtual_id= edge-node-1 edge-node-2 edge-node-3 edge-node-4 edge-node-5 edge-node-6 lamp
+services:hostname= pc71.emulab.net
+services:hostname= pc46.emulab.net
+services:hostname= pc48.emulab.net
+services:hostname= pc67.emulab.net
+services:hostname= pc66.emulab.net
+services:hostname= pc59.emulab.net
+services:hostname= pc51.emulab.net
+link:virtual_node_id= edge-node-1 edge-node-2
+link:virtual_node_id= edge-node-3 edge-node-4
+link:virtual_node_id= edge-node-5 edge-node-6
+link:IP= 10.10.1.1 10.10.1.2
+link:IP= 10.10.2.1 10.10.2.2
+link:IP= 10.10.3.1 10.10.3.2

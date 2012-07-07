@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified"
+    targetNamespace="http://www.dataandsearch.org/netkarma/"
+	xmlns:netkarma="http://www.dataandsearch.org/netkarma/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.w3.org/2001/XMLSchema">
+
+<!-- ================ -->
+<!-- TYPE DEFINITIONS -->
+<!-- ================ -->
+
+<simpleType name="notificationEnumType">
+ <restriction base="xsd:string">
+  <enumeration value="INVOKING_SERVICE" />
+  <enumeration value="SERVICE_INVOKED" />
+  <enumeration value="INVOKING_WORKFLOW" />
+  <enumeration value="WORKFLOW_INVOKED" />
+  <enumeration value="DATA_PRODUCED" />
+  <enumeration value="DATA_CONSUMED" />  
+  <enumeration value="DATA_SEND_STARTED" />
+  <enumeration value="DATA_RECEIVE_STARTED" />  
+  <enumeration value="DATA_SEND_FINISHED" /> 
+  <enumeration value="DATA_RECEIVE_FINISHED" />
+  <enumeration value="ADD_ANNOTATION" />  
+  <enumeration value="ADD_ANNOTATION_BY_ID" /> 
+  <enumeration value="ADD_MULTIPLE_OBJECT_ANNOTATION" />
+ </restriction>
+</simpleType>
+
+<simpleType name="actorEnumType">
+  <restriction base="string">
+    <enumeration value="INVOKER"/>
+    <enumeration value="INVOKEE"/>
+    <enumeration value="PRODUCER"/>
+    <enumeration value="CONSUMER"/>
+    <enumeration value="SENDER"/>
+    <enumeration value="RECEIVER"/>
+  </restriction>
+</simpleType> 
+
+<simpleType name="dataEnumType">
+  <restriction base="string">
+    <enumeration value="FILE"/>
+    <enumeration value="BLOCK"/>
+  </restriction>
+</simpleType>  
+
+<simpleType name="timestampLocatorType">
+  <restriction base="string">
+    <enumeration value="DERIVED"/>
+    <enumeration value="FILE"/>
+    <enumeration value="HEADER"/>
+    <enumeration value="FOOTER"/>
+  </restriction>
+</simpleType>  
+
+<simpleType name="instanceLocatorType">
+  <restriction base="string">
+    <enumeration value="DERIVED"/>
+    <enumeration value="FILE"/>
+    <enumeration value="HEADER"/>
+  </restriction>
+</simpleType>  
+
+<simpleType name="actorEntityEnumType">
+  <restriction base="string">
+    <enumeration value="USER"/>
+    <enumeration value="WORKFLOW"/>
+    <enumeration value="SERVICE"/>
+    <enumeration value="METHOD"/>
+  </restriction>
+</simpleType>
+
+<simpleType name="parentEnumType">
+  <restriction base="string">
+    <enumeration value="USER"/>
+    <enumeration value="WORKFLOW"/>
+    <enumeration value="SERVICE"/>
+  </restriction>
+</simpleType>
+
+<simpleType name="actorEntityEnumSubtype">
+  <restriction base="string">
+    <enumeration value="CONTROLLER"/>
+    <enumeration value="HUMAN_PROXY"/>
+  </restriction>
+</simpleType>   
+
+<simpleType name="comparatorEnumType">
+  <restriction base="string">
+    <enumeration value="EQUALS"/>
+    <enumeration value="CONTAINS"/>
+  </restriction>
+</simpleType>  
+  
+  <simpleType name="notificationPartEnumType">
+    <restriction base="string">
+      <enumeration value="ACTOR"/>
+      <enumeration value="DATA_BLOCK"/>
+      <enumeration value="ANNOTATION"/>
+      <enumeration value="ALL"/>
+    </restriction>
+  </simpleType>  
+  
+
+<simpleType name="uriEnumType">
+  <restriction base="string">
+    <enumeration value="URL"/>
+    <enumeration value="URN"/>
+  </restriction>
+</simpleType> 
+
+<simpleType name="filterPredicateEnumType">
+  <restriction base="string">
+    <enumeration value="AND"/>
+    <enumeration value="OR"/>
+  </restriction>
+</simpleType>
+
+<simpleType name="selectMethodEnumType">
+  <restriction base="string">
+    <enumeration value="COMPLETE_STRING"/>
+    <enumeration value="SUBSTRING"/>
+    <enumeration value="READ_PROPERTY_OF"/>
+    <enumeration value="READ_ARGUMENT_OF"/>
+    <enumeration value="READ_TOKEN"/>
+    <enumeration value="CONSTANT"/>
+    <enumeration value="LAST_NCHAR"/>
+  </restriction>
+</simpleType>  
+
+<simpleType name="selectMechanismEnumType">
+  <restriction base="string">
+    <enumeration value="SIMPLE"/>
+    <enumeration value="COMPLEX"/>
+  </restriction>
+</simpleType>  
+
+<simpleType name="autoIncrementEnumType">
+  <restriction base="string">
+    <enumeration value="AUTO_INCREMENT"/>
+  </restriction>
+</simpleType> 
+
+<simpleType name="matchLineEnumType">
+  <restriction base="string">
+    <enumeration value="PREV_NTH_LINE"/>
+    <enumeration value="NEXT_NTH_LINE"/>
+  </restriction>
+</simpleType> 
+
+<simpleType name="dependencyLinkEnumType">
+  <restriction base="string">
+    <enumeration value="SEQUENTIAL"/>
+    <enumeration value="DIRECT"/>
+  </restriction>
+</simpleType> 
+
+<complexType name="appenderType">
+   <choice>
+    <element name="autoIncrement" type="netkarma:autoIncrementEnumType"/>
+    <element name="selectMethod" type="netkarma:selectMethodType"/>  
+   </choice>
+</complexType>
+
+<complexType name="timestampType">
+  <sequence>
+   <element name="timestampLocator" type="netkarma:timestampLocatorType"/>
+   <choice>
+    <element name="timestamp" type="netkarma:selectMethodType"/>
+    <element name="fileTimestampLocator" type="netkarma:selectMethodType"/>
+    <element name="headerTimestampLocator" type="netkarma:selectMethodType"/>
+    <element name="footerTimestampLocator" type="netkarma:selectMethodType"/>    
+   </choice>
+  </sequence>
+</complexType>
+
+<complexType name="instanceType">
+  <sequence>
+   <element name="instanceLocator" type="netkarma:instanceLocatorType"/>
+   <choice>
+    <element name="derivedInstanceLocator" type="netkarma:provenanceDataType"/>
+    <element name="fileInstanceLocator" type="netkarma:selectMethodType"/>
+    <element name="headerInstanceLocator" type="netkarma:selectMethodType"/>
+   </choice>
+  </sequence>
+</complexType>
+
+<complexType name="dependencyType">
+  <sequence>
+   <element name="sourceNotificationId" type="int"/>
+   <element name="targetNotificationId" type="int"/>
+   <element name="sourceActorType" type="netkarma:actorEnumType"/>
+   <element name="targetActorType" type="netkarma:actorEnumType"/>
+   <element name="matchRule" type="netkarma:matchRuleType" minOccurs="0" maxOccurs="unbounded"/>
+  </sequence>
+</complexType>
+
+<complexType name="matchRuleType">
+  <sequence>
+   <element name="matchLineType" type="netkarma:matchLineEnumType"/>
+   <element name="matchLineNum" type="int"/>
+   <element name="matchDataName" type="string"/>
+   <element name="matchDataValue" type="netkarma:selectMethodType"/>
+  </sequence>
+</complexType>
+
+<complexType name="dependencyDataType">
+  <sequence>
+   <element name="name" type="string"/>
+   <element name="filter" type="netkarma:filterType" minOccurs="1" maxOccurs="unbounded"/>
+   <element name="value" type="netkarma:selectMethodType"/>
+  </sequence>
+</complexType>
+
+<complexType name="dependencyLinkType">
+  <sequence>
+   <element name="linkType" type="netkarma:dependencyLinkEnumType"/>
+   <element name="source" type="string"/>
+   <element name="target" type="string"/>
+  </sequence>
+</complexType>
+
+<complexType name="simpleSelectionType">
+  <sequence>   
+   <element name="selectionType" type="netkarma:selectMethodEnumType"/>
+   <choice>
+    <element name="completeString" type="netkarma:completeType"/>
+    <element name="substring" type="netkarma:substringType"/>
+    <element name="readPropertyOf" type="netkarma:readPropertyOfType"/>
+    <element name="readArgumentOf" type="netkarma:readArgumentOfType"/>
+    <element name="readToken" type="netkarma:readTokenType"/>
+    <element name="constant" type="netkarma:constantType"/>
+    <element name="lastNChar" type="netkarma:lastNCharType"/>
+   </choice>
+  </sequence>
+</complexType>
+
+<complexType name="complexSelectionType">
+	<sequence>
+		<element name="simpleSelection" type="netkarma:simpleSelectionType" minOccurs="2" maxOccurs="unbounded"/>
+	</sequence>   
+</complexType>
+
+<complexType name="selectMethodType">
+  <sequence>   
+   <element name="selectionMechanism" type="netkarma:selectMechanismEnumType"/>
+   <choice>
+   	<element name="simpleSelection" type="netkarma:simpleSelectionType"/>
+    <element name="complexSelection" type="netkarma:complexSelectionType"/>
+   </choice>
+  </sequence>
+</complexType>
+
+<!--complexType name="selection">
+  <sequence>
+   <element name="selectionType" type="netkarma:selectMethodEnumType"/>
+   <element name="methodType" type="netkarma:selectMethodType" minOccurs="1" maxOccurs="unbounded"/>
+  </sequence>
+</complexType-->
+
+<complexType name="lastNCharType">
+  <sequence>
+    <element name="argumentNumber" type="int"/>
+    <element name="numChars" type="int"/>
+  </sequence>
+</complexType>
+
+<complexType name="completeType">
+  <sequence>
+    <element name="argumentNumber" type="int"/>
+  </sequence>
+</complexType>
+
+<complexType name="constantType">
+  <sequence>
+    <element name="constantValue" type="string"/>
+  </sequence>
+</complexType>
+
+<complexType name="substringType">
+  <sequence>
+    <element name="argumentNumber" type="int"/>
+    <element name="beginIndex" type="int"/>
+    <element name="endIndex" type="int" minOccurs="0"/>
+  </sequence>
+</complexType>
+
+<complexType name="readPropertyOfType">
+  <sequence>
+    <element name="argumentNumber" type="int"/>
+    <element name="key" type="string"/>
+    <element name="delimiter" type="string" minOccurs="0"/>
+  </sequence>
+</complexType>
+
+<complexType name="readArgumentOfType">
+  <sequence>
+    <element name="argumentNumber" type="int"/>
+    <element name="methodName" type="string"/>
+    <element name="paramDelimiter" type="string" minOccurs="0"/>
+    <element name="paramList" type="int" minOccurs="1" maxOccurs="unbounded"/>
+  </sequence>
+</complexType>
+
+<complexType name="readTokenType">
+  <sequence>
+    <element name="argumentNumber" type="int"/>
+    <element name="delimiter" type="string"/>
+    <element name="maxTokens" type="int"/>
+    <element name="tokenNumbers" type="int" minOccurs="1" maxOccurs="unbounded"/>
+  </sequence>
+</complexType>
+
+<!-- ================= -->
+<!-- MAJOR DEFINITIONS -->
+<!-- ================= -->
+
+<complexType name="actorsType">
+   <sequence>
+     <element name="actorId" type="netkarma:provenanceDataType"/>
+     <element name="appendId" type="netkarma:appenderType" minOccurs="0" maxOccurs="unbounded"/>
+     <element name="actorType" type="netkarma:actorEnumType"/>
+     <element name="entityType" type="netkarma:actorEntityEnumType"/>
+     <element name="onBehalfOf" type="netkarma:provenanceDataType" minOccurs="0"/>
+     <element name="entitySubtype" type="netkarma:actorEntityEnumSubtype" minOccurs="0"/>
+     <element name="annotations" type="netkarma:annotationType" minOccurs="0" maxOccurs="unbounded"/>
+     <element name="parent" type="netkarma:parentType" minOccurs="0" maxOccurs="unbounded"/>
+     <element name="timestep" type="xsd:int" minOccurs="0" />
+   </sequence>
+ </complexType>
+
+<complexType name="dataType">
+   <sequence>
+     <element name="dataId" type="xsd:string"/>
+     <element name="appendId" type="netkarma:appenderType" minOccurs="0" maxOccurs="unbounded"/>
+     <element name="dataType" type="netkarma:dataEnumType"/>
+     <element name="dataValue" type="netkarma:provenanceDataType"/>
+     <element name="annotations" type="netkarma:annotationType" minOccurs="0" maxOccurs="unbounded"/>
+   </sequence>
+</complexType>
+
+<complexType name="annotationType">
+   <sequence>
+     <element name="property" type="xsd:string"/>
+     <element name="value" type="netkarma:provenanceDataType"/>
+   </sequence>
+ </complexType>
+
+<complexType name="filterType">
+  <sequence>
+    <element name="argumentNumber" type="int"/>
+    <element name="argumentValue" type="string"/>
+    <element name="filterPredicate" type="netkarma:filterPredicateEnumType" minOccurs="0"/>
+    <element name="comparator" type="netkarma:comparatorEnumType"/>
+  </sequence>
+</complexType>
+
+<complexType name="provenanceDataType">
+  <sequence>    
+    <element name="uriInfo" type="netkarma:uriType"/>
+    <element name="selectMethod" type="netkarma:selectMethodType"/>
+    <element name="argumentNumber" type="int"/>
+  </sequence>
+</complexType>
+
+<complexType name="parentType">
+   <sequence>
+     <element name="parentId" type="netkarma:provenanceDataType"/>
+     <element name="parentType" type="netkarma:parentEnumType"/>
+   </sequence>
+</complexType>
+
+<complexType name="uriType">
+   <sequence>
+     <element name="identifier" type="xsd:string"/>
+     <element name="type" type="netkarma:uriEnumType"/>
+   </sequence>
+</complexType>
+
+<!-- karma-notification element -->
+
+<complexType name="notificationType">
+  <sequence>
+    <element name="notificatonId" type="xsd:int"/>
+    <element name="notificationType" type="netkarma:notificationEnumType"/>
+    <element name="notificationPartType" type="netkarma:notificationPartEnumType"/>
+    <element name="actors" type="netkarma:actorsType" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="dataBlocks" type="netkarma:dataType" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="annotations" type="netkarma:annotationType" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="notificationTime" type="netkarma:timestampType" minOccurs="0" />    
+  </sequence>
+</complexType>
+
+<complexType name="rule">
+  <sequence>
+    <element name="hasDuplicates" type="boolean"/>
+    <element name="isDistinct" type="boolean" minOccurs="0"/>
+    <element name="filter" type="netkarma:filterType" minOccurs="1" maxOccurs="unbounded"/>
+    <element name="notification" type="netkarma:notificationType"/>   
+  </sequence>
+</complexType>
+
+<element name="karmaNotifications">
+  <complexType>
+   <sequence>
+     <element name="project" type="string"/>  
+     <element name="argDelimiter" type="string"/>
+     <element name="maxArgs" type="int" minOccurs="0"/>
+     <element name="instanceID" type="netkarma:instanceType" minOccurs="0"/>
+     <element name="startTime" type="netkarma:timestampType" minOccurs="0" />     
+     <element name="ruleset" type="netkarma:rule" minOccurs="1" maxOccurs="unbounded"/>
+     <element name="dependencyData" type="netkarma:dependencyDataType" minOccurs="0" maxOccurs="unbounded"/>
+     <element name="dependency" type="netkarma:dependencyType" minOccurs="0" maxOccurs="unbounded"/>     
+     <element name="dependencyLink" type="netkarma:dependencyLinkType" minOccurs="0" maxOccurs="unbounded"/>
+     <element name="globalDependency" type="netkarma:dependencyType" minOccurs="0" maxOccurs="unbounded"/>
+   </sequence>
+ </complexType>
+</element>
+
+</schema>

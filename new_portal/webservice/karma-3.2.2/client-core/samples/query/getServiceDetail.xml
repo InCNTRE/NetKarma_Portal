@@ -1,0 +1,6 @@
+<ns:getServiceDetailRequest xmlns:ns="http://www.dataandsearch.org/karma/query/2010/10/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <ns:uniqueURIList>
+    <ns:uniqueURI>urn:qname:http://www.d2i.indiana.edu/karma:TestService_30196841</ns:uniqueURI>
+    <ns:uniqueURI>urn:qname:http://www.d2i.indiana.edu/karma:TestService_1644218477</ns:uniqueURI>
+  </ns:uniqueURIList>
+</ns:getServiceDetailRequest>

@@ -1,0 +1,54 @@
+<rspec xmlns="http://protogeni.net/resources/rspec/0.2" xmlns:lamp="http://protogeni.net/resources/rspec/0.2/ext/lamp/1" valid_until="2012-07-04T15:32:37Z">
+   <node xmlns:lamp="http://protogeni.net/resources/rspec/0.2/ext/lamp/1" virtual_id="edge-node-1" virtualization_type="raw" exclusive="1" startup_command="/usr/local/etc/lamp/bootstrap.sh urn:publicid:IDN+emulab.net+slice+phoebus-lamp-d2i urn=urn:publicid:IDN+www.emulab.net+user+dghoshal" virtualization_subtype="raw" component_urn="urn:publicid:IDN+emulab.net+node+pc41" component_uuid="de9803c2-773e-102b-8eb4-001143e453fe" component_manager_urn="urn:publicid:IDN+emulab.net+authority+cm" component_manager_uuid="28a10955-aa00-11dd-ad1f-001143e453fe" hostname="pc41.emulab.net" sshdport="22" sliver_uuid="c719159d-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85386">
+      <disk_image name="urn:publicid:IDN+emulab.net+image+GeniSlices//UBUNTU91-LAMP"/>
+      <lamp:config/>
+      <interface virtual_id="en1_iface0" component_id="eth3"/>
+   <services><login authentication="ssh-keys" hostname="pc41.emulab.net" port="22" username="d2igec14"/></services></node> 
+   <node xmlns:lamp="http://protogeni.net/resources/rspec/0.2/ext/lamp/1" virtual_id="phoebus-node-1" virtualization_type="raw" exclusive="1" startup_command="/usr/local/etc/lamp/bootstrap.sh urn:publicid:IDN+emulab.net+slice+phoebus-lamp-d2i urn=urn:publicid:IDN+www.emulab.net+user+dghoshal" virtualization_subtype="raw" component_urn="urn:publicid:IDN+emulab.net+node+pc150" component_uuid="de98a21d-773e-102b-8eb4-001143e453fe" component_manager_urn="urn:publicid:IDN+emulab.net+authority+cm" component_manager_uuid="28a10955-aa00-11dd-ad1f-001143e453fe" hostname="pc150.emulab.net" sshdport="22" sliver_uuid="c7c0dc2a-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85387">
+      <node_type type_name="pc" type_slots="1"/>
+      <disk_image name="urn:publicid:IDN+emulab.net+image+GeniSlices//UBUNTU91-LAMP"/>
+      <lamp:config/>
+      <interface virtual_id="pn1_iface0" component_id="eth3"/>
+      <interface virtual_id="pn1_iface1" component_id="eth4"/>
+   <services><login authentication="ssh-keys" hostname="pc150.emulab.net" port="22" username="d2igec14"/></services></node>
+   <node xmlns:lamp="http://protogeni.net/resources/rspec/0.2/ext/lamp/1" virtual_id="delay-node" virtualization_type="raw" exclusive="1" startup_command="/usr/local/etc/lamp/bootstrap.sh urn:publicid:IDN+emulab.net+slice+phoebus-lamp-d2i urn=urn:publicid:IDN+www.emulab.net+user+dghoshal" virtualization_subtype="raw" component_urn="urn:publicid:IDN+emulab.net+node+pc128" component_uuid="de98c8fe-773e-102b-8eb4-001143e453fe" component_manager_urn="urn:publicid:IDN+emulab.net+authority+cm" component_manager_uuid="28a10955-aa00-11dd-ad1f-001143e453fe" hostname="pc128.emulab.net" sshdport="22" sliver_uuid="c85f288b-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85388">
+      <node_type type_name="pc" type_slots="1"/>
+      <disk_image name="urn:publicid:IDN+emulab.net+image+GeniSlices//UBUNTU91-LAMP"/>
+      <lamp:config/>
+      <interface virtual_id="dn_iface0" component_id="eth3"/>
+      <interface virtual_id="dn_iface1" component_id="eth4"/>
+   <services><login authentication="ssh-keys" hostname="pc128.emulab.net" port="22" username="d2igec14"/></services></node>
+   <node xmlns:lamp="http://protogeni.net/resources/rspec/0.2/ext/lamp/1" virtual_id="phoebus-node-2" virtualization_type="raw" exclusive="1" startup_command="/usr/local/etc/lamp/bootstrap.sh urn:publicid:IDN+emulab.net+slice+phoebus-lamp-d2i urn=urn:publicid:IDN+www.emulab.net+user+dghoshal" virtualization_subtype="raw" component_urn="urn:publicid:IDN+emulab.net+node+pc119" component_uuid="de98ed5e-773e-102b-8eb4-001143e453fe" component_manager_urn="urn:publicid:IDN+emulab.net+authority+cm" component_manager_uuid="28a10955-aa00-11dd-ad1f-001143e453fe" hostname="pc119.emulab.net" sshdport="22" sliver_uuid="c91bd734-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85389">
+      <node_type type_name="pc" type_slots="1"/>
+      <disk_image name="urn:publicid:IDN+emulab.net+image+GeniSlices//UBUNTU91-LAMP"/>
+      <lamp:config/>
+      <interface virtual_id="pn2_iface0" component_id="eth3"/>
+      <interface virtual_id="pn2_iface1" component_id="eth4"/>
+   <services><login authentication="ssh-keys" hostname="pc119.emulab.net" port="22" username="d2igec14"/></services></node>
+   <node xmlns:lamp="http://protogeni.net/resources/rspec/0.2/ext/lamp/1" virtual_id="edge-node-2" virtualization_type="raw" exclusive="1" startup_command="/usr/local/etc/lamp/bootstrap.sh urn:publicid:IDN+emulab.net+slice+phoebus-lamp-d2i urn=urn:publicid:IDN+www.emulab.net+user+dghoshal" virtualization_subtype="raw" component_urn="urn:publicid:IDN+emulab.net+node+pc127" component_uuid="de98daba-773e-102b-8eb4-001143e453fe" component_manager_urn="urn:publicid:IDN+emulab.net+authority+cm" component_manager_uuid="28a10955-aa00-11dd-ad1f-001143e453fe" hostname="pc127.emulab.net" sshdport="22" sliver_uuid="ca2e34ab-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85390">
+      <node_type type_name="pc" type_slots="1"/>
+      <disk_image name="urn:publicid:IDN+emulab.net+image+GeniSlices//UBUNTU91-LAMP"/>
+      <lamp:config/>
+      <interface virtual_id="en2_iface0" component_id="eth3"/>
+   <services><login authentication="ssh-keys" hostname="pc127.emulab.net" port="22" username="d2igec14"/></services></node> 
+   <link virtual_id="link0" link_type="ethernet" sliver_uuid="caed1dc5-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85391" vlantag="299">
+    <interface_ref virtual_node_id="edge-node-1" virtual_interface_id="en1_iface0" component_urn="urn:publicid:IDN+emulab.net+interface+pc41:eth3" sliver_uuid="cbabd387-c1ff-11e1-9f7f-001143e453fe" IP="10.10.1.1" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85392" MAC="0002b33f8295"/>
+    <interface_ref virtual_node_id="phoebus-node-1" virtual_interface_id="pn1_iface0" component_urn="urn:publicid:IDN+emulab.net+interface+pc150:eth3" sliver_uuid="cc883bd5-c1ff-11e1-9f7f-001143e453fe" IP="10.10.1.2" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85393" MAC="0002b365cf5f"/>
+    <link_type link_type="ethernet" name="ethernet"/>
+   </link>
+   <link virtual_id="link1" link_type="ethernet" sliver_uuid="cd2bdc59-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85394" vlantag="305">
+    <interface_ref virtual_node_id="phoebus-node-1" virtual_interface_id="pn1_iface1" component_urn="urn:publicid:IDN+emulab.net+interface+pc150:eth4" sliver_uuid="cdcba75b-c1ff-11e1-9f7f-001143e453fe" IP="10.10.2.1" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85395" MAC="00034794c56f"/>
+    <interface_ref virtual_node_id="delay-node" virtual_interface_id="dn_iface0" component_urn="urn:publicid:IDN+emulab.net+interface+pc128:eth3" sliver_uuid="ceebe24d-c1ff-11e1-9f7f-001143e453fe" IP="10.10.2.2" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85396" MAC="0002b365c02d"/>
+    <link_type link_type="ethernet" name="ethernet"/>
+   </link>   
+   <link virtual_id="link2" link_type="ethernet" sliver_uuid="cfbeb005-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85397" vlantag="301">
+    <interface_ref virtual_node_id="delay-node" virtual_interface_id="dn_iface1" component_urn="urn:publicid:IDN+emulab.net+interface+pc128:eth4" sliver_uuid="d0785607-c1ff-11e1-9f7f-001143e453fe" IP="10.10.3.1" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85398" MAC="000347952995"/>
+    <interface_ref virtual_node_id="phoebus-node-2" virtual_interface_id="pn2_iface0" component_urn="urn:publicid:IDN+emulab.net+interface+pc119:eth3" sliver_uuid="d14444b1-c1ff-11e1-9f7f-001143e453fe" IP="10.10.3.2" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85399" MAC="0002b365cefb"/>
+    <link_type link_type="ethernet" name="ethernet"/>
+   </link>
+   <link virtual_id="link3" link_type="ethernet" sliver_uuid="d1fdd42d-c1ff-11e1-9f7f-001143e453fe" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85400" vlantag="303">
+    <interface_ref virtual_node_id="phoebus-node-2" virtual_interface_id="pn2_iface1" component_urn="urn:publicid:IDN+emulab.net+interface+pc119:eth4" sliver_uuid="d2a4851e-c1ff-11e1-9f7f-001143e453fe" IP="10.10.4.1" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85401" MAC="00034794c044"/>
+    <interface_ref virtual_node_id="edge-node-2" virtual_interface_id="en2_iface0" component_urn="urn:publicid:IDN+emulab.net+interface+pc127:eth3" sliver_uuid="d3a64e3a-c1ff-11e1-9f7f-001143e453fe" IP="10.10.4.2" sliver_urn="urn:publicid:IDN+emulab.net+sliver+85402" MAC="0002b365cbf7"/>
+    <link_type link_type="ethernet" name="ethernet"/>
+   </link>
+</rspec>

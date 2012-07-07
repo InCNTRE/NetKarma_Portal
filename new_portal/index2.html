@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>NetKarma Portal</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="shortcut icon" href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/table.css" />
+<script src="js/DataTables-1.9.1/media/js/jquery.dataTables.js"></script>
+<script>
+
+
+
+$(document).ready(function() { 
+oTable = $('#example').dataTable({
+        "bProcessing": true,
+        "sAjaxSource": "webservice/get_experiments.cgi"
+    });
+});
+
+
+$("#form").submit(function(event) {
+
+  event.preventDefault();
+  var $form = $( this ),
+        term = $form.find( 'input[name="exp_name"]' ).val(),
+        url = "webservice/create_exp.cgi";
+
+  $.post( url, { exp_name: term },
+	function() {
+		alert( 'Created experiment ' + term );
+		oTable.fnReloadAjax( 'webservice/get_experiments.cgi' );
+		oTable.fnDraw();
+		
+	}
+	);
+});
+
+
+
+</script>
+
+
+
+
+</head>
+
+<body> 
+<img src="images/NetKarma_recycle120.png">
+
+<div class="box2">
+
+
+<table>
+<tr>
+<td width="25%" style="vertical-align:top;">
+
+   
+
+  <fieldset>
+  <legend>Create New Experiment</legend>
+
+
+  <form id="form"> 
+
+    <div class="formfield" id="exp_name_d">
+     Experiment Name:
+     <input type="text" name="exp_name" id="exp_name" />
+   </div>
+     <div class="formfield">
+       Experiment Contact e-mail:
+       <input type="text" size=45 name="exp_email" id="exp_email" />
+     </div>
+     <div class="formfield">
+       Experiment URL:
+       <input type="text" size=45 name="exp_url" id="exp_url" />
+     </div>
+     <div class="formfield">
+     Experiment Description:
+     <textarea cols=45 rows=10 name="exp_desc" id="exp_desc">
+     </textarea>
+     </div>
+     <div class="formfield">
+     <input type="radio" name="doi:10.5072/FK2" id="doi:10.5072/FK2" checked="checked" />
+        <label for="radio1">Test DOI handle
+           <span class='handle_id'>(doi:10.5072/FK2)</span>
+        </label>
+     <br/>
+     <input type="radio" name="doi:10.5967/M0" id="doi:10.5967/M0" DISABLED/>
+        <label for="radio2">Permanant DOI handle
+            <span class='handle_id'>(doi:10.5967/M0)</span>
+        </label>
+     </div>
+     <div class="formfield" id="submit_newexp">
+     <input type="submit" />
+     </div>
+  </form>
+
+</td>
+<td style="vertical-align:top;">
+
+<fieldset>
+  <legend>Experiments</legend>
+     
+
+     <div class="demo">
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+        <thead>
+          <tr>
+            <th>Experiment Name</th>
+            <th>Handle</th>
+            <th>Creator</th>
+            <th>Creation Time</th>
+          </tr>
+        </thead>
+       </table>
+   </div>
+
+   
+
+</fieldset>
+
+</td> 
+
+</table>
+
+
+
+</div>
+
+	
+      <div style="float: left; width: 20%; padding-top: 10px;>
+       <img src="images/iu.png" class="footer_image" />
+      </div>
+
+      <div style="float: left; width: 33%; padding-top: 10px;>
+       <a href="http://incntre.iu.edu/">
+        <img src="images/incntre-trans.png" class="footer_image" />
+       </a>
+      </div>
+      <div style="float: left; width: 33%; padding-top: 10px;">
+       <a href="http://globalnoc.iu.edu/">
+        <img src="images//PTI_IU_trans.png" class="footer_image" />
+       </a>
+      </div>
+
+
+
+
+</script>
+
+</body>
+
+</html>

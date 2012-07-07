@@ -1,0 +1,31 @@
+Start-time:  2012-06-20 17:35:21
+------------------------------------------------------------
+Client connecting to 10.10.4.2, TCP port 5001
+TCP window size: 0.02 MByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.1 port 37694 connected with 10.10.4.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-10.0 sec    110 MBytes  11.0 MBytes/sec
+PING 10.10.4.2 (10.10.4.2) 56(84) bytes of data.
+64 bytes from 10.10.4.2: icmp_seq=1 ttl=61 time=39.7 ms
+64 bytes from 10.10.4.2: icmp_seq=2 ttl=61 time=6.06 ms
+64 bytes from 10.10.4.2: icmp_seq=3 ttl=61 time=8.20 ms
+64 bytes from 10.10.4.2: icmp_seq=4 ttl=61 time=6.06 ms
+64 bytes from 10.10.4.2: icmp_seq=5 ttl=61 time=8.21 ms
+64 bytes from 10.10.4.2: icmp_seq=6 ttl=61 time=1.82 ms
+64 bytes from 10.10.4.2: icmp_seq=7 ttl=61 time=8.21 ms
+64 bytes from 10.10.4.2: icmp_seq=8 ttl=61 time=1.82 ms
+64 bytes from 10.10.4.2: icmp_seq=9 ttl=61 time=8.18 ms
+64 bytes from 10.10.4.2: icmp_seq=10 ttl=61 time=1.78 ms
+
+--- 10.10.4.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+rtt min/avg/max/mdev = 1.780/9.009/39.730/10.579 ms
+------------------------------------------------------------
+Client connecting to 10.10.4.2, TCP port 5001
+TCP window size: 0.02 MByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.1 port 37699 connected with 10.10.4.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-10.0 sec    110 MBytes  10.9 MBytes/sec
+End-time:  2012-06-20 17:36:51

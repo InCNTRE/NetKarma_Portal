@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:karma="http://www.dataandsearch.org/karma/2010/08/"
+	xmlns:opm="http://openprovenance.org/model/v1.1.a" xmlns:qi="http://www.dataandsearch.org/karma/query/2010/10/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://www.dataandsearch.org/karma/query/2010/10/"
+	xml:lang="en">
+	<annotation>
+		<documentation>
+			Karma Query Schema API.
+			Author: You-Wei Cheah
+			Contact: yocheah@indiana.edu
+			Version: for Karma release v3.2.2
+  			Date: January 19, 2012
+    	</documentation>
+	</annotation>
+	<import namespace="http://www.dataandsearch.org/karma/2010/08/"
+		schemaLocation="karma_ingest_type_schema.xsd" />
+	<import namespace="http://openprovenance.org/model/v1.1.a"
+		schemaLocation="opm.1_1.xsd" />
+	<import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		schemaLocation="rdf.xsd" />
+	<simpleType name="matchType">
+		<restriction base="xsd:string">
+			<enumeration value="LIKE" />
+			<enumeration value="EXACT" />
+			<enumeration value="STARTSWITH" />
+			<enumeration value="ENDSWITH" />
+		</restriction>
+	</simpleType>
+	<simpleType name="formatEnumType">
+		<restriction base="xsd:string">
+			<enumeration value="OPM" />
+			<enumeration value="RDF" />
+		</restriction>
+	</simpleType>
+	<simpleType name="detailEnumType">
+		<restriction base="xsd:string">
+			<enumeration value="COARSE" />
+			<enumeration value="FINE" />
+		</restriction>
+	</simpleType>
+	<simpleType name="objectEnumType">
+		<restriction base="xsd:string">
+			<enumeration value="AGENT" />
+			<enumeration value="FILE" />
+			<enumeration value="BLOCK" />
+			<enumeration value="PROCESS" />
+		</restriction>
+	</simpleType>
+	<simpleType name="dataObjectEnumType">
+		<restriction base="xsd:string">
+			<enumeration value="FILE" />
+			<enumeration value="BLOCK" />
+			<enumeration value="COLLECTION" />
+		</restriction>
+	</simpleType>
+	<simpleType name="relationshipEnumType">
+		<restriction base="xsd:string">
+			<enumeration value="WASDERIVEDFROM" />
+			<enumeration value="WASTRIGGEREDBY" />
+			<enumeration value="WASCONTROLLEDBY" />
+			<enumeration value="WASGENERATEDBY" />
+			<enumeration value="USED" />
+		</restriction>
+	</simpleType>
+	<complexType name="serviceDetail">
+		<all>
+			<element name="type" type="xsd:string" />
+			<element minOccurs="0" name="subtype" type="xsd:string" />
+			<element minOccurs="0" name="workflowID" type="xsd:string" />
+			<element minOccurs="0" name="serviceID" type="xsd:string" />
+			<element minOccurs="0" name="timestep" type="xsd:int" />
+			<element minOccurs="0" name="workflowNodeID" type="xsd:string" />
+			<element minOccurs="0" name="instanceOf" type="xsd:string" />
+			<element minOccurs="0" name="invocationStartTime" type="xsd:dateTime"/>
+			<element minOccurs="0" name="executionEndTime" type="xsd:dateTime"/>
+			<element minOccurs="0" name="executionStatus" type="xsd:string"/>
+		</all>
+		<attribute name="id" type="xsd:string" use="required"/>
+	</complexType>
+	<complexType name="abstractServiceDetail">
+		<all>
+			<element name="type" type="xsd:string" />
+			<element minOccurs="0" name="subtype" type="xsd:string" />
+			<element minOccurs="0" name="name" type="xsd:string" />
+			<element minOccurs="0" name="version" type="xsd:string" />
+			<element minOccurs="0" name="creationTime" type="xsd:string" />
+		</all>
+		<attribute name="id" type="xsd:string" use="required"/>
+	</complexType>
+	<complexType name="clientDetail">
+		<all>
+			<element name="name" type="xsd:string" />
+			<element minOccurs="0" name="affiliation" type="xsd:string" />
+			<element minOccurs="0" name="email" type="xsd:string" />
+		</all>
+		<attribute name="dn" type="xsd:string" use="required"/>
+	</complexType>
+	<complexType name="membershipDetail">
+		<all>
+			<element name="dataObjectType" type="qi:dataObjectEnumType" />
+			<element minOccurs="0" name="instanceOf" type="xsd:string" />
+		</all>
+		<attribute name="id" type="xsd:string" use="required"/>
+	</complexType>
+	<complexType name="dataProductDetail">
+		<choice>
+			<sequence>
+				<element name="fileURI" type="xsd:anyURI" />
+				<element minOccurs="0" name="owner" type="xsd:string" />
+				<element minOccurs="0" name="creationDate" type="xsd:dateTime" />
+				<element minOccurs="0" name="size" type="xsd:long" />
+				<element minOccurs="0" name="md5" type="xsd:string" />
+				<element minOccurs="0" name="fileName" type="xsd:string" />
+			</sequence>
+			<sequence>
+				<element name="blockContent" type="xsd:string" />
+				<element minOccurs="0" name="size" type="xsd:long" />
+				<element minOccurs="0" name="md5" type="xsd:string" />				
+			</sequence>
+			<sequence>
+				<element name="collectionURI" type="xsd:string" />
+				<sequence>
+					<element minOccurs="0" maxOccurs="unbounded" name="membership"
+						type="qi:membershipDetail" />
+				</sequence>
+			</sequence>
+		</choice>
+		<attribute name="id" type="xsd:string" use="required"/>
+	</complexType>
+	<complexType name="abstractDataProductDetail">
+		<sequence>
+			<element name="name" type="xsd:string" />
+			<element name="type" type="xsd:string" />
+		</sequence>
+		<attribute name="id" type="xsd:string" use="required"/>
+	</complexType>
+	<complexType name="uniqueFileListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="fileURIDetailsType"
+				type="qi:fileURIDetailsType" />
+		</sequence>
+	</complexType>
+	<complexType name="fileURIDetailsType">
+		<sequence>
+			<element name="fileID" type="xsd:string" />
+			<element name="fileURI" type="xsd:string" />
+			<element minOccurs="0" name="creationDate" type="xsd:dateTime" />
+		</sequence>
+	</complexType>
+	<complexType name="uniqueURIListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="uniqueURI"
+				type="xsd:anyURI" />
+		</sequence>
+	</complexType>
+	<complexType name="uniqueIDListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="uniqueID"
+				type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="abstractServiceDetailListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="abstractServiceDetail"
+				type="qi:abstractServiceDetail" />
+		</sequence>
+	</complexType>
+	<complexType name="abstractMethodListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="abstractMethod"
+				type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="abstractDataProductListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="abstractDataProductDetail"
+				type="qi:abstractDataProductDetail" />
+		</sequence>
+	</complexType>
+	<complexType name="annotationListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="annotation"
+				type="karma:annotationType" />
+		</sequence>
+	</complexType>
+	<complexType name="serviceIDListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="serviceID"
+				type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="clientNameListType">
+		<sequence>
+			<element maxOccurs="unbounded" name="clientName" type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="methodNameListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="methodName"
+				type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="dataProductNameListType">
+		<sequence>
+			<element maxOccurs="unbounded" name="dataProductName" type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="dataProductTypeListType">
+		<sequence>
+			<element maxOccurs="unbounded" name="dataProductType" type="qi:dataObjectEnumType" />
+		</sequence>
+	</complexType>
+	<complexType name="dataProductIDListType">
+		<sequence>
+			<element maxOccurs="unbounded" name="dataProductID" type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="methodInvocationIDListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="methodInvocationID"
+				type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="methodInvocationNameListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="methodInvocationName"
+				type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="methodInvocationDetailListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="methodInvocationDetail"
+				type="xsd:string" />
+		</sequence>
+	</complexType>
+	<complexType name="serviceDetailListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="serviceDetail"
+				type="qi:serviceDetail" />
+		</sequence>
+	</complexType>
+	<complexType name="annotationIDListType">
+		<sequence maxOccurs="unbounded">
+			<choice>
+				<sequence>
+					<element name="relationshipID" type="qi:relationshipEnumType" />
+					<element name="cause" type="xsd:string" />
+					<element name="effect" type="xsd:string" />
+				</sequence>
+				<sequence>
+					<element name="objectID" type="qi:objectEnumType" />
+					<element name="uniqueID" type="xsd:string" />
+				</sequence>
+			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="clientDetailListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="clientDetail"
+				type="qi:clientDetail" />
+		</sequence>
+	</complexType>
+	<complexType name="dataProductDetailListType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="unbounded" name="dataProductDetail"
+				type="qi:dataProductDetail" />
+		</sequence>
+	</complexType>
+	<complexType name="findAbstractServiceRequestType">
+		<choice>
+			<element name="returnAll" type="xsd:boolean" />
+			<sequence>
+				<element minOccurs="0" name="methodName" type="xsd:string" />
+				<element minOccurs="0" name="workflowID" type="xsd:string" />
+				<element minOccurs="0" name="subServiceName" type="xsd:string" />
+				<element minOccurs="0" name="nextServiceName" type="xsd:string" />
+				<element minOccurs="0" name="serviceName" type="xsd:string" />
+				<element minOccurs="0" name="version" type="xsd:string" />
+				<element minOccurs="0" name="annotationList" type="qi:annotationListType" />
+				<element minOccurs="0" name="isInputOfDataProductID" type="xsd:string" />
+				<element minOccurs="0" name="isOutputOfDataProductID" type="xsd:string" />
+				<element minOccurs="0" name="hasInstanceOfService" type="xsd:string" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="findAbstractServiceResponseType">
+		<sequence>
+			<element name="uniqueIDList" type="qi:uniqueIDListType" />
+			<element name="serviceNameList" type="qi:serviceIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getAbstractServiceDetailRequestType">
+		<sequence>
+			<element name="uniqueIDList" type="qi:uniqueIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getAbstractServiceDetailResponseType">
+		<sequence>
+			<element name="abstractServiceDetailListType" type="qi:abstractServiceDetailListType" />
+		</sequence>
+	</complexType>
+	<complexType name="findAbstractMethodRequestType">
+		<choice>
+			<element name="returnAll" type="xsd:boolean" />
+			<sequence>
+				<element minOccurs="0" name="serviceIDList" type="qi:serviceIDListType" />
+				<element minOccurs="0" name="methodNameList" type="qi:methodNameListType" />
+				<element minOccurs="0" name="methodParamsName" type="xsd:string" />
+				<element minOccurs="0" name="annotationList" type="qi:annotationListType" />
+				<element minOccurs="0" name="isInputOfDataProductID" type="xsd:string" />
+				<element minOccurs="0" name="isOutputOfDataProductID" type="xsd:string" />
+				<element minOccurs="0" name="hasInstanceOfMethod" type="xsd:string" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="findAbstractMethodResponseType">
+		<choice>
+			<sequence>
+				<element name="uniqueIDList" type="qi:uniqueIDListType" />
+			</sequence>
+			<sequence>
+				<element name="methodNameList" type="qi:methodNameListType" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="getAbstractMethodDetailRequestType">
+		<sequence>
+			<element name="uniqueIDList" type="qi:uniqueIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getAbstractMethodDetailResponseType">
+		<sequence>
+			<element name="abstractMethodList" type="qi:abstractMethodListType" />
+		</sequence>
+	</complexType>
+	<complexType name="findAbstractDataProductRequestType">
+		<choice>
+			<element name="returnAll" type="xsd:boolean" />
+			<sequence>
+				<element minOccurs="0" name="dataProductNameList" type="qi:dataProductNameListType" />
+				<element minOccurs="0" name="dataProductTypeList" type="qi:dataProductTypeListType" />
+				<element minOccurs="0" name="isInputOfServiceID" type="xsd:string" />
+				<element minOccurs="0" name="isOutputOfServiceID" type="xsd:string" />
+				<element minOccurs="0" name="isInputOfMethodID" type="xsd:string" />
+				<element minOccurs="0" name="isOutputOfMethodID" type="xsd:string" />
+				<element minOccurs="0" name="hasInstanceOfDataProduct" type="xsd:string" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="findAbstractDataProductResponseType">
+		<sequence>
+			<element name="uniqueIDList" type="qi:uniqueIDListType" />
+			<element name="dataProductNameList" type="qi:dataProductNameListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getAbstractDataProductDetailRequestType">
+		<sequence>
+			<element name="dataProductIDList" type="qi:dataProductIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getAbstractDataProductDetailResponseType">
+		<sequence>
+			<element name="abstractDataProductList" type="qi:abstractDataProductListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getAnnotationDetailRequestType">
+		<sequence>
+			<element name="annotationPairedIDList" type="qi:annotationIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getAnnotationDetailResponseType">
+		<sequence>
+			<element name="annotationList" type="qi:annotationListType" />
+		</sequence>
+	</complexType>
+	<complexType name="findServiceRequestType">
+		<all>
+			<element minOccurs="0" name="name" type="xsd:string" />
+			<element minOccurs="0" name="hostName" type="xsd:string" />
+			<element minOccurs="0" name="architecture" type="xsd:string" />
+			<element minOccurs="0" name="initializationTime" type="xsd:dateTime" />
+			<element minOccurs="0" name="terminationTime" type="xsd:dateTime" />
+			<element minOccurs="0" name="isSuccess" type="xsd:boolean" />
+			<element minOccurs="0" name="workflowID" type="xsd:string" />
+			<element minOccurs="0" name="subServiceID" type="xsd:string" />
+			<element minOccurs="0" name="nextServiceID" type="xsd:string" />
+			<element minOccurs="0" name="annotationList" type="qi:annotationListType" />
+		</all>
+	</complexType>
+	<complexType name="findServiceResponseType">
+		<choice>
+			<sequence>
+				<element name="uniqueURIList" type="qi:uniqueURIListType" />
+			</sequence>
+			<sequence>
+				<element name="serviceIDList" type="qi:serviceIDListType" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="findDataProductRequestType">
+		<sequence>
+			<choice>
+				<sequence>
+					<element minOccurs="0" name="blockName" type="xsd:string" />
+					<element minOccurs="0" name="blockContent" type="xsd:string" />
+					<element minOccurs="0" name="blockMD5Checksum" type="xsd:string" />
+					<element minOccurs="0" name="blockSize" type="xsd:long" />
+					<element minOccurs="0" name="blockIsInstanceOfDataProduct"
+						type="xsd:string" />
+				</sequence>
+				<sequence>
+					<element minOccurs="0" name="fileName" type="xsd:string" />
+					<element minOccurs="0" name="fileURI" type="xsd:string" />
+					<element minOccurs="0" name="fileOwnerID" type="xsd:string" />
+					<element minOccurs="0" name="fileCreationDate" type="xsd:dateTime" />
+					<element minOccurs="0" name="fileMD5Checksum" type="xsd:string" />
+					<element minOccurs="0" name="fileSize" type="xsd:long" />
+					<element minOccurs="0" name="fileIsInstanceOfDataProduct"
+						type="xsd:string" />
+				</sequence>
+			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="findDataProductResponseType">
+		<choice>
+			<sequence>
+				<element name="uniqueBlockIDList" type="qi:uniqueIDListType" />
+			</sequence>
+			<sequence>
+				<element name="uniqueFileURIList" type="qi:uniqueFileListType" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="findMethodInvocationRequestType">
+		<all>
+			<element minOccurs="0" name="serviceIDList" type="qi:serviceIDListType" />
+			<element minOccurs="0" name="methodNameList" type="qi:methodNameListType" />
+			<element minOccurs="0" name="methodParamsName" type="xsd:string" />
+			<element minOccurs="0" name="annotationList" type="qi:annotationListType" />
+			<element minOccurs="0" name="isInputOfDataProductID" type="xsd:string" />
+			<element minOccurs="0" name="isOutputOfDataProductID" type="xsd:string" />
+			<element minOccurs="0" name="hasInstanceOfMethod" type="xsd:string" />
+			<element minOccurs="0" name="timestamp" type="xsd:dateTime" />
+			<element minOccurs="0" name="requestStatus" type="karma:statusEnumType" />
+			<element minOccurs="0" name="requestSendTime" type="xsd:dateTime" />
+			<element minOccurs="0" name="requestReceiveTime" type="xsd:dateTime" />
+			<element minOccurs="0" name="responseStatus" type="karma:statusEnumType" />
+			<element minOccurs="0" name="responseSendTime" type="xsd:dateTime" />
+			<element minOccurs="0" name="responseReceiveTime" type="xsd:dateTime" />
+		</all>
+	</complexType>
+	<complexType name="findMethodInvocationResponseType">
+		<choice>
+			<sequence>
+				<element name="methodInvocationIDList" type="qi:methodInvocationIDListType" />
+			</sequence>
+			<sequence>
+				<element name="methodInvocationNameList" type="qi:methodInvocationNameListType" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="getServiceDetailRequestType">
+		<choice>
+			<sequence>
+				<element name="uniqueURIList" type="qi:uniqueURIListType" />
+			</sequence>
+			<sequence>
+				<element name="uniqueIDList" type="qi:uniqueIDListType" />
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="getServiceDetailResponseType">
+		<sequence>
+			<element name="serviceDetailList" type="qi:serviceDetailListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getClientDetailRequestType">
+		<sequence>
+			<element name="uniqueIDList" type="qi:uniqueIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getClientDetailResponseType">
+		<sequence>
+			<element name="clientDetailList" type="qi:clientDetailListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getDataProductDetailRequestType">
+		<sequence>
+			<element name="dataProductIDList" type="qi:dataProductIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getDataProductDetailResponseType">
+		<sequence>
+			<element name="dataProductDetailList" type="qi:dataProductDetailListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getMethodInvocationDetailRequestType">
+		<sequence>
+			<element name="uniqueIDList" type="qi:uniqueIDListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getMethodInvocationDetailResponseType">
+		<sequence>
+			<element name="methodInvocationDetailList" type="qi:methodInvocationDetailListType" />
+		</sequence>
+	</complexType>
+	<complexType name="getWorkflowGraphRequestType">
+		<all>
+			<element name="workflowID" type="xsd:string" />
+			<element minOccurs="0" name="informationDetailLevel" type="qi:detailEnumType" />
+			<element name="format" type="qi:formatEnumType" />
+		</all>
+	</complexType>
+	<complexType name="getWorkflowGraphResponseType">
+		<choice>
+			<element ref="opm:opmGraph" />
+			<element ref="rdf:RDF" />
+		</choice>
+	</complexType>
+	<complexType name="getProvenanceHistoryRequestType">
+		<all>
+			<element name="artifactID" type="xsd:string" />
+			<element minOccurs="0" name="timeRange" type="xsd:long" />
+			<element minOccurs="0" name="informationDetailLevel" type="qi:detailEnumType" />
+			<element name="format" type="qi:formatEnumType" />
+		</all>
+	</complexType>
+	<complexType name="getProvenanceHistoryResponseType">
+		<choice>
+			<element ref="opm:opmGraph" />
+			<element ref="rdf:RDF" />
+		</choice>
+	</complexType>
+	<complexType name="compareWorkflowGraphsRequestType">
+		<all>
+			<element minOccurs="0" name="workflowID1" type="xsd:string" />
+			<element minOccurs="0" name="workflowID2" type="xsd:string" />
+		</all>
+	</complexType>
+	<complexType name="differenceType">
+		<all>
+			<element name="name" type="xsd:string" />
+			<element name="value" type="xsd:string" />
+		</all>
+	</complexType>
+	<complexType name="compareWorkflowGraphsResponseType">
+		<sequence>
+			<element minOccurs="0" name="differences" type="qi:differenceType" />
+		</sequence>
+	</complexType>
+	<complexType name="getNodeCountOfGraphRequestType">
+		<all>
+			<element minOccurs="0" name="workflowID" type="xsd:string" />
+		</all>
+	</complexType>
+	<complexType name="getNodeCountOfGraphResponseType">
+		<all>
+			<element minOccurs="0" name="count" type="xsd:int" />
+		</all>
+	</complexType>
+	<element name="findAbstractServiceRequest" type="qi:findAbstractServiceRequestType" />
+	<element name="findAbstractServiceResponse" type="qi:findAbstractServiceResponseType" />
+	<element name="getAbstractServiceDetailRequest" type="qi:getAbstractServiceDetailRequestType" />
+	<element name="getAbstractServiceDetailResponse" type="qi:getAbstractServiceDetailResponseType" />
+	<element name="findAbstractMethodRequest" type="qi:findAbstractMethodRequestType" />
+	<element name="findAbstractMethodResponse" type="qi:findAbstractMethodResponseType" />
+	<element name="getAbstractMethodDetailRequest" type="qi:getAbstractMethodDetailRequestType" />
+	<element name="getAbstractMethodDetailResponse" type="qi:getAbstractMethodDetailResponseType" />
+	<element name="findAbstractDataProductRequest" type="qi:findAbstractDataProductRequestType" />
+	<element name="findAbstractDataProductResponse" type="qi:findAbstractDataProductResponseType" />
+	<element name="getAbstractDataProductDetailRequest" type="qi:getAbstractDataProductDetailRequestType" />
+	<element name="getAbstractDataProductDetailResponse" type="qi:getAbstractDataProductDetailResponseType" />
+	<element name="getAnnotationDetailRequest" type="qi:getAnnotationDetailRequestType" />
+	<element name="getAnnotationDetailResponse" type="qi:getAnnotationDetailResponseType" />
+	<element name="findServiceRequest" type="qi:findServiceRequestType" />
+	<element name="findServiceResponse" type="qi:findServiceResponseType" />
+	<element name="getServiceDetailRequest" type="qi:getServiceDetailRequestType" />
+	<element name="getServiceDetailResponse" type="qi:getServiceDetailResponseType" />
+	<element name="findDataProductRequest" type="qi:findDataProductRequestType" />
+	<element name="findDataProductResponse" type="qi:findDataProductResponseType" />
+	<element name="getDataProductDetailRequest" type="qi:getDataProductDetailRequestType" />
+	<element name="getDataProductDetailResponse" type="qi:getDataProductDetailResponseType" />
+	<element name="findMethodInvocationRequest" type="qi:findMethodInvocationRequestType" />
+	<element name="findMethodInvocationResponse" type="qi:findMethodInvocationResponseType" />
+	<element name="getMethodInvocationDetailRequest" type="qi:getMethodInvocationDetailRequestType" />
+	<element name="getMethodInvocationDetailResponse" type="qi:getMethodInvocationDetailResponseType" />
+	<element name="getClientDetailRequest" type="qi:getClientDetailRequestType" />
+	<element name="getClientDetailResponse" type="qi:getClientDetailResponseType" />
+	<element name="getWorkflowGraphRequest" type="qi:getWorkflowGraphRequestType" />
+	<element name="getWorkflowGraphResponse" type="qi:getWorkflowGraphResponseType" />
+	<element name="getProvenanceHistoryRequest" type="qi:getProvenanceHistoryRequestType" />
+	<element name="getProvenanceHistoryResponse" type="qi:getProvenanceHistoryResponseType" />
+	<element name="compareWorkflowGraphsRequest" type="qi:compareWorkflowGraphsRequestType" />
+	<element name="compareWorkflowGraphsResponse" type="qi:compareWorkflowGraphsResponseType" />
+	<element name="getNodeCountOfGraphRequest" type="qi:getNodeCountOfGraphRequestType" />
+	<element name="getNodeCountOfGraphResponse" type="qi:getNodeCountOfGraphResponseType" />
+</schema>

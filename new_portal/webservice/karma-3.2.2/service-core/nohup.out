@@ -1,0 +1,1 @@
+bin/KarmaServer.sh: line 24: 19029 Killed                  java -classpath $CP edu.indiana.dsi.karma.util.ServiceLauncher $1

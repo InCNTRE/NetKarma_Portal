@@ -1,0 +1,8 @@
+Start-time:  2012-04-01 18:55:46
+Source: ftp://10.10.1.2:2811/users/dghoshal/
+Dest:   ftp://10.10.1.1:2811/users/dghoshal/
+  pl_package.tar.gz
+
+     22309570 bytes        11.20 MB/sec avg        11.20 MB/sec inst
+
+End-time:  2012-04-01 18:55:48

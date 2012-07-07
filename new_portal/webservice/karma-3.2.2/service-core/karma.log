@@ -1,0 +1,16 @@
+07 Mar 2012 00:11:55,213 [main] DEBUG edu.indiana.dsi.karma.util.ServiceLauncher  -populated annotation scope dictionary
+07 Mar 2012 00:11:55,855 [ExpireMan] INFO  edu.indiana.dsi.karma.ingest.db.DBConnectionPool$ExpirationManager  -ExpireMan thread started
+07 Mar 2012 00:11:55,855 [main] DEBUG edu.indiana.dsi.karma.util.ServiceLauncher  -started database connection pool
+07 Mar 2012 00:11:55,858 [ConnPool] INFO  edu.indiana.dsi.karma.ingest.db.DBConnectionPool  -ConnPool control thread started
+07 Mar 2012 00:11:55,886 [main] DEBUG edu.indiana.dsi.karma.util.ServiceLauncher  -ingester created
+07 Mar 2012 00:11:55,887 [main] DEBUG edu.indiana.dsi.karma.ingest.AsyncRawNotificationProcessor  -async processor threads started
+07 Mar 2012 00:11:55,887 [main] DEBUG edu.indiana.dsi.karma.util.ServiceLauncher  -asynchronous raw notification processors started
+07 Mar 2012 00:11:55,888 [AsynProc-1] INFO  edu.indiana.dsi.karma.ingest.AsyncRawNotificationProcessor  -Async processor AsynProc-1 started
+07 Mar 2012 00:11:55,895 [AsynProc-0] INFO  edu.indiana.dsi.karma.ingest.AsyncRawNotificationProcessor  -Async processor AsynProc-0 started
+07 Mar 2012 00:11:55,936 [main] DEBUG edu.indiana.dsi.karma.util.ServiceLauncher  -querier created
+07 Mar 2012 00:11:56,253 [main] INFO  edu.indiana.dsi.karma.messaging.MessageDaemons  -Starting Notification Deamon [0]  for receiving notifications from Client.
+07 Mar 2012 00:11:56,256 [main] INFO  edu.indiana.dsi.karma.messaging.MessageDaemons  -Notification Deamon [0] Started.
+07 Mar 2012 00:11:56,256 [main] INFO  edu.indiana.dsi.karma.messaging.MessageDaemons  -Starting Query Deamon [0] for receiving queries from Client.
+07 Mar 2012 00:11:56,256 [Thread-2] INFO  edu.indiana.dsi.karma.messaging.NotificationReceiverRunnable  -[Karma server: Listening to Messaging System]
+07 Mar 2012 00:11:56,257 [main] INFO  edu.indiana.dsi.karma.messaging.MessageDaemons  -Query Deamon [0] Started.
+07 Mar 2012 00:11:56,257 [Thread-4] INFO  edu.indiana.dsi.karma.messaging.QueryReceiverRunnable  -[Karma server: Listening Queries from Messaging System]

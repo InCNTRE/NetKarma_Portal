@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  * Author: Yiming Sun
+  * Author: Devarshi Ghoshal
+  * Author: You-Wei Cheah
+  *
+  * Version: for Karma release v3.2.1
+  * Date:    December 29, 2011
+  *
+ -->
+ 
+<schema elementFormDefault="qualified"
+    targetNamespace="http://www.dataandsearch.org/karma/2010/08/"
+	xmlns:karma="http://www.dataandsearch.org/karma/2010/08/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.w3.org/2001/XMLSchema">
+
+
+    <!-- ======================================================================== -->
+    <!-- ==     COMMON TYPES DEFINITION                                        == -->
+    <!-- ======================================================================== -->
+
+    <simpleType name="statusEnumType">
+      <restriction base="string">
+        <enumeration value="SUCCESS" />
+        <enumeration value="FAILED" />
+      </restriction>
+    </simpleType>
+    
+    <simpleType name="personnelEnumType">
+      <restriction base="string">
+        <enumeration value="PERSON" />
+        <enumeration value="ORGANIZATION"/>
+      </restriction>
+    </simpleType>
+    
+    <simpleType name="entityEnumType">
+      <restriction base="string">
+        <enumeration value="USER"/>
+        <enumeration value="WORKFLOW"/>
+        <enumeration value="SERVICE"/>
+        <enumeration value="METHOD"/>
+      </restriction>
+    </simpleType>  
+    
+    <simpleType name="entityEnumSubtype">
+      <restriction base="string">
+        <enumeration value="CONTROLLER"/>
+        <enumeration value="HUMAN_PROXY"/>
+      </restriction>
+    </simpleType>     
+    
+    <simpleType name="actionEnumType">
+      <restriction base="string">
+        <enumeration value="CONSUME"/>
+        <enumeration value="PRODUCE"/>
+        <enumeration value="UPDATE"/>
+        <enumeration value="DELETE"/>
+      </restriction>
+    </simpleType>
+    
+    <simpleType name="behalfEnumType">
+      <restriction base="string">
+        <enumeration value="CONTROL"/>
+        <enumeration value="PROXY"/>
+      </restriction>
+    </simpleType>
+    
+    <simpleType name="annotableObjectEnumType">
+      <restriction base="string">
+        <enumeration value="ENTITY"/>
+        <enumeration value="FILE"/>
+      </restriction>
+    </simpleType> 
+    
+    <simpleType name="annotableRelationshipEnumType">
+      <restriction base="string">
+        <enumeration value="INVOCATION"/>
+        <enumeration value="DATA_TRANSFER"/>
+      </restriction>
+    </simpleType>
+    
+    <!-- Devarshi: authorship-type added to store info. in registry-level -->
+   	<simpleType name="authorshipEnumType">
+      <restriction base="string">
+        <enumeration value="AUTHOR"/>
+        <enumeration value="OWNER"/>
+        <enumeration value="CONTRIBUTOR"/>
+        <enumeration value="EXECUTOR"/>
+      </restriction>
+    </simpleType> 
+
+    <complexType name="annotationType">
+      <sequence>
+        <element name="property" type="anyURI"/>
+        <element name="value" type="anyType"/>
+      </sequence>
+    </complexType>
+    
+    <complexType name="entityType">
+      <sequence>
+      <choice>
+        <element name="userInformation" type="karma:userInformationType"/>
+        <element name="workflowInformation" type="karma:workflowInformationType"/>
+        <element name="serviceInformation" type="karma:serviceInformationType"/>
+        <element name="methodInformation" type="karma:methodInformationType"/>
+      </choice>        
+        <element name="type" type="karma:entityEnumType"/>
+        <element name="subtype" type="karma:entityEnumSubtype" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    
+    <complexType name="userInformationType">
+        <sequence>
+            <element name="userDN" type="string" />
+            <element name="fullName" type="string" minOccurs="0" />
+            <element name="type" type="karma:personnelEnumType"/>
+            <element name="affiliation" type="string" minOccurs="0"/>
+            <element name="email" type="string" minOccurs="0"/>
+            <!-- element name="instance" type="xsd:string" minOccurs="0" -->
+        </sequence>
+    </complexType>
+    
+
+    <complexType name="workflowInformationType">
+      <sequence>
+	      <element name="workflowID" type="anyURI"/>
+	      <element name="workflowNodeID" type="string" minOccurs="0"/>
+	      <element name="timestep" type="int" minOccurs="0"/>
+	      <element name="annotations" type="karma:annotationType" minOccurs="0" maxOccurs="unbounded"/>
+	      <!-- element name="instance" type="string" minOccurs="0"/ -->
+	      <element name="userBehalf" minOccurs="0">
+	        <complexType>
+	          <sequence>
+	            <element name="userDN" type="string"/>
+	            <element name="authorship" type="karma:authorshipEnumType" minOccurs="0"/>
+	            <!-- element name="behalfType" type="karma:behalfEnumType"/ -->
+	          </sequence>
+	        </complexType>
+	      </element>
+	      <element name="instanceOf" type="karma:instanceOfType" minOccurs="0"/>
+	      <!-- element name="behalfUserDN" type="string" minOccurs="0"/ -->
+      </sequence>
+    </complexType>
+    
+    <complexType name="serviceInformationType">
+      <complexContent>
+        <extension base="karma:workflowInformationType">
+          <sequence>
+            <element name="serviceID" type="anyURI"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+    
+    <complexType name="methodInformationType">
+      <complexContent>
+        <extension base="karma:serviceInformationType">
+          <sequence>
+            <element name="methodID" type="anyURI"/>
+          </sequence>
+        </extension>     
+      </complexContent>
+    </complexType>
+    
+    
+    <complexType name="invocationType">
+      <sequence>
+        <element name="invoker" type="karma:entityType" />
+        <element name="invokee" type="karma:entityType" />
+        <element name="invocationTime" type="dateTime" />
+        <element name="params" type="karma:dataObjectType" minOccurs="0" />
+        <element name="annotations" type="karma:annotationType" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+
+    <complexType name="invocationStatusType">
+      <complexContent>
+        <xsd:extension base="karma:invocationType">
+          <sequence>
+            <element name="statusTime" type="dateTime" />
+            <element name="status" type="karma:statusEnumType" />
+          </sequence>
+        </xsd:extension>
+      </complexContent>
+    </complexType>
+    
+    <complexType name="dataTransferType">
+      <sequence>
+        <element name="sender" type="karma:entityType" />
+        <element name="receiver" type="karma:entityType" />
+        <element name="transferTime" type="dateTime" />
+        <!-- element name="params" type="anyType" minOccurs="0" / -->
+        <choice>
+          <element name="fault" type="karma:dataObjectType" />
+          <element name="result" type="karma:dataObjectType" />
+        </choice>
+        <element name="annotations" type="karma:annotationType" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+
+    <complexType name="dataTransferStatusType">
+      <complexContent>
+        <xsd:extension base="karma:dataTransferType">
+          <sequence>
+            <element name="statusTime" type="dateTime" />
+            <element name="status" type="karma:statusEnumType" />
+          </sequence>
+        </xsd:extension>
+      </complexContent>
+    </complexType>
+    
+    <complexType name="fileType">
+      <sequence>
+        <element name="fileURI" type="anyURI" />
+        <element name="ownerDN" type="string" minOccurs="0"/>
+        <element name="createDate" type="dateTime" minOccurs="0"/>
+        <element name="size" type="long" minOccurs="0" />
+        <element name="md5sum" type="string" minOccurs="0" />
+        <element name="objectName" type="string" minOccurs="0" /> <!--  change this to dataObjectName to be consistent -->
+      </sequence>
+    </complexType>
+
+    <complexType name="blockType">
+      <sequence>
+        <element name="blockContent" type="anyType"/>
+      </sequence>
+    </complexType>
+    
+    <complexType name="collectionType">
+      <sequence>
+        <element name="collectionURI" type="anyURI"/>
+        <element name="members" minOccurs="1" maxOccurs="unbounded" type="karma:dataObjectType" />
+      </sequence>
+    </complexType>
+
+    <complexType name="dataObjectType">
+        <sequence>
+            <choice>
+              <element name="file" type="karma:fileType"/>
+              <element name="block" type="karma:blockType"/>
+              <element name="collection" type="karma:collectionType"/>
+            </choice>
+            <!-- element name="creator" type="karma:entityType" / -->
+            <!--  element name="parentID" type="anyURI" minOccurs="0" / -->
+            <element name="instanceOf" type="karma:instanceOfType" minOccurs="0"/>
+            <element name="annotations" type="karma:annotationType" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    
+    <complexType name="dataLifeCycleType">
+      <sequence>
+        <element name="action" type="karma:actionEnumType"/>
+        <element name="actor" type="karma:entityType"/>
+        <element name="dataObject" type="karma:dataObjectType"/>
+        <element name="timestamp" type="dateTime"/>
+        <element name="dataRole" minOccurs="0">
+          <simpleType>
+            <restriction base="string">
+              <maxLength value="63"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="annotations" type="karma:annotationType" minOccurs="0" maxOccurs="unbounded" />
+      </sequence>
+    </complexType>
+
+    <complexType name="entityLifeCycleType">
+      <sequence>
+            <element name="entity" type="karma:entityType"/>
+            <element name="timestamp" type="dateTime" />  
+      </sequence>
+    </complexType>
+    
+
+    <complexType name="workflowFailedType">
+      <sequence>
+        <element name="workflow" type="karma:entityType" />
+        <element name="failureMessage" type="string" />
+        <element name="failedTime" type="dateTime" />      
+      </sequence>
+    </complexType>
+    
+    <!-- Devarshi: addAnnotationType, for adding annotations to existing entities and dataObjects -->
+
+    <complexType name="annotableEntityType">
+      <sequence>
+        <element name="entityID" type="anyURI"/>
+        <element name="contextEntityID" type="anyURI" minOccurs="0"/>
+        <element name="type" type="karma:entityEnumType"/>
+        <!-- required to set the instanceOf values only if it's exe-level -->
+        <!-- decided not to have instanceOf for annotableType notifications
+        	 - will handle adding annotations to objects based on the IDs
+        	 - in the logic -->
+        <!-- element name="instanceOf" type="karma:instanceOfEntityType" minOccurs="0"/-->
+        </sequence>
+    </complexType>
+    
+    <complexType name="annotableFileType">
+      <sequence>
+        <element name="fileURI" type="anyURI" />
+        <element name="ownerDN" type="string" minOccurs="0"/>
+        <element name="createDate" type="dateTime" minOccurs="0"/>
+        <!-- element name="instanceOf" type="karma:instanceOfType" minOccurs="0"/-->
+        </sequence>
+    </complexType>
+    
+    <complexType name="addAnnotationType">
+        <sequence>
+            <choice>
+              <element name="annotableEntity" type="karma:annotableEntityType"/>
+              <element name="annotableFile" type="karma:annotableFileType"/>
+            </choice>
+            <element name="annotableObjectType" type="karma:annotableObjectEnumType"/>
+            <element name="annotations" type="karma:annotationType" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="annotatingTimestamp" type="dateTime" minOccurs="0"/>
+            <element name="notificationtimestamp" type="dateTime"/>
+        </sequence>
+    </complexType>
+    
+    <complexType name="addAnnotationByIdType">
+        <sequence>
+            <element name="objectID" type="long"/>
+            <element name="annotableObjectType" type="karma:annotableObjectEnumType"/>
+            <element name="annotations" type="karma:annotationType" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="annotatingTimestamp" type="dateTime" minOccurs="0"/>
+            <element name="notificationtimestamp" type="dateTime"/>
+        </sequence>
+    </complexType>
+    
+    <complexType name="addMultipleObjectAnnotationType">
+        <sequence>
+            <choice>
+              <element name="annotableEntity" type="karma:annotableEntityType" minOccurs="1" maxOccurs="unbounded"/>
+              <element name="annotableFile" type="karma:annotableFileType" minOccurs="1" maxOccurs="unbounded"/>
+            </choice>
+            <element name="annotableObjectType" type="karma:annotableObjectEnumType"/>
+            <element name="annotations" type="karma:annotationType" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="annotatingTimestamp" type="dateTime" minOccurs="0"/>
+            <element name="notificationtimestamp" type="dateTime"/>
+        </sequence>
+    </complexType>
+    
+    
+    <!-- You-Wei: addRelationshipAnnotationByIdType, for adding annotations to existing causal dependencies using ids-->
+    
+    <complexType name="addRelationshipAnnotationByIdType">
+       <sequence>
+            <element name="relationshipID" type="long"/>
+            <element name="annotableRelationshipType" type="karma:annotableRelationshipEnumType"/>
+            <element name="annotations" type="karma:annotationType" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="annotatingTimestamp" type="dateTime" minOccurs="0"/>
+            <element name="notificationtimestamp" type="dateTime"/>
+        </sequence>
+    </complexType>
+
+	<!-- Devarshi: InstanceOfTypes, for storing registry-level information  -->
+
+    <complexType name="instanceOfType">
+        <sequence>
+        	<element name="instanceOfID" type="string"/>  
+        	<element name="version" type="string" minOccurs="0"/>    
+        	<element name="creationTime" type="dateTime" minOccurs="0"/>       
+        </sequence>
+    </complexType>	
+	    
+    <!-- ======================================================================== -->
+    <!-- ==   GLOBAL ELEMENTS DEFINITION                                       == -->
+    <!-- ======================================================================== -->
+	<element name="invokingService" type="karma:invocationType" />
+	
+	<element name="invokingServiceStatus" type="karma:invocationStatusType" />
+
+	<!--  element name="invokingServiceSucceeded" type="karma:invocationStatusType" / -->
+
+	<element name="invokingWorkflow" type="karma:invocationType" />
+
+	<element name="invokingWorkflowStatus" type="karma:invocationStatusType" />
+
+	<!-- element name="invokingWorkflowSucceeded" type="karma:invocationStatusType" / -->
+
+	<element name="receivedResponse" type="karma:dataTransferType" />
+
+	<element name="receivedFault" type="karma:dataTransferType" />
+
+	<element name="workflowInitialized" type="karma:entityLifeCycleType" />
+
+	<element name="serviceInitialized" type="karma:entityLifeCycleType" />
+
+	<element name="workflowTerminated" type="karma:entityLifeCycleType" />
+
+	<element name="serviceTerminated" type="karma:entityLifeCycleType" />
+
+	<element name="serviceInvoked" type="karma:invocationType" />
+
+	<element name="workflowInvoked" type="karma:invocationType" />
+
+	<element name="dataConsumed" type="karma:dataLifeCycleType" />
+
+	<element name="dataProduced" type="karma:dataLifeCycleType" />
+	
+	<element name="dataDeleted" type="karma:dataLifeCycleType" />
+	
+	<element name="dataUpdated" type="karma:dataLifeCycleType" />
+
+	<element name="sendingResponse" type="karma:dataTransferType" />
+
+	<element name="sendingResponseStatus" type="karma:dataTransferStatusType" />
+
+	<element name="dataSendStarted" type="karma:dataTransferType" />
+
+	<element name="dataSendFinished" type="karma:dataTransferType" />
+
+	<element name="dataReceivedStarted" type="karma:dataTransferType" />
+
+	<element name="dataReceivedFinished" type="karma:dataTransferType" />
+
+	<element name="sendingFault" type="karma:dataTransferType" />
+
+	<element name="workflowFailed" type="karma:workflowFailedType" />
+	
+	<element name="addAnnotation" type="karma:addAnnotationType" />
+	
+	<element name="addAnnotationById" type="karma:addAnnotationByIdType" />	
+	
+	<element name="addMultipleObjectAnnotation" type="karma:addMultipleObjectAnnotationType" />
+
+	<element name="addRelationshipAnnotationById" type="karma:addRelationshipAnnotationByIdType" />	
+	
+    <element name="unknown" type="anyType"/>
+
+	<element name="getOPM">
+		<complexType>
+			<sequence>
+				<element name="in" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+
+</schema>
+        
+

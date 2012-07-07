@@ -1,0 +1,116 @@
+#
+# Copyright 2010 The Trustees of Indiana University
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# ------------------------------------------------------------------------------
+#
+# Project: Karma
+# File:  README
+# Description:  
+#    This prototype provenance collection adaptor mines a log file against a 
+#    set of rules and generates provenance events.  The provenance events are
+#    sent to the Karma service. 
+# ------------------------------------------------------------------------------
+# 
+
+This module can be built from the included source.
+
+*********************
+Building from Source:
+*********************
+Prerequisites:
+--------------
+i)  Apache-Ant  
+    (the directory where this is installed is referred to as ANT_HOME)
+ii) JDK 1.5/1.6     
+    (the directory where this is installed is referred to as JAVA_HOME)
+
+NOTE: Also, make sure both <ANT_HOME>/bin and <JAVA_HOME>/bin should be
+      on your $PATH.
+
+Unzipping the Source Tarball:
+----------------------------
+Aside from the Ant, Java, and all of the necessary source, 
+configuration files, and jars are included in the directory
+Karma-Adaptor.  
+
+The directory, Karma-Adaptor (containing this readme file) will be your 
+build and installation directory. This installation directory is 
+referred to in the rest of this readme file as <ADAPTOR_HOME>.
+
+Edit the Environment Configuration File:
+----------------------------------------
+In adaptor_stdenvs.cfg, set the ADAPTOR_HOME, and JAVA_HOME, 
+environment variables to the paths for the Karma-Adaptor directory containing 
+this README file (<ADAPTOR_HOME>), and the directory where you installed Java.
+
+In config/karma-adaptor.properties, set the rabbitMQ server information. Do not
+modify the rulefile properties.
+
+This karma adaptor is built and run using a set of scripts. The scripts in 
+the <ADAPTOR_HOME> directory are configured for the bash shell.
+
+To adaptor is built using the ant command:
+ant karma-adaptor
+
+If you encounter an error, please be sure that both ANT and JDK 1.6 are on 
+your path. 
+
+*****************************
+Running the Karma Adaptor:
+*****************************
+
+Edit the Parser Configuration File:
+-----------------------------------
+Similar to compiling, please edit the settings for ADAPTOR_HOME and JAVA_HOME 
+in the adaptor_stdenvs.cfg file in <ADAPTOR_HOME> that is used to set the 
+environment for running the adaptor.
+
+Specifying the Rules Files:
+---------------------------
+When the adaptor is run it expects one of the following files which is used to 
+specify the rules used to map log entries into notifications. Defaults are 
+included for these in the <ADAPTOR_HOME>/deps directory:
+  app_desc_ruleset.xml: the default rule file to parse the gush logfiles which 
+  			are generated through experiments using application 
+  			description files in gush. 
+  cmdline_ruleset.xml:  the default rule file to parse the gush logfiles which 
+  			are generated through simple gush-commands issued at the
+  			gush shell. 
+  The adaptor switches between the two rulefiles automatically based on the  
+  input log type. 
+  Subject to change for different applications and visualization requirements.
+  Don't modify these properties, if using a custom rulefile.
+
+NOTE: The default ruleset assumes the GUSH logfiles to generate timestamped
+      data. The patch for generate such data has been applied to GUSH in the
+      July-2011 release. For, a later version of GUSH, old_ruleset.xml should
+      be used.
+
+Execution:
+-----------
+To ingest provenance events using the default setup, run the shell-script as:
+./provenance_collector.sh -l <logfile>
+
+where, <logfile> is the log-file which is to be parsed to ingest provenance 
+data.
+
+If there is any specific requirement to write custom rulefile for richer
+provenance and better visualization, then these basic rulefiles can be 
+modified to include specific rules. The run command in that case should be:
+./provenance_collector.sh -l <logfile> -r <rulefile>
+
+A sample logfile is attached in <ADAPTOR_HOME>/sample directory. For generating
+provenance through the sample log, run the shell script as:
+./provenance_collector.sh -l sample/logfile-peng-virtual-machine-10718-1310771616.txt -r deps/roundrobin_ruleset.xml

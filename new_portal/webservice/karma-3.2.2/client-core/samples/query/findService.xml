@@ -1,0 +1,4 @@
+<ns:findServiceRequest xmlns:ns="http://www.dataandsearch.org/karma/query/2010/10/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <ns:workflowID>tag:www.d2i.indiana.edu/TestWorkflow/instance-1683192740</ns:workflowID>
+  <ns:isSuccess>true</ns:isSuccess>
+</ns:findServiceRequest>

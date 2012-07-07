@@ -1,0 +1,4 @@
+rspec {http://protogeni.net/resources/rspec/0.2}node virtual_id
+services login hostname
+link interface_ref virtual_node_id
+link interface_ref IP

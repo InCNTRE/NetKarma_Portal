@@ -1,0 +1,30 @@
+<ns:serviceInvoked xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">
+<!--  <ns:invoker>
+    <ns:serviceInformation>
+      <ns:workflowID>workflow_9</ns:workflowID>
+      <ns:workflowNodeID>http://service10.org/Free_Service</ns:workflowNodeID>
+      <ns:timestep>2</ns:timestep>
+      <ns:serviceID>http://service10.org</ns:serviceID>
+    </ns:serviceInformation>
+    <ns:type>SERVICE</ns:type>
+  </ns:invoker>
+-->
+<ns:invoker>
+   <ns:workflowInformation>
+     <ns:workflowID>workflow_8</ns:workflowID>
+     <ns:workflowNodeID>PE_workflowNode_invokee</ns:workflowNodeID>
+     <ns:timestep>-1</ns:timestep>
+   </ns:workflowInformation>
+   <ns:type>WORKFLOW</ns:type>
+ </ns:invoker>
+  <ns:invokee>
+    <ns:serviceInformation>
+      <ns:workflowID>workflow_8</ns:workflowID>
+      <ns:workflowNodeID>http://workflow20.org/Winning_Streak</ns:workflowNodeID>
+      <ns:timestep>3</ns:timestep>
+      <ns:serviceID>http://workflow20.org/service20</ns:serviceID>
+    </ns:serviceInformation>
+    <ns:type>SERVICE</ns:type>
+  </ns:invokee>
+  <ns:invocationTime>2010-08-29T17:55:53.452-04:00</ns:invocationTime>
+</ns:serviceInvoked>

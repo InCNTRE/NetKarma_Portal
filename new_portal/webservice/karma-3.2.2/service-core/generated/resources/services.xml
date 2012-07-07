@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.4  Built on : Apr 26, 2008 (06:24:30 EDT) -->
+<serviceGroup>
+    <service name="KarmaService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="edu.indiana.dsi.karma.KarmaServiceMessageReceiverInOut"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="edu.indiana.dsi.karma.KarmaServiceMessageReceiverInOnly"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">edu.indiana.dsi.karma.KarmaServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="serviceInitialized" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/serviceInitialized</actionMapping>
+        </operation>
+        <operation name="workflowInitialized" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/workflowInitialized</actionMapping>
+        </operation>
+        <operation name="invokingWorkflow" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/invokingWorkflow</actionMapping>
+        </operation>
+        <operation name="findDataProduct" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/findDataProduct</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/findDataProductResponse</outputActionMapping>
+        </operation>
+        <operation name="workflowTerminated" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/workflowTerminated</actionMapping>
+        </operation>
+        <operation name="dataReceivedStarted" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataReceivedStarted</actionMapping>
+        </operation>
+        <operation name="dataSendFinished" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataSendFinished</actionMapping>
+        </operation>
+        <operation name="invokingServiceStatus" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/invokingServiceStatus</actionMapping>
+        </operation>
+        <operation name="addRelationshipAnnotationById" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/addRelationshipAnnotationById</actionMapping>
+        </operation>
+        <operation name="addMultipleObjectAnnotation" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/addMultipleObjectAnnotation</actionMapping>
+        </operation>
+        <operation name="dataDeleted" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataDeleted</actionMapping>
+        </operation>
+        <operation name="dataConsumed" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataConsumed</actionMapping>
+        </operation>
+        <operation name="getClientDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getClientDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getClientDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="findService" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/findService</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/findServiceResponse</outputActionMapping>
+        </operation>
+        <operation name="getAbstractMethodDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getAbstractMethodDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getAbstractMethodDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="findAbstractService" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/findAbstractService</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/findAbstractServiceResponse</outputActionMapping>
+        </operation>
+        <operation name="receivedResponse" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/receivedResponse</actionMapping>
+        </operation>
+        <operation name="getWorkflowGraph" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getWorkflowGraph</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getWorkflowGraphResponse</outputActionMapping>
+        </operation>
+        <operation name="dataUpdated" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataUpdated</actionMapping>
+        </operation>
+        <operation name="workflowInvoked" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/workflowInvoked</actionMapping>
+        </operation>
+        <operation name="getNodeCountOfGraph" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getNodeCountOfGraph</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getNodeCountOfGraphResponse</outputActionMapping>
+        </operation>
+        <operation name="invokingWorkflowStatus" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/invokingWorkflowStatus</actionMapping>
+        </operation>
+        <operation name="dataProduced" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataProduced</actionMapping>
+        </operation>
+        <operation name="storeUnknown" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/storeUnknown</actionMapping>
+        </operation>
+        <operation name="workflowFailed" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/workflowFailed</actionMapping>
+        </operation>
+        <operation name="sendingResponse" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/sendingResponse</actionMapping>
+        </operation>
+        <operation name="receivedFault" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/receivedFault</actionMapping>
+        </operation>
+        <operation name="invokingService" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/invokingService</actionMapping>
+        </operation>
+        <operation name="addAnnotation" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/addAnnotation</actionMapping>
+        </operation>
+        <operation name="dataReceivedFinished" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataReceivedFinished</actionMapping>
+        </operation>
+        <operation name="getDataProductDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getDataProductDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getDataProductDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="findAbstractDataProduct" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/findAbstractDataProduct</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/findAbstractDataProductResponse</outputActionMapping>
+        </operation>
+        <operation name="dataSendStarted" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/dataSendStarted</actionMapping>
+        </operation>
+        <operation name="findAbstractMethod" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/findAbstractMethod</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/findAbstractMethodResponse</outputActionMapping>
+        </operation>
+        <operation name="sendingFault" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/sendingFault</actionMapping>
+        </operation>
+        <operation name="serviceTerminated" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/serviceTerminated</actionMapping>
+        </operation>
+        <operation name="getMethodInvocationDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getMethodInvocationDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getMethodInvocationDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="findMethodInvocation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/findMethodInvocation</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/findMethodInvocationResponse</outputActionMapping>
+        </operation>
+        <operation name="serviceInvoked" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/serviceInvoked</actionMapping>
+        </operation>
+        <operation name="sendingResponseStatus" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/sendingResponseStatus</actionMapping>
+        </operation>
+        <operation name="compareWorkflowGraphs" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/compareWorkflowGraphs</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/compareWorkflowGraphsResponse</outputActionMapping>
+        </operation>
+        <operation name="getAnnotationDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getAnnotationDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getAnnotationDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="getAbstractDataProductDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getAbstractDataProductDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getAbstractDataProductDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="addAnnotationById" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/addAnnotationById</actionMapping>
+        </operation>
+        <operation name="getAbstractServiceDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getAbstractServiceDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getAbstractServiceDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="getServiceDetail" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getServiceDetail</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getServiceDetailResponse</outputActionMapping>
+        </operation>
+        <operation name="getProvenanceHistory" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dataandsearch.org/karma/2010/08/">
+            <actionMapping>http://www.dataandsearch.org/karma/getProvenanceHistory</actionMapping>
+            <outputActionMapping>http://www.dataandsearch.org/karma/2010/08/KarmaService/getProvenanceHistoryResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

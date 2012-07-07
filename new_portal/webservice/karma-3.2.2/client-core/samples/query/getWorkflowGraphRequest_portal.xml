@@ -1,0 +1,5 @@
+<q0:getWorkflowGraphRequest xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:q0="http://www.dataandsearch.org/karma/query/2010/10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <q0:workflowID>urn:tool:gush:8fd010b7-4391-46da-93b6-62f204b4f0b2</q0:workflowID>
+ <q0:format>OPM</q0:format>
+ <q0:informationDetailLevel>FINE</q0:informationDetailLevel>
+</q0:getWorkflowGraphRequest>

@@ -1,0 +1,20 @@
+<ns:workflowInvoked
+xmlns:ns="http://www.dataandsearch.org/karma/2010/08/"
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+ <ns:invoker>
+   <ns:userInformation>
+     <ns:userDN>newDN</ns:userDN>
+     <ns:type>PERSON</ns:type>
+   </ns:userInformation>
+   <ns:type>USER</ns:type>
+ </ns:invoker>
+ <ns:invokee>
+   <ns:workflowInformation >
+     <ns:workflowID>workflow_1</ns:workflowID>
+     <ns:workflowNodeID>PE_workflowNode</ns:workflowNodeID>
+     <ns:timestep>-1</ns:timestep>
+   </ns:workflowInformation>
+   <ns:type>WORKFLOW</ns:type>
+ </ns:invokee>
+ <ns:invocationTime>2011-11-27T11:06:23.589Z</ns:invocationTime>
+</ns:workflowInvoked>

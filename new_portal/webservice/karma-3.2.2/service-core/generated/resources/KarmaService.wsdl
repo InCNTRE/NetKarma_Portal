@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="KarmaService" targetNamespace="http://www.dataandsearch.org/karma/2010/08/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.dataandsearch.org/karma/2010/08/" xmlns:qi="http://www.dataandsearch.org/karma/query/2010/10/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	
+			<xsd:import namespace="http://www.dataandsearch.org/karma/2010/08/" schemaLocation="karma_ingest_type_schema.xsd"/>
+			<xsd:import namespace="http://www.dataandsearch.org/karma/query/2010/10/" schemaLocation="karma_query_schema.xsd"/>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getServiceDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getServiceDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNodeCountOfGraph_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getNodeCountOfGraphResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClientDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getClientDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="workflowFailedRequest">
+    <wsdl:part name="parameters" element="tns:workflowFailed">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findService_RequestMessage">
+    <wsdl:part name="parameters" element="qi:findServiceRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataSendStartedRequest">
+    <wsdl:part name="parameters" element="tns:dataSendStarted">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDataProduct_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:findDataProductResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProvenanceHistory_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getProvenanceHistoryRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAnnotationRequest">
+    <wsdl:part name="parameters" element="tns:addAnnotation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invokingServiceStatusRequest">
+    <wsdl:part name="parameters" element="tns:invokingServiceStatus">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAnnotationByIdRequest">
+    <wsdl:part name="parameters" element="tns:addAnnotationById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDataProduct_RequestMessage">
+    <wsdl:part name="parameters" element="qi:findDataProductRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getWorkflowGraph_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getWorkflowGraphRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invokingWorkflowStatusRequest">
+    <wsdl:part name="parameters" element="tns:invokingWorkflowStatus">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataReceivedFinishedRequest">
+    <wsdl:part name="parameters" element="tns:dataReceivedFinished">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="storeUnknownRequest">
+    <wsdl:part name="parameters" element="tns:unknown">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbstractServiceDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getAbstractServiceDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRelationshipAnnotationByIdRequest">
+    <wsdl:part name="parameters" element="tns:addRelationshipAnnotationById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendingResponseRequest">
+    <wsdl:part name="parameters" element="tns:sendingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="serviceTerminatedRequest">
+    <wsdl:part name="parameters" element="tns:serviceTerminated">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbstractServiceDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getAbstractServiceDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbstractDataProductDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getAbstractDataProductDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invokingServiceRequest">
+    <wsdl:part name="parameters" element="tns:invokingService">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendingResponseStatusRequest">
+    <wsdl:part name="parameters" element="tns:sendingResponseStatus">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invokingWorkflowRequest">
+    <wsdl:part name="parameters" element="tns:invokingWorkflow">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDataProductDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getDataProductDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="compareWorkflowGraphs_RequestMessage">
+    <wsdl:part name="parameters" element="qi:compareWorkflowGraphsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbstractDataProductDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getAbstractDataProductDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receivedFaultRequest">
+    <wsdl:part name="parameters" element="tns:receivedFault">
+    </wsdl:part>
+    <wsdl:part name="parameters" element="tns:receivedFault">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClientDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getClientDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="workflowInvokedRequest">
+    <wsdl:part name="parameters" element="tns:workflowInvoked">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAbstractMethod_RequestMessage">
+    <wsdl:part name="parameters" element="qi:findAbstractMethodRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAnnotationDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getAnnotationDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendingFaultRequest">
+    <wsdl:part name="parameters" element="tns:sendingFault">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMultipleObjectAnnotationRequest">
+    <wsdl:part name="parameters" element="tns:addMultipleObjectAnnotation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="workflowInitializedRequest">
+    <wsdl:part name="parameters" element="tns:workflowInitialized">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAbstractDataProduct_RequestMessage">
+    <wsdl:part name="parameters" element="qi:findAbstractDataProductRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataProducedRequest">
+    <wsdl:part name="parameters" element="tns:dataProduced">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAbstractMethod_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:findAbstractMethodResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receivedResponseRequest">
+    <wsdl:part name="parameters" element="tns:receivedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findService_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:findServiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="compareWorkflowGraphs_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:compareWorkflowGraphsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMethodInvocationDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getMethodInvocationDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findMethodInvocation_RequestMessage">
+    <wsdl:part name="parameters" element="qi:findMethodInvocationRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbstractMethodDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getAbstractMethodDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataReceivedStartedRequest">
+    <wsdl:part name="parameters" element="tns:dataReceivedStarted">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDataProductDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getDataProductDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataUpdatedRequest">
+    <wsdl:part name="parameters" element="tns:dataUpdated">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAbstractDataProduct_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:findAbstractDataProductResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findMethodInvocation_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:findMethodInvocationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getServiceDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getServiceDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAbstractService_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:findAbstractServiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getWorkflowGraph_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getWorkflowGraphResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="workflowTerminatedRequest">
+    <wsdl:part name="parameters" element="tns:workflowTerminated">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="serviceInvokedRequest">
+    <wsdl:part name="parameters" element="tns:serviceInvoked">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProvenanceHistory_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getProvenanceHistoryResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAbstractService_RequestMessage">
+    <wsdl:part name="parameters" element="qi:findAbstractServiceRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAbstractMethodDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getAbstractMethodDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAnnotationDetail_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getAnnotationDetailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataSendFinishedRequest">
+    <wsdl:part name="parameters" element="tns:dataSendFinished">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataConsumedRequest">
+    <wsdl:part name="parameters" element="tns:dataConsumed">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="serviceInitializedRequest">
+    <wsdl:part name="parameters" element="tns:serviceInitialized">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMethodInvocationDetail_ResponseMessage">
+    <wsdl:part name="parameters" element="qi:getMethodInvocationDetailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNodeCountOfGraph_RequestMessage">
+    <wsdl:part name="parameters" element="qi:getNodeCountOfGraphRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dataDeletedRequest">
+    <wsdl:part name="parameters" element="tns:dataDeleted">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="KarmaService">
+    <wsdl:operation name="invokingService">
+      <wsdl:input message="tns:invokingServiceRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="invokingServiceStatus">
+      <wsdl:input message="tns:invokingServiceStatusRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="invokingWorkflow">
+      <wsdl:input message="tns:invokingWorkflowRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="invokingWorkflowStatus">
+      <wsdl:input message="tns:invokingWorkflowStatusRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="receivedResponse">
+      <wsdl:input message="tns:receivedResponseRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="receivedFault">
+      <wsdl:input message="tns:receivedFaultRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowInitialized">
+      <wsdl:input message="tns:workflowInitializedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="serviceInitialized">
+      <wsdl:input message="tns:serviceInitializedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowTerminated">
+      <wsdl:input message="tns:workflowTerminatedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="serviceTerminated">
+      <wsdl:input message="tns:serviceTerminatedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="serviceInvoked">
+      <wsdl:input message="tns:serviceInvokedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowInvoked">
+      <wsdl:input message="tns:workflowInvokedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataConsumed">
+      <wsdl:input message="tns:dataConsumedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataProduced">
+      <wsdl:input message="tns:dataProducedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataUpdated">
+      <wsdl:input message="tns:dataUpdatedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataDeleted">
+      <wsdl:input message="tns:dataDeletedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendingResponse">
+      <wsdl:input message="tns:sendingResponseRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendingResponseStatus">
+      <wsdl:input message="tns:sendingResponseStatusRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataSendStarted">
+      <wsdl:input message="tns:dataSendStartedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataSendFinished">
+      <wsdl:input message="tns:dataSendFinishedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataReceivedStarted">
+      <wsdl:input message="tns:dataReceivedStartedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataReceivedFinished">
+      <wsdl:input message="tns:dataReceivedFinishedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendingFault">
+      <wsdl:input message="tns:sendingFaultRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowFailed">
+      <wsdl:input message="tns:workflowFailedRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addAnnotation">
+      <wsdl:input message="tns:addAnnotationRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addAnnotationById">
+      <wsdl:input message="tns:addAnnotationByIdRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addMultipleObjectAnnotation">
+      <wsdl:input message="tns:addMultipleObjectAnnotationRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addRelationshipAnnotationById">
+      <wsdl:input message="tns:addRelationshipAnnotationByIdRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="storeUnknown">
+      <wsdl:input message="tns:storeUnknownRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="findAbstractService">
+      <wsdl:input message="tns:findAbstractService_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:findAbstractService_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbstractServiceDetail">
+      <wsdl:input message="tns:getAbstractServiceDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getAbstractServiceDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAbstractMethod">
+      <wsdl:input message="tns:findAbstractMethod_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:findAbstractMethod_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbstractMethodDetail">
+      <wsdl:input message="tns:getAbstractMethodDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getAbstractMethodDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAbstractDataProduct">
+      <wsdl:input message="tns:findAbstractDataProduct_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:findAbstractDataProduct_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbstractDataProductDetail">
+      <wsdl:input message="tns:getAbstractDataProductDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getAbstractDataProductDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAnnotationDetail">
+      <wsdl:input message="tns:getAnnotationDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getAnnotationDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findService">
+      <wsdl:input message="tns:findService_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:findService_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceDetail">
+      <wsdl:input message="tns:getServiceDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getServiceDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDataProduct">
+      <wsdl:input message="tns:findDataProduct_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:findDataProduct_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataProductDetail">
+      <wsdl:input message="tns:getDataProductDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getDataProductDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findMethodInvocation">
+      <wsdl:input message="tns:findMethodInvocation_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:findMethodInvocation_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMethodInvocationDetail">
+      <wsdl:input message="tns:getMethodInvocationDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getMethodInvocationDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientDetail">
+      <wsdl:input message="tns:getClientDetail_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getClientDetail_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowGraph">
+      <wsdl:input message="tns:getWorkflowGraph_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getWorkflowGraph_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProvenanceHistory">
+      <wsdl:input message="tns:getProvenanceHistory_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getProvenanceHistory_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="compareWorkflowGraphs">
+      <wsdl:input message="tns:compareWorkflowGraphs_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:compareWorkflowGraphs_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNodeCountOfGraph">
+      <wsdl:input message="tns:getNodeCountOfGraph_RequestMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getNodeCountOfGraph_ResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KarmaServiceBinding" type="tns:KarmaService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="invokingService">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/invokingService"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="invokingServiceStatus">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/invokingServiceStatus"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="invokingWorkflow">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/invokingWorkflow"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="invokingWorkflowStatus">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/invokingWorkflowStatus"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="receivedResponse">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/receivedResponse"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="receivedFault">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/receivedFault"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowInitialized">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/workflowInitialized"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="serviceInitialized">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/serviceInitialized"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowTerminated">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/workflowTerminated"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="serviceTerminated">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/serviceTerminated"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="serviceInvoked">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/serviceInvoked"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowInvoked">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/workflowInvoked"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataConsumed">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataConsumed"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataProduced">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataProduced"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataUpdated">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataUpdated"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataDeleted">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataDeleted"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendingResponse">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/sendingResponse"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendingResponseStatus">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/sendingResponseStatus"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataSendStarted">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataSendStarted"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataSendFinished">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataSendFinished"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataReceivedStarted">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataReceivedStarted"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="dataReceivedFinished">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/dataReceivedFinished"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendingFault">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/sendingFault"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="workflowFailed">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/workflowFailed"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addAnnotation">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/addAnnotation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addAnnotationById">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/addAnnotationById"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addMultipleObjectAnnotation">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/addMultipleObjectAnnotation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="addRelationshipAnnotationById">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/addRelationshipAnnotationById"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="storeUnknown">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/storeUnknown"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="findAbstractService">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/findAbstractService"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbstractServiceDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getAbstractServiceDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAbstractMethod">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/findAbstractMethod"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbstractMethodDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getAbstractMethodDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAbstractDataProduct">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/findAbstractDataProduct"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAbstractDataProductDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getAbstractDataProductDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAnnotationDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getAnnotationDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findService">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/findService"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getServiceDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDataProduct">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/findDataProduct"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataProductDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getDataProductDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findMethodInvocation">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/findMethodInvocation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMethodInvocationDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getMethodInvocationDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientDetail">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getClientDetail"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowGraph">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getWorkflowGraph"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProvenanceHistory">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getProvenanceHistory"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="compareWorkflowGraphs">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/compareWorkflowGraphs"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNodeCountOfGraph">
+      <soap:operation soapAction="http://www.dataandsearch.org/karma/getNodeCountOfGraph"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KarmaService">
+    <wsdl:port name="KarmaServiceSOAP" binding="tns:KarmaServiceBinding">
+      <soap:address location="http://www.dataandsearch.org/karma/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

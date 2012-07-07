@@ -1,0 +1,419 @@
+/*
+# -----------------------------------------------------------------
+#
+# Project:  Karma Provenance Service
+# File:  README
+# Description:  instructions for building and installing the karma service,
+#   which provides core capability to store provenance events to a database
+#   and returns results.
+#
+# -----------------------------------------------------------------
+*/
+
+Table of Contents
+=======================
+O.   Upgrade from v3.2 to v3.2.1
+I.   Software Dependencies
+       1.1 Basic
+       1.2 Web Service vs. Messaging System
+II.  Setup Karma Database
+III. Configure Karma Properties
+       3.1 Required Properties
+       3.2 Optional Properties
+IV.  Host Karma as Axis2 Web Service
+       4.1 Setup Web Service Container with Axis2
+       4.2 Building Karma Service as Axis2 Service
+       4.3 Deploying Karma Service as Axis2 Service
+V. Host Karma using RabbitMQ
+       5.1 Install RabbitMQ and Erlang/OTP
+       5.2 Build and Deploy Karma Service as Standalone Server 
+       5.3 Run Karma Service as Standalone Server.
+
+O. Upgrade from v3.2 to v3.2.1
+==============================
+
+Karma v3.2.1 is an upgrade from v3.2. Main new features include:
+
+1) Improvement of query performance with provenance graphs caching.
+2) Implementation of several query API calls:
+	getNodeCountOfGraph() - return the number of nodes in a graph based on workflowID
+	getDataProductDetail() - returns details of execution level data objects
+	getAbstractDataProductDetail() - returns the details of registry level data objects
+	getServiceDetail() - returns details of execution level services
+	getAbstractServiceDetail() - returns details of registry level services
+	getClientDetail() - returns details of registry level personnels
+	getAnnotationDetail() - returns annotations of services, data objects, agents,
+	relationships, etc that were ingested as annotations
+	findDataProduct() - returns a list of execution level data objects that matches the
+	specified criteria
+	findAbstractDataProduct() - returns a list of registry level data objects that matches the
+	specified criteria
+	findService() - returns a list of execution level services that matches the
+	specified criteria
+	findAbstractService() - returns a list of registry level services that matches the
+	specified criteria
+3) Bugfixes:
+	(1) getProvenanceHistory()
+		- Fixed some null pointer exceptions.
+		- Added support for returning fileURIs.
+		- Eliminated duplicate registry processes.
+		- Fixed querying for agents and wasControlledBy relationship.
+		- Modification of tags, URIs, and accounts in OPM graph to be consistent.
+	(2) getWorkflowGraph()
+		- Fixed querying for agents and wasControlledBy relationship.
+		- Eliminated duplicate registry processes.
+		- Modification of tags, URIs, and accounts in OPM graph to be consistent.
+	(3) Improved findService() and findDataProduct() performance and accuracy.
+	(4) Fix a bug that did not add annotations from raw notifications if entities or data objects were
+	present in the database.
+	(5) Modified cache size for graphs to handle larger graphs.
+
+To upgrade an existing database v3.2 to the v3.2.1, please follow these steps:
+
+1. Backup the existing database
+mysqldump -u <user> -p <karma_db> > karma_3.2_dump.sql
+
+2. Apply this script to the v3.2 karma database
+mysql -u <user> -p <karma_db> < config/sql-scripts-archive/karma_alter_db_add_cache_tables.sql
+mysql -u <user> -p <karma_db> < config\sql-scripts-archive\karma_alter_db_stored_procs001.sql
+
+For fresh installation, simply follow the rest of the documentation.
+ 
+I. Software Dependencies
+========================
+ 
+Karma v3.2.1 has been tested with the following software packages on which it
+has a dependency.  These packages will need to be installed separately:
+
+1.1 Basic
+ 
+1) Apache ANT v1.6 or higher (for building Karma from source)
+    http://ant.apache.org
+  
+2) mySQL Database Community Server v5.1
+    http://dev.mysql.com
+    
+3) mySQL Connector/JDBC v5.1 or higher
+    http://dev.mysql.com/downloads/connector/j/
+    
+4) Java Development Kit (JDK) v5 or v6
+    http://java.sun.com
+    
+   JSR 173 API (required if using JDK5)
+   JSR 173 API is integrated into JDK6.  However, if the build environment uses
+   JDK5, the JSR 173 API jar must be manually included in the classpath. This
+   jar comes with XML Beans v2.3.0 package
+    
+5) Apache XML Beans v2.3.0
+    http://xmlbeans.apache.org
+    Look for v2.3.0 from any binary distribution mirror sites
+
+1.2 Web Service vs. Messaging System
+
+Choose either group 6 or group 7. To host Karma as webservice, 6.1 and 6.2 are
+required. To host Karma as a standalone server using RabbitMQ Messaging System,
+7.1 and 7.2 are required.
+
+6) Web Service
+
+6.1) Apache Tomcat Server v5.5x or v6 (If to run Karma as an Apache Axis2 web
+     service)
+     http://tomcat.apache.org
+    
+6.2) Apache Axis2/Java v1.4 or v1.5x WAR (Web Archive) Distribution (If to run
+     Karma as an Apache Axis2 web service)
+     http://ws.apache.org/axis2
+
+7) Standalone Server with Integrated Messaging System
+
+7.1) RabbitMQ Server.
+     http://www.rabbitmq.com
+
+7.2) Erlang is required for building RabbitMQ. Install a recent version of
+     Erlang/OTP from
+     http://www.erlang.org
+    
+Please refer to the corresponding documentation of each software package for
+installation instructions.
+ 
+Karma v3.1.1 also conforms to Open Provenance Model (OPM) v1.1.
+http://eprints.ecs.soton.ac.uk/18332/1/opm.pdf
+ 
+II. Setup Karma Database
+========================
+ 
+After you have successfully installed and launched a mySQL database instance,
+please follow these steps to setup the Karma database.
+ 
+1. Log into mySQL as an administrator:
+ 
+  bash> mysql -u root -p
+ 
+2. Create a database, preferably named "karma"
+ 
+  mysql> CREATE DATABASE karma;
+ 
+3. Create login credentials for karma and grant permissions
+ 
+  mysql> GRANT ALL ON karma.* TO 'karmauser'@'localhost' IDENTIFIED BY
+       > 'karmapwd';
+ 
+in the example above, 'karmauser' and 'karmapwd' are just examples. DO NOT use
+these verbatim; choose something more secure instead, especially for the
+password.
+ 
+This example also assumes that the database is hosted on the same node as Karma.
+If this is not the case, please specify the host onto which Karma is hosted:
+ 
+  mysql> GRANT ALL ON karma.* TO 'karmauser'@'dedicated-node.iu.edu' IDENTIFIED
+       > BY 'karmapwd';
+        
+4. Use the provided database schema definition to define tables.  The schema
+   definition file can be found in the config/ directory of the Karma service
+   distribution, and is named karma_db_schema.sql
+ 
+  bash> cd ${Karma-Service-Core}
+  bash> mysql -u root -p karma < config/karma_db_schema.sql
+ 
+III. Configure Karma Properties
+===============================
+ 
+Karma depends on a number of properties for the correct operation as well as
+performance tweaking.  The distribution package contains a sample properties
+file, which can be found in config/karma.properties.  Please use this sample
+file to configure Karma according to the deployment environment.  Below is the
+detailed explanation of each of these properties.
+ 
+3.1.1 Required properties – these properties must be properly set regardless how
+     Karma is hosted (as an Axis2 web service or standalone server using
+     RabbitMQ).
+ 
+log4j.properties.path - path to a log4j.properties file.  Karma uses log4j to
+     log information.  A sample log4j.properties file is also provided with the
+     distribution package, in the config/ directory.  This log4j.properties file
+     defines two separate loggers, karmlog and karmconsole.  karmlog is a
+     rolling file appender that writes log messages to a series of files on
+     disk, where as karmconsole is a console appender that writes log messages
+     to screen.  Please modify log4j.properties to change settings such as the
+     name and location of the log file etc.
+ 
+database.location – URI of karma database
+ 
+database.username – username for logging into karma database
+ 
+database.password – password for logging into karma database
+ 
+conn.pool.init.size – initial size of karma database connection pool.
+     Creating database connection is expensive.  Karma uses a connection pool
+     to deliver faster performance.
+ 
+conn.pool.max.size – maximum size of karma database connection pool.
+ 
+conn.time.to.live.ms – number of milliseconds a database connection in the pool
+     lives before being replaced by a new connection.  This is to ensure the
+     database connections in the pool do not timeout.  Please choose a moderate
+     number.  If the number is too small, each connection gets replaced too
+     frequently and causes performance overhead; on the other hand, if the
+     number is too large, the connection may timeout and also cause performance
+     penalty.
+
+async.processor.thread.count - number of asynchronous raw (unprocessed)
+     notification processors to run.  Karma asynchronously processes ingested
+     notifications to avoid server overload.
+  
+raw.notif.process.batch.size – maximum number of raw (unprocessed) notifications
+     to fetch from the database for each access.
+
+raw.notif.cache.size - number of raw notifications each asynchronous processor
+     takes after they are fetched from the database.
+
+The following formula may serve as a guideline for specifying the above 3
+properties:
+  
+  raw.notif.cache.size = raw.notif.batch.size / async.processor.thread.count
+
+annotation.definition.scope.count - number of known annotation definition scope
+     settings.  This property must be followed by N pairs of
+     annotation.definition.property.x and annotation.definition.scope.x
+
+annotation.definition.property.x - name or URI of annotation property x, where
+     1<=x<=N, N being the value given to annotation.definition.scope.count
+
+annotation.definition.scope.x - scope of annotation property x, where 1<=x<=N.
+     The value of this property must be one of the following tokens:
+     OPM_ANNOTATION  - this annotation is defined by OPM
+     KARMA_ANNOTATION - this annotation is defined by Karma
+     EXTERNAL_SOURCE - this annotation is defined by some other external source
+
+3.2 Optional properties - applicable only if Karma uses rabbitMQ
+
+The following 2 properties are used to set messaging daemons.
+
+messaging.daemon.notification - number of daemons to receive notifications from RabbitMQ
+ 
+messaging.daemon.query - number of daemons to receive queries from RabbitMQ
+
+The following 5 properties are used to connect to an RabbitMQ Server.
+
+messaging.username    - RabbitMQ Username
+messaging.password    - RabbitMq Password
+messaging.hostname    - Hostname that hosts RabbitMQ Server
+messaging.hostport    - Port number on the RabbitMQ Server
+messaging.virtualhost - The virtual host is created for administrative purposes.
+     Each connection (and all channels inside) must be associated with a single
+     virtual host. Each virtual host comprises its own namespace, a set of
+     exchanges, message queues and all associated objects. The default value
+     is “/”.
+
+The following 3 properties are used to configure how to send the Notifications
+to Karma Server.
+
+messaging.exchangename - A message routing agent. It can be durable (our system
+     uses durable), temporary, and auto-deleted. Each message is delivered to
+     each qualifying queue. The default value here is “KarmaExchange”.
+
+messaging.queuename - Named “Weak FIFO” buffer. The default value is
+     “KarmaQueue”.
+
+messaging.routingkey - In our Imprementation, we use direct exchange type. Same
+     routingkey is used on both publisher and subscriber sides. The default
+     value here is “KarmaKey”
+
+The following 2 properties are used for the Karma Server to reconnect to the
+RabbitMQ Server in case of failures.
+
+messaging.retry.interval - Karma server will wait for N seconds (retry interval)
+      before each retry if connection between itself and RabbitMQ Server is
+      lost.  The default value for N is 5.
+      
+messaging.retry.threshold - Karma Server will retry up to X times (retry
+      threshold) to create the connection between itself and RabbitMQ Server.
+      The default value for X is 5.
+
+ 
+IV. Host Karma as Axis2 Web Service
+===================================
+ 
+Currently there are two options to host Karma.  One is to host Karma as an
+Apache Axis2 Web Service.  The other option is to host Karma as a stand-alone
+server using rabbitMQ for messaging.  This section is on how to host Karma as
+a web service.
+
+4.1 Setup Web Service Container with Axis2
+
+Assuming that you have successfully installed and launched an instance of Apache
+Tomcat server and successfully downloaded a copy of Apache Axis2 WAR
+distribution, follow these steps to deploy Axis2:
+ 
+1. Unzip Axis2 WAR distribution package
+ 
+  bash> unzip axis2-1.5.1-war.zip
+ 
+2. Copy the WAR file into the webapps/ directory under tomcat
+ 
+  bash> cp axis2-1.5.1-war/axis2.war ~/apache-tomcat-5.5/webapps/
+ 
+Apache Tomcat server will automatically expand the WAR file and create a
+directory named axis2/
+ 
+ 
+4.2 Building Karma Service as Axis2 Service
+
+Take the following steps to build Karma as a Web Service.
+ 
+1. Generate Java code and XmlBeans from the WSDL and XML Schema
+ 
+  bash> ant wsdl2java
+ 
+2. Edit the following file to make necessary configuration changes
+ 
+  generated/resources/services.xml
+ 
+2.1) The service should be configured to run with "application" scope.  This
+     is done by adding the clause
+    
+    scope="application"
+    
+to the line that reads
+    
+    <service name="KarmaService">
+    
+so then it reads
+    
+    <service name="KarmaService" scope="application">
+    
+    
+2.2) Add the following custom initialization parameters required by Karma.
+     The values shown below are just examples.  Please edit the actual values
+     to suit your deployment environment.  Explanation of each parameter follows.
+    
+  <parameter
+     name=”karma.properties.file.path”>/home/karma/karma.properties</parameter>
+    
+2.3) Explanation of the parameters
+
+karma.properties.file.path - path to the properties file configured in
+     Section III.
+
+     
+3. Save the modified services.xml file and continue build
+ 
+  bash> ant karma.webservice
+ 
+this generates a karma.aar file under build/lib/ directory
+ 
+Note: if you would like to start over, you may use the following command.  BE
+AWARE that this command will delete all built files, including the services.xml
+you have modified
+ 
+  bash> ant clean
+ 
+ 4.3 Deploying Karma Service
+
+Now that Karms has been built as an axis2 archive (AAR), it needs to be deployed.
+ 
+1. Copy the aar file into axis2's service directory
+ 
+  bash> cp karma.aar ~/apache-tomcat-5.5/webapps/axis2/WEB-INF/services/
+ 
+2. karma.aar does not contain the mySQL JDBC jar.  This is intentional to avoid
+  duplicate or even conflicting versions of JDBC jar files being deployed into a
+  Tomcat/axis2 server that already has JDBC jar deployed.
+ 
+  However, if your Tomcat server does not yet have mySQL JDBC jar file, please
+  copy the one you downloaded earlier into axis2’s lib directory:
+ 
+  bash> cp mysql-connection-java-5.1.x-bin.jar ~/apache-tomcat-5.5/webapps/axis2/WEB-INF/lib
+ 
+ 
+V. Host Karma as Standalone Server using RabbitMQ
+==================================================
+This section is on how to host Karma as a standalone server using RabbitMQ for messaging.
+
+5.1 Install RabbitMQ and Erlang/OTP
+
+If hosting RabbitMQ on Windows, complete bundle and installation documents can
+be retrieved at http://www.rabbitmq.com/install.html 
+
+If hosting RabbitMQ on platforms other than Windows, download Erlang/OTP from
+http://www.erlang.org/download.html and follow the installation guide here, then
+download RabbitMQ server from http://www.rabbitmq.com/download.html and follow
+the installation documents inside the package.
+
+5.2 Build and Deploy Karma Service as Standalone Server 
+
+Follow the ant command below to build Karma Service as Standalone Server using
+RabbitMQ Messaging System.
+
+   bash> cd ${Karma-Service-Core}
+   bash> build-standalone.sh
+
+5.3 Run Karma Service as Standalone Server.
+
+   bash> cd ${Karma-Service-Core}/bin
+   bash> ./KarmaServer.sh ${Karma-Service-Core}/config/karma.properties
+
+Default log file (karma.log) can be found at execution directory. 
+
+
+ 

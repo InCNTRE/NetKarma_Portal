@@ -1,0 +1,361 @@
+<ns:getWorkflowGraphResponse xmlns:ns="http://www.dataandsearch.org/karma/query/2010/10/">
+  <v1:opmGraph xmlns:v1="http://openprovenance.org/model/v1.1.a">
+    <v1:processes>
+      <v1:process id="Process_2847">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>edge-node-1</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>1</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2848">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>phoebus-node-1</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>1</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2849">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>delay-node</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>1</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2850">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>phoebus-node-2</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>1</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2851">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>edge-node-2</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>1</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2852">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>grid-ftp@10.10.1.1</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>2</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2853">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>grid-ftp@10.10.4.2</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>2</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2854">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>SERVICE</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-serviceID">
+            <v1:value>
+              <serviceID>/users/d2igec14//GL/bin/globus-url-copy -vb -p -1 -t 60 -dcstack phoebus:'phoebus_path=10.10.1.2/5006#10.10.4.1/5006' ftp://10.10.1.1:2811/dev/zero ftp://10.10.4.2:2811/dev/null</serviceID>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-timestep">
+            <v1:value>
+              <timestep>2</timestep>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowNodeID">
+            <v1:value>
+              <workflowNodeID>null</workflowNodeID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+      <v1:process id="Process_2855">
+        <v1:annotation>
+          <v1:property uri="process-type">
+            <v1:value>
+              <type>WORKFLOW</type>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="process-workflowID">
+            <v1:value>
+              <workflowID>11831313-778b-439d-90df-01aa96186849</workflowID>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:process>
+    </v1:processes>
+    <v1:causalDependencies>
+      <v1:wasTriggeredBy>
+        <v1:effect ref="Process_2853"/>
+        <v1:cause ref="Process_2852"/>
+        <v1:time noEarlierThan="2012-07-06T10:05:40.000-04:00" noLaterThan="2012-07-06T10:06:40.000-04:00"/>
+        <v1:annotation id="Invocation-Annotation_2507">
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Initial Bytes Transferred">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">5242880</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Initial Avg Transfer Rate(MBps)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">1.00</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Initial Inst Transfer Rate(MBps)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">1.00</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Final Bytes Transferred">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">202375168</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Final Avg Transfer Rate(MBps)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">3.51</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Final Inst Transfer Rate(MBps)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">8.10</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Min Latency (ms)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">17.089</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Max Latency (ms)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">86.141</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Avg Latency (ms)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">44.194</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Start Bandwidth (MBps)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">10.6</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/End Bandwidth (MBps)">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">10.9</value>
+            </v1:value>
+          </v1:property>
+          <v1:property uri="invocation-annotation/EXTERNAL_SOURCE/Datagram Loss %">
+            <v1:value>
+              <value xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">NA</value>
+            </v1:value>
+          </v1:property>
+        </v1:annotation>
+      </v1:wasTriggeredBy>
+      <v1:wasTriggeredBy>
+        <v1:effect ref="Process_2854"/>
+        <v1:cause ref="Process_2855"/>
+        <v1:time noEarlierThan="2012-07-06T10:05:40.000-04:00" noLaterThan="2012-07-06T10:05:40.000-04:00"/>
+      </v1:wasTriggeredBy>
+      <v1:wasExecutedOn>
+        <ns1:effect ref="Process_2852" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:cause ref="Process_2847" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:time exactlyAt="2012-07-06T10:05:40.000-04:00" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+      </v1:wasExecutedOn>
+      <v1:wasExecutedOn>
+        <ns1:effect ref="Process_2853" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:cause ref="Process_2851" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:time exactlyAt="2012-07-06T10:05:40.000-04:00" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+      </v1:wasExecutedOn>
+      <v1:wasExecutedOn>
+        <ns1:effect ref="Process_2854" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:cause ref="Process_2852" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:time exactlyAt="2012-07-06T10:05:40.000-04:00" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+      </v1:wasExecutedOn>
+      <v1:wasConnectedTo>
+        <ns1:effect ref="Process_2848" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:cause ref="Process_2847" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:time exactlyAt="2012-07-06T12:16:59.000-04:00" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+      </v1:wasConnectedTo>
+      <v1:wasConnectedTo>
+        <ns1:effect ref="Process_2849" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:cause ref="Process_2848" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:time exactlyAt="2012-07-06T12:16:59.000-04:00" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+      </v1:wasConnectedTo>
+      <v1:wasConnectedTo>
+        <ns1:effect ref="Process_2850" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:cause ref="Process_2849" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:time exactlyAt="2012-07-06T12:16:59.000-04:00" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+      </v1:wasConnectedTo>
+      <v1:wasConnectedTo>
+        <ns1:effect ref="Process_2851" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:cause ref="Process_2850" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+        <ns1:time exactlyAt="2012-07-06T12:16:59.000-04:00" xmlns:ns1="http://www.dataandsearch.org/karma/query/opmExt/2012/03/"/>
+      </v1:wasConnectedTo>
+    </v1:causalDependencies>
+  </v1:opmGraph>
+</ns:getWorkflowGraphResponse>

@@ -1,0 +1,14 @@
+rspec:virtual_id= edge-node-1 phoebus-node-1 delay-node phoebus-node-2 edge-node-2
+services:hostname= pc138.emulab.net
+services:hostname= pc140.emulab.net
+services:hostname= pc137.emulab.net
+services:hostname= pc136.emulab.net
+services:hostname= pc130.emulab.net
+link:virtual_node_id= edge-node-1 phoebus-node-1
+link:virtual_node_id= phoebus-node-1 delay-node
+link:virtual_node_id= delay-node phoebus-node-2
+link:virtual_node_id= phoebus-node-2 edge-node-2
+link:IP= 10.10.1.1 10.10.1.2
+link:IP= 10.10.2.1 10.10.2.2
+link:IP= 10.10.3.1 10.10.3.2
+link:IP= 10.10.4.1 10.10.4.2

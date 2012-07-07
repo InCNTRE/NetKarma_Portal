@@ -1,0 +1,21 @@
+Start-time:  2012-07-06 10:05:40
+Command:  /users/d2igec14//GL/bin/globus-url-copy -vb -p -1 -t 60 -dcstack phoebus:'phoebus_path=10.10.1.2/5006#10.10.4.1/5006' ftp://10.10.1.1:2811/dev/zero ftp://10.10.4.2:2811/dev/null
+Execution-host:  edge-node-1.gec14-xsp-1.emulab-net.emulab.net
+Source: ftp://10.10.1.1:2811/dev/
+Dest:   ftp://10.10.4.2:2811/dev/
+  zero  ->  null
+
+      5242880 bytes         1.00 MB/sec avg         1.00 MB/sec inst
+     17301504 bytes         1.65 MB/sec avg         2.30 MB/sec inst
+     33030144 bytes         2.10 MB/sec avg         3.00 MB/sec inst
+     49807360 bytes         2.38 MB/sec avg         3.20 MB/sec inst
+     62390272 bytes         2.38 MB/sec avg         2.40 MB/sec inst
+     74448896 bytes         2.37 MB/sec avg         2.30 MB/sec inst
+     89128960 bytes         2.43 MB/sec avg         2.80 MB/sec inst
+    105381888 bytes         2.51 MB/sec avg         3.10 MB/sec inst
+    121634816 bytes         2.58 MB/sec avg         3.10 MB/sec inst
+    159907840 bytes         3.05 MB/sec avg         7.30 MB/sec inst
+    202375168 bytes         3.51 MB/sec avg         8.10 MB/sec inst
+
+Cancelling copy...
+End-time:  2012-07-06 10:06:40

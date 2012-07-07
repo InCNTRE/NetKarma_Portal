@@ -38,10 +38,13 @@ print "<script type='text/javascript' charset='utf-8'>
         'sAjaxSource': '../webservice/get_topology.cgi?exp_id=$exp_id'
     });
     cont = \$('#container_id').fileTree({ root: '$dir', script:'../webservice/jqueryfiletree.cgi'}, function(file) {
-        alert(file);
+	var sh_file = file.substring(0,file.length-1);   	
+         window.open(sh_file);
 });
  
 });
+
+
 
 
 </script>";
@@ -124,7 +127,7 @@ EOF
 
 
 #Tab2
-print "<div id=\"tabs-2\">";
+print "<div id=\"tabs-2\" onclick=\"oTable.fnDraw();\">";
 
 
 print <<TAB2;
@@ -153,6 +156,9 @@ WorkFlow Name
 </div>
 <div id="cytoscapeweb">
         <center> No WorkFlow Chosen/Available</center>    
+</div>
+
+<div id="node_wf">
 </div>
 
 

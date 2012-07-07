@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:karma="http://www.dataandsearch.org/karma/2010/08/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.dataandsearch.org/karma/2010/08/">
+    <simpleType name="statusEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="SUCCESS"/>
+            <enumeration value="FAILED"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="personnelEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="PERSON"/>
+            <enumeration value="ORGANIZATION"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="entityEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="USER"/>
+            <enumeration value="WORKFLOW"/>
+            <enumeration value="SERVICE"/>
+            <enumeration value="METHOD"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="entityEnumSubtype">
+        <restriction base="xsd:string">
+            <enumeration value="CONTROLLER"/>
+            <enumeration value="HUMAN_PROXY"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="actionEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="CONSUME"/>
+            <enumeration value="PRODUCE"/>
+            <enumeration value="UPDATE"/>
+            <enumeration value="DELETE"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="behalfEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="CONTROL"/>
+            <enumeration value="PROXY"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="annotableObjectEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="ENTITY"/>
+            <enumeration value="FILE"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="annotableRelationshipEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="INVOCATION"/>
+            <enumeration value="DATA_TRANSFER"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="authorshipEnumType">
+        <restriction base="xsd:string">
+            <enumeration value="AUTHOR"/>
+            <enumeration value="OWNER"/>
+            <enumeration value="CONTRIBUTOR"/>
+            <enumeration value="EXECUTOR"/>
+        </restriction>
+    </simpleType>
+    <complexType name="annotationType">
+        <sequence>
+            <element name="property" type="xsd:anyURI"/>
+            <element name="value" type="xsd:anyType"/>
+        </sequence>
+    </complexType>
+    <complexType name="entityType">
+        <sequence>
+            <choice>
+                <element name="userInformation" type="karma:userInformationType"/>
+                <element name="workflowInformation" type="karma:workflowInformationType"/>
+                <element name="serviceInformation" type="karma:serviceInformationType"/>
+                <element name="methodInformation" type="karma:methodInformationType"/>
+            </choice>
+            <element name="type" type="karma:entityEnumType"/>
+            <element minOccurs="0" name="subtype" type="karma:entityEnumSubtype"/>
+        </sequence>
+    </complexType>
+    <complexType name="userInformationType">
+        <sequence>
+            <element name="userDN" type="xsd:string"/>
+            <element minOccurs="0" name="fullName" type="xsd:string"/>
+            <element name="type" type="karma:personnelEnumType"/>
+            <element minOccurs="0" name="affiliation" type="xsd:string"/>
+            <element minOccurs="0" name="email" type="xsd:string"/>
+        </sequence>
+    </complexType>
+    <complexType name="workflowInformationType">
+        <sequence>
+            <element name="workflowID" type="xsd:anyURI"/>
+            <element minOccurs="0" name="workflowNodeID" type="xsd:string"/>
+            <element minOccurs="0" name="timestep" type="xsd:int"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="annotations" type="karma:annotationType"/>
+            <element minOccurs="0" name="userBehalf">
+                <complexType>
+                    <sequence>
+                        <element name="userDN" type="xsd:string"/>
+                        <element minOccurs="0" name="authorship" type="karma:authorshipEnumType"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element minOccurs="0" name="instanceOf" type="karma:instanceOfType"/>
+        </sequence>
+    </complexType>
+    <complexType name="serviceInformationType">
+        <complexContent>
+            <extension base="karma:workflowInformationType">
+                <sequence>
+                    <element name="serviceID" type="xsd:anyURI"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="methodInformationType">
+        <complexContent>
+            <extension base="karma:serviceInformationType">
+                <sequence>
+                    <element name="methodID" type="xsd:anyURI"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="invocationType">
+        <sequence>
+            <element name="invoker" type="karma:entityType"/>
+            <element name="invokee" type="karma:entityType"/>
+            <element name="invocationTime" type="xsd:dateTime"/>
+            <element minOccurs="0" name="params" type="karma:dataObjectType"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="annotations" type="karma:annotationType"/>
+        </sequence>
+    </complexType>
+    <complexType name="invocationStatusType">
+        <complexContent>
+            <extension base="karma:invocationType">
+                <sequence>
+                    <element name="statusTime" type="xsd:dateTime"/>
+                    <element name="status" type="karma:statusEnumType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="dataTransferType">
+        <sequence>
+            <element name="sender" type="karma:entityType"/>
+            <element name="receiver" type="karma:entityType"/>
+            <element name="transferTime" type="xsd:dateTime"/>
+            <choice>
+                <element name="fault" type="karma:dataObjectType"/>
+                <element name="result" type="karma:dataObjectType"/>
+            </choice>
+            <element maxOccurs="unbounded" minOccurs="0" name="annotations" type="karma:annotationType"/>
+        </sequence>
+    </complexType>
+    <complexType name="dataTransferStatusType">
+        <complexContent>
+            <extension base="karma:dataTransferType">
+                <sequence>
+                    <element name="statusTime" type="xsd:dateTime"/>
+                    <element name="status" type="karma:statusEnumType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="fileType">
+        <sequence>
+            <element name="fileURI" type="xsd:anyURI"/>
+            <element minOccurs="0" name="ownerDN" type="xsd:string"/>
+            <element minOccurs="0" name="createDate" type="xsd:dateTime"/>
+            <element minOccurs="0" name="size" type="xsd:long"/>
+            <element minOccurs="0" name="md5sum" type="xsd:string"/>
+            <element minOccurs="0" name="objectName" type="xsd:string"/>
+        </sequence>
+    </complexType>
+    <complexType name="blockType">
+        <sequence>
+            <element name="blockContent" type="xsd:anyType"/>
+        </sequence>
+    </complexType>
+    <complexType name="collectionType">
+        <sequence>
+            <element name="collectionURI" type="xsd:anyURI"/>
+            <element maxOccurs="unbounded" name="members" type="karma:dataObjectType"/>
+        </sequence>
+    </complexType>
+    <complexType name="dataObjectType">
+        <sequence>
+            <choice>
+                <element name="file" type="karma:fileType"/>
+                <element name="block" type="karma:blockType"/>
+                <element name="collection" type="karma:collectionType"/>
+            </choice>
+            <element minOccurs="0" name="instanceOf" type="karma:instanceOfType"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="annotations" type="karma:annotationType"/>
+        </sequence>
+    </complexType>
+    <complexType name="dataLifeCycleType">
+        <sequence>
+            <element name="action" type="karma:actionEnumType"/>
+            <element name="actor" type="karma:entityType"/>
+            <element name="dataObject" type="karma:dataObjectType"/>
+            <element name="timestamp" type="xsd:dateTime"/>
+            <element minOccurs="0" name="dataRole">
+                <simpleType>
+                    <restriction base="xsd:string">
+                        <maxLength value="63"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="annotations" type="karma:annotationType"/>
+        </sequence>
+    </complexType>
+    <complexType name="entityLifeCycleType">
+        <sequence>
+            <element name="entity" type="karma:entityType"/>
+            <element name="timestamp" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <complexType name="workflowFailedType">
+        <sequence>
+            <element name="workflow" type="karma:entityType"/>
+            <element name="failureMessage" type="xsd:string"/>
+            <element name="failedTime" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <complexType name="annotableEntityType">
+        <sequence>
+            <element name="entityID" type="xsd:anyURI"/>
+            <element minOccurs="0" name="contextEntityID" type="xsd:anyURI"/>
+            <element name="type" type="karma:entityEnumType"/>
+        </sequence>
+    </complexType>
+    <complexType name="annotableFileType">
+        <sequence>
+            <element name="fileURI" type="xsd:anyURI"/>
+            <element minOccurs="0" name="ownerDN" type="xsd:string"/>
+            <element minOccurs="0" name="createDate" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <complexType name="addAnnotationType">
+        <sequence>
+            <choice>
+                <element name="annotableEntity" type="karma:annotableEntityType"/>
+                <element name="annotableFile" type="karma:annotableFileType"/>
+            </choice>
+            <element name="annotableObjectType" type="karma:annotableObjectEnumType"/>
+            <element maxOccurs="unbounded" name="annotations" type="karma:annotationType"/>
+            <element minOccurs="0" name="annotatingTimestamp" type="xsd:dateTime"/>
+            <element name="notificationtimestamp" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <complexType name="addAnnotationByIdType">
+        <sequence>
+            <element name="objectID" type="xsd:long"/>
+            <element name="annotableObjectType" type="karma:annotableObjectEnumType"/>
+            <element maxOccurs="unbounded" name="annotations" type="karma:annotationType"/>
+            <element minOccurs="0" name="annotatingTimestamp" type="xsd:dateTime"/>
+            <element name="notificationtimestamp" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <complexType name="addMultipleObjectAnnotationType">
+        <sequence>
+            <choice>
+                <element maxOccurs="unbounded" name="annotableEntity" type="karma:annotableEntityType"/>
+                <element maxOccurs="unbounded" name="annotableFile" type="karma:annotableFileType"/>
+            </choice>
+            <element name="annotableObjectType" type="karma:annotableObjectEnumType"/>
+            <element maxOccurs="unbounded" name="annotations" type="karma:annotationType"/>
+            <element minOccurs="0" name="annotatingTimestamp" type="xsd:dateTime"/>
+            <element name="notificationtimestamp" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <complexType name="addRelationshipAnnotationByIdType">
+        <sequence>
+            <element name="relationshipID" type="xsd:long"/>
+            <element name="annotableRelationshipType" type="karma:annotableRelationshipEnumType"/>
+            <element maxOccurs="unbounded" name="annotations" type="karma:annotationType"/>
+            <element minOccurs="0" name="annotatingTimestamp" type="xsd:dateTime"/>
+            <element name="notificationtimestamp" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <complexType name="instanceOfType">
+        <sequence>
+            <element name="instanceOfID" type="xsd:string"/>
+            <element minOccurs="0" name="version" type="xsd:string"/>
+            <element minOccurs="0" name="creationTime" type="xsd:dateTime"/>
+        </sequence>
+    </complexType>
+    <element name="invokingService" type="karma:invocationType"/>
+    <element name="invokingServiceStatus" type="karma:invocationStatusType"/>
+    <element name="invokingWorkflow" type="karma:invocationType"/>
+    <element name="invokingWorkflowStatus" type="karma:invocationStatusType"/>
+    <element name="receivedResponse" type="karma:dataTransferType"/>
+    <element name="receivedFault" type="karma:dataTransferType"/>
+    <element name="workflowInitialized" type="karma:entityLifeCycleType"/>
+    <element name="serviceInitialized" type="karma:entityLifeCycleType"/>
+    <element name="workflowTerminated" type="karma:entityLifeCycleType"/>
+    <element name="serviceTerminated" type="karma:entityLifeCycleType"/>
+    <element name="serviceInvoked" type="karma:invocationType"/>
+    <element name="workflowInvoked" type="karma:invocationType"/>
+    <element name="dataConsumed" type="karma:dataLifeCycleType"/>
+    <element name="dataProduced" type="karma:dataLifeCycleType"/>
+    <element name="dataDeleted" type="karma:dataLifeCycleType"/>
+    <element name="dataUpdated" type="karma:dataLifeCycleType"/>
+    <element name="sendingResponse" type="karma:dataTransferType"/>
+    <element name="sendingResponseStatus" type="karma:dataTransferStatusType"/>
+    <element name="dataSendStarted" type="karma:dataTransferType"/>
+    <element name="dataSendFinished" type="karma:dataTransferType"/>
+    <element name="dataReceivedStarted" type="karma:dataTransferType"/>
+    <element name="dataReceivedFinished" type="karma:dataTransferType"/>
+    <element name="sendingFault" type="karma:dataTransferType"/>
+    <element name="workflowFailed" type="karma:workflowFailedType"/>
+    <element name="addAnnotation" type="karma:addAnnotationType"/>
+    <element name="addAnnotationById" type="karma:addAnnotationByIdType"/>
+    <element name="addMultipleObjectAnnotation" type="karma:addMultipleObjectAnnotationType"/>
+    <element name="addRelationshipAnnotationById" type="karma:addRelationshipAnnotationByIdType"/>
+    <element name="unknown" type="xsd:anyType"/>
+    <element name="getOPM">
+        <complexType>
+            <sequence>
+                <element name="in" type="xsd:string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

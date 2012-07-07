@@ -1,0 +1,12 @@
+<ns:getDataProductDetailRequest xmlns:ns="http://www.dataandsearch.org/karma/query/2010/10/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <ns:dataProductIDList>
+    <ns:dataProductID>Block_1</ns:dataProductID>
+    <ns:dataProductID>File_2</ns:dataProductID>
+    <ns:dataProductID>File_3</ns:dataProductID>
+    <ns:dataProductID>Block_4</ns:dataProductID>
+    <ns:dataProductID>File_5</ns:dataProductID>
+    <ns:dataProductID>File_6</ns:dataProductID>
+    <ns:dataProductID>File_7</ns:dataProductID>
+    <ns:dataProductID>File_8</ns:dataProductID>
+  </ns:dataProductIDList>
+</ns:getDataProductDetailRequest>

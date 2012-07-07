@@ -23,7 +23,7 @@ if ($fn) {
 	);
 	echo "$fn uploaded";
         $ingest_cmd = "/home/chsmall/git/NetKarma_Portal/new_portal/webservice/injest.pl $id";
-        $output = shell_exec($ingest_cmd);
+        if ($fn == "slice.info") {$output = shell_exec($ingest_cmd); }
         echo $output; 
            
 	exit();

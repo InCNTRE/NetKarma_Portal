@@ -1,0 +1,5 @@
+<ns:getWorkflowGraphResponse xmlns:ns="http://www.dataandsearch.org/karma/query/2010/10/">
+  <v1:opmGraph xmlns:v1="http://openprovenance.org/model/v1.1.a">
+    <v1:causalDependencies/>
+  </v1:opmGraph>
+</ns:getWorkflowGraphResponse>

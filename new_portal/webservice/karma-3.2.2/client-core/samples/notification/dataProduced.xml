@@ -1,0 +1,21 @@
+<ns:dataProduced xmlns:ns="http://www.dataandsearch.org/karma/2010/08/">
+  <ns:action>PRODUCE</ns:action>
+  <ns:actor>
+    <ns:serviceInformation>
+      <ns:workflowID>workflow_8</ns:workflowID>
+      <ns:workflowNodeID>someworkflowNode</ns:workflowNodeID>
+      <ns:timestep>-1</ns:timestep>
+    <ns:serviceID>SOME_SERVICE_1</ns:serviceID>
+    </ns:serviceInformation>
+    <ns:type>SERVICE</ns:type>
+  </ns:actor>
+  <ns:dataObject>
+    <ns:file>
+    <ns:fileURI>http://karma1.itsc.uah.edu/it/20110914073920/AMSR_E_L3_SeaIce25km_V13_20110913_brws_hdf</ns:fileURI>
+    <ns:ownerDN>karma</ns:ownerDN>
+    <ns:createDate>2011-09-16T19:32:00.182-04:00</ns:createDate>
+    <ns:size>65286</ns:size>   
+    </ns:file>
+  </ns:dataObject>
+  <ns:timestamp>2010-08-29T17:55:53.452-04:00</ns:timestamp>
+</ns:dataProduced>

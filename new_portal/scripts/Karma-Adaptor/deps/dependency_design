@@ -1,0 +1,53 @@
+PREV_NTH_LINE
+NEXT_NTH_LINE
+
+selectMethod
+
+linkedEntity
+	-- process
+
+dependentEntity
+	-- host, pid
+
+linkEntity (Transitivity): works only for SEQUENTIAL
+	-- process -> pid
+
+------------------------------------
+dependencyData
+	name
+	selectionRule -> value
+ 
+	dataSet
+		name - PID
+		value -	20320 (using Rule)
+	dataSet
+		name - PROCESS
+		value -	wc
+	dataSet
+		name - HOST
+		value -	102.73.45.78	
+
+linkRule
+	type - SEQUENTIAL
+	source - PID
+	target - PROCESS
+linkRule
+	type - DIRECT
+	source - HOST
+	target - HOST
+
+dependency
+	sourceNotificationId - 7
+	targetNotificationId - 3
+	sourceActorType - INVOKEE
+	targetActorType - PRODUCER
+	matchRule
+		matchLineType - PREV_NTH_LINE
+		matchLineNum - 1
+		matchDataName - PID
+		matchDataValue - PID-value (selectionRule)
+	matchRule
+		matchLineType - NEXT_NTH_LINE
+		matchLineNum - 1
+		matchDataName - HOST
+		matchDataValue - HOST-value

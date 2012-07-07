@@ -10,28 +10,43 @@ use Config::Simple;
 my $iperf_file = "";
 my $xsplog_file = "";
 my $slice_file = "";
+my $ts_iperf = "";
 
 my $exp_id = $ARGV[0];
 #$exp_id = 42;
 my $wf_id;
+my $injest = 0;
 
 # Get the three files
 #
 my $user = "netkarma_demo";
 my $upload_path = "/home/chsmall/git/NetKarma_Portal/new_portal/webservice/uploads/" . $exp_id;
 #print $upload_path;
+my $manifest = $upload_path . "/manifest";
+my $man_file = "";
 
 my @files = <$upload_path/*>;
 
+
 foreach my $file (@files) {
-    if ($file =~/iperf.xsplog.(\d+)/) { $iperf_file = $file; }
+    if ($file =~/iperf.xsplog.(\d+)/) { $iperf_file = $file; $ts_iperf = $1;}
     if ($file =~/xsplog.(\d+)/) { $xsplog_file = $file; }
+    if ($file =~/manifest/) { 
+       $man_file = $file;
+       `/home/chsmall/git/NetKarma_Portal/new_portal/webservice/get-slice-info.py $manifest $exp_id`;
+	print "====== /home/chsmall/git/NetKarma_Portal/new_portal/webservice/get-slice-info.py $manifest $exp_id\n";
+    }
     if ($file =~/slice.info/) { $slice_file = $file; }
+    my $sh_lock = "." . $ts_iperf . ".lock";
+    if ($file =~/$sh_lock/) { $injest = 1;} 
 
 }
 
-if (( $iperf_file ne "") && ( $xsplog_file ne "") && ( $slice_file ne "")) {
+if (( $iperf_file ne "") && ( $xsplog_file ne "") && (( $slice_file ne "") || ($man_file ne "")) && ($injest == 0)) {
     my $rv =`java -jar netkarma-xsp-adapter.jar $user $slice_file $xsplog_file $iperf_file`;
+    my $touch_file = $upload_path . "/." . $ts_iperf . ".lock";
+    print "=== $touch_file\n";
+    system("touch $touch_file");
 
     if ( $rv =~ /Workflow-Instance ID = (\S+)/ ) { $wf_id=$1; print $wf_id; }
     add_wf_id($wf_id,$exp_id);
@@ -86,6 +101,6 @@ sub cache_opm {
 
 # Sleep for a while than try to query
 sleep 2;
-system ("/home/chsmall/git/NetKarma_Portal/new_portal/webservice/karma2xgmml_test.pl $wf_id $exp_id");
+system ("/home/chsmall/git/NetKarma_Portal/new_portal/webservice/karma2xgmml_ns.pl $wf_id $exp_id");
 
 }
